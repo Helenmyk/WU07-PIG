@@ -1,0 +1,56 @@
+h1 {
+    color: #FF69B4;
+    font-family: 'Indie Flower', cursive;
+    font-size: 60px;
+}
+
+body {
+    background-color: skyblue;
+    text-align: center;
+    margin: -35px;
+}
+
+#guess {
+    letter-spacing: 17px;
+    font-size: 32px;
+    height: 143px;
+    line-height: 184px;
+    margin-top: -30px;
+}
+
+.letter-button{
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size:20px;
+    font-weight: bold;
+    white-space: nowrap;
+    background-color: white;
+    font-family: 'Indie Flower';
+    cursor: pointer;
+    letter-spacing: 6px;
+}
+
+#render{
+  background-color: white; opacity 0.2;
+}
+
+button:hover{background-color:#FF69B4};
+
+#reset {
+    border-radius: 8px;
+    padding: 7px 28px;
+    margin-bottom: 37px;
+    font-size:15px;
+    background-color:gold;
+    font-family: 'Indie Flower', cursive;
+    cursor: pointer;
+    letter-spacing: 4px;
+}
+
+#wrong {
+    position: relative;
+    margin-top: -181px;
+    background-color: opacity: 0.2;
+    font-family: 'Indie Flower', cursive;
+    font-size: 24px;
+}
