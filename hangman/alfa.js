@@ -63,7 +63,7 @@ var utrykk = [
     'SKVETTE VANN PÅ GÅSA',
     'INGEN VET HVOR HAREN HOPPER',
     'GJØR IKKE EN FLUE FORTRED'
-    'SULTEN SOM ULV'
+    'SULTEN SOM EN ULV'
 
 >>>>>>> 4f928585445e5bea1c4a41261867850e5e7e8d6a
 ];
