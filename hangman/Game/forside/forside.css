@@ -141,7 +141,7 @@ body {
 #gress {
   z-index: 399;
   margin-top: 170px;
-  margin-left: -400px;
+  margin-left: -4200px;
   position: absolute;
   user-select: none;
   -webkit-transform: scale(1.1); /* Saf3.1+, Chrome */
