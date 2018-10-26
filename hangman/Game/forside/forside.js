@@ -46,6 +46,9 @@ function historie() {
 function lett() {
   document.location.href = "../lett/index.html";
 }
+function vanskelig() {
+  document.location.href = "../vanskelig/index.html";
+}
 
 $().ready(function() {
   $("#lydBilde").click(function() {
