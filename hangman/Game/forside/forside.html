@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>NETTSIDE</title>
+<meta charset="utf-8"><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="forside.css" />
+</head>
+
+<body>
+  <div class="parent">
+  <div class="alleElementer">
+  <img id="grisen" src="grisen.png" />
+  <img src="gress.png" id="gress" />
+  <img src="logo.png" id="logo" />
+  <div class="menyKnapper">
+
+  <button id="start" onclick="startSpill()"  class="menyKnapp">Start spill</button>
+  <br>
+  <button id="regler" onclick="regler()" id="spillRegler" class="menyKnapp">Regler</button>
+  <br>
+  <button id="historie" onclick="historie()" id="spillHistorie" class="menyKnapp">Historie</button>
+
+  </div>
+</div>
+<div id="vGrad" class="vanskelighetsGrad">
+<button onclick="lett()" class="vanskeligKnapp" id="lett">Lett</button>
+<button class="vanskeligKnapp" id="vanskelig">Vanskelig</button>
+</div>
+<div id="infoBokser">
+
+<div id="menyBoksRegler">
+<h2 class="boksOverskrift">REGLER</h2>
+<p>«Pop Pig» er basert på det tradisjonelle hangman-spillet, men med en liten vri.
+    Ordet man skal gjette seg frem til vises med en rad med streker, der hvor en
+    strek tilsvarer én bokstav.<br><br>
+
+    Dersom bokstaven man gjetter er riktig vil den vises på riktig posisjon.
+
+    Hvis bokstaven som blir gjettet er feil vil én ballong sprekke.
+
+    Spillet er over når spilleren har gjettet hele ordet, eller når alle ballongene
+    er sprekt.<br><br>
+
+    Gjett ordet på så få bokstaver som mulig. Klarer du å få Billie Bacon hjem
+    til gården?
+   </p>
+   <br>
+   <br>
+   <button class="menyKnapp" name="tilbake" onclick="regler()">Tilbake</button>
+    </p>
+</div>
+
+<div id="menyBoksHistorie">
+  <h2 class="boksOverskrift">HISTORIE</h2>
+  <p>Grisen «Billie Bacon» har rotet seg bort fra gården –
+     heldigvis har han funnet seg noen heliumballonger!<br><br>
+
+     Han er ensom, alene og savner de andre dyrene. Klarer du å
+     hjelpe Billie Bacon tilbake til gården?
+   </p>
+     <br>
+     <br>
+     <button class="menyKnapp" name="tilbake" onclick="historie()">Tilbake</button>
+      </p>
+</div>
+</div>
+
+</div>
+<div id="border1" class="side1"></div>
+<div id="border2" class="side2"></div>
+<div id="border3" class="side3"></div>
+<div id="border4" class="side4"></div>
+
+  <!--<img src="ballongani.gif"/> -->
+</body>
+<script type="text/javascript" src="forside.js"></script>
+</html>

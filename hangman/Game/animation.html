@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>NETTSIDE</title>
+<meta charset="utf-8">
+
+<style>
+body {
+  background-color: royalblue;
+}
+.object {
+  animation: MoveUpDown 2.5s linear infinite;
+  position: absolute;
+}
+
+@keyframes MoveUpDown {
+  0%, 100% {
+    top: 90px;
+  }
+  50% {
+    top: 100px;
+  }
+}
+
+@keyframes leftRight {
+  0%{
+    left: -20%;
+  }
+  100%{
+    left: 120%;
+  }
+}
+
+#sky1{
+  position: absolute;
+  left: -100px;
+  top:100px;
+}
+
+#sky2{
+  position: absolute;
+  left: -100px;
+  top:300px;
+}
+
+#sky3{
+  position: absolute;
+  left: -100px;
+  top:120px;
+}
+
+#sky4{
+  position: absolute;
+  left: -100px;
+  top:280px;
+}
+
+#sky5{
+  position: absolute;
+  left: -100px;
+  top:80px;
+}
+
+#sky6{
+  position: absolute;
+  left: -100px;
+  top:150px;
+}
+#ballong{
+  position: absolute;
+  left: 210px;
+  top: 80px;
+}
+#ballong2{
+  position: absolute;
+  left: 200px;
+  top: 100px;
+}
+#ballong3{
+  position: absolute;
+  left: 220px;
+  top: 100px;
+}
+#ballong4{
+  position: absolute;
+  left: 210px;
+  top: 115px;
+}
+#ballong5{
+  position: absolute;
+  left: 240px;
+  top: 115px;
+}
+#ballong6{
+  position: absolute;
+  left: 235px;
+  top: 80px;
+}
+#ballong7{
+  position: absolute;
+  left: 245px;
+  top: 100px;
+}
+</style>
+</head>
+
+<body>
+<img id="sky1" src="sky.png" width="100px"/>
+<img id="sky2" src="sky.png" width="100px"/>
+<img id="sky3" src="sky.png" width="100px"/>
+<img id="sky4" src="sky.png" width="100px"/>
+<img id="sky5" src="sky.png" width="100px"/>
+<img id="sky6" src="sky.png" width="100px"/>
+  <div class="object">
+  <img id="ballong" src="fixedballong.png" width="60px"/>
+  <img id="ballong6" src="fixedballong.png" width="60px"/>
+  <img id="ballong7" src="fixedballong.png" width="60px"/>
+  <img id="ballong2" src="fixedballong.png" width="60px"/>
+  <img id="ballong3" src="fixedballong.png" width="60px"/>
+  <img id="ballong4" src="fixedballong.png" width="60px"/>
+  <img id="ballong5" src="fixedballong.png" width="60px"/>
+</div>
+  <!--<img src="ballongani.gif"/> -->
+</body>
+<script>
+window.onload = oppstart();
+
+function oppstart (){
+let b = document.getElementById("ballong");
+
+b.onclick = event => {
+  ballong.src="blng.gif";
+  setTimeout(removeImg, 300);
+}
+}
+
+function removeImg() {
+  var elem = document.getElementById("ballong");
+  elem.parentNode.removeChild(elem);
+}
+let skytall = 1;
+
+setInterval(sendSky,20000)
+function sendSky() {
+  if(skytall == 7){
+    skytall=1;
+  }
+  let sendSky = document.getElementById("sky"+skytall);
+
+  sendSky.style.animation = "leftRight 30s linear"
+  sendSky.style.animationFillMode = "backwards";
+
+  skytall++
+}
+</script>
+</html>

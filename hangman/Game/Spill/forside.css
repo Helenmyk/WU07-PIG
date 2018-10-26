@@ -1,0 +1,195 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color: #000;
+  overflow: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.side1 {
+  position: absolute;
+  display: flex;
+  height: 5%;
+  width: 100%;
+  background: black;
+  z-index: 500;
+}
+
+.side2 {
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  height: 5%;
+  width: 100%;
+  background: black;
+  z-index: 500;
+}
+
+.side3 {
+  position: absolute;
+  display: flex;
+  right: 0;
+  height: 100%;
+  width: 15%;
+  background: black;
+  z-index: 500;
+}
+
+.side4 {
+  position: absolute;
+  display: flex;
+  left: 0;
+  height: 100%;
+  width: 15%;
+  background: black;
+  z-index: 500;
+}
+
+.parent {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background: -webkit-linear-gradient(top, #7ec0ee 0%, #fff 100%);
+  background: -linear-gradient(top, #7ec0ee 0%, #fff 100%);
+  background: -moz-linear-gradient(top, #7ec0ee 0%, #fff 100%);
+}
+
+.menyKnapp {
+  z-index: 400;
+  background-color: #b28edb;
+  color: black;
+  font-size: 20px;
+  padding: 14px 20px;
+  border-radius: 8px;
+  margin: 2px;
+  display: block;
+  width: 120%;
+  border: 2px solid #6a4891;
+  opacity: 0.8;
+  user-select: none;
+}
+
+.menyKnapp:hover {
+  background-color: #6a4891;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+}
+
+#menyKnapper {
+  position: absolute;
+  left: 18%;
+  top: 40%;
+}
+
+#stille {
+  width: 2%;
+  height: 3%;
+  margin-left: 16%;
+  margin-top: 4%;
+  cursor: pointer;
+  user-select: none;
+  outline: 0;
+}
+.child {
+  margin-left: 20%;
+  margin-top: 20%;
+  margin-bottom: 20%;
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+}
+#menyBoksRegler {
+  overflow-y: auto;
+  padding: 2%;
+  margin-top: 15%;
+  margin-left: 35%;
+  margin-bottom: 15%;
+  height: 51%;
+  display: block;
+  border: solid 1px;
+  background-color: #b28edb;
+  position: absolute;
+  width: 30%;
+  display: none;
+  opacity: 0.9;
+}
+
+#menyBoksHistorie {
+  overflow-y: auto;
+  padding: 2%;
+  margin-top: 15%;
+  margin-left: 35%;
+  margin-bottom: 15%;
+  height: 51%;
+  display: block;
+  border: solid 1px;
+  background-color: #b28edb;
+  position: absolute;
+  width: 30%;
+  display: none;
+  opacity: 0.9;
+}
+
+.boksOverskrift {
+  font-size: 2em;
+  text-align: center;
+}
+
+button {
+  background-color: #b28edb;
+  border: 2px solid #6a4891;
+  font-size: 15px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  margin: 2px;
+  display: block;
+  width: 100px;
+  user-select: none;
+  outline: 0;
+}
+
+button:hover {
+  background-color: #6a4891;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+}
+
+#bakgrunn {
+  margin-left: -20%;
+  width: 110%;
+}
+
+#grisen {
+  position: absolute;
+  margin-top: -130px;
+  margin-left: -230px;
+  user-select: none;
+  -webkit-transform: scale(0.15); /* Saf3.1+, Chrome */
+  -moz-transform: scale(0.15); /* FF3.5+ */
+  -ms-transform: scale(0.15); /* IE9 */
+  -o-transform: scale(0.15); /* Opera 10.5+ */
+  transform: scale(0.15);
+}
+#logo {
+  position: absolute;
+  margin-top: 7%;
+  margin-left: 35%;
+  user-select: none;
+}
+
+.test {
+  margin-left: 45%;
+  max-width: 100%;
+  max-height: 100%;
+  position: relative;
+}
