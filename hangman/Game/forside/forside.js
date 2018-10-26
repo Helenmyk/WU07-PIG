@@ -46,3 +46,14 @@ function historie() {
 function lett() {
   document.location.href = "../index.html";
 }
+
+$().ready(function() {
+
+      $("#lydBilde").click(function(){
+      var src = ($(this).attr('src') === 'no-sound.png')
+                       ? 'speaker.png' : 'no-sound.png';
+
+      $(this).attr('src', src);
+
+      });
+    });
