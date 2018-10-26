@@ -187,7 +187,17 @@ input[name="tilbake"] {
   z-index: 400;
   position: absolute;
 }
-
+#lydBilde {
+  position: absolute;
+  margin-left: -402px;
+  margin-top: -250px;
+  user-select: none;
+  -webkit-transform: scale(0.15); /* Saf3.1+, Chrome */
+  -moz-transform: scale(0.15); /* FF3.5+ */
+  -ms-transform: scale(0.15); /* IE9 */
+  -o-transform: scale(0.15); /* Opera 10.5+ */
+  transform: scale(0.15);
+}
 #infoBokser {
   margin-left: 45%;
   max-width: 100%;
