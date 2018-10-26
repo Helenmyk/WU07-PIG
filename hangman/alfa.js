@@ -1,93 +1,92 @@
-var wordsEnkel = [
-    'SPONGEBOB',
-    'SQUIDWARD',
-    'JIMMY NEUTRON',
-    'COSMO',
-    'WANDA',
-    'TIMMY TURNER',
-    'MR KRABS',
-    'MRS PUFF',
-    'SANDY CHEEKS',
-    'DIDI PICKLES',
-    'PATRICK STAR',
-    'CARL WHEEZER'
-
+var words = [
+  "SPONGEBOB",
+  "SQUIDWARD",
+  "JIMMY NEUTRON",
+  "COSMO",
+  "WANDA",
+  "TIMMY TURNER",
+  "MR KRABS",
+  "MRS PUFF",
+  "SANDY CHEEKS",
+  "DIDI PICKLES",
+  "PATRICK STAR",
+  "CARL WHEEZER"
 ];
 
 /*------------- app's state -------------*/
 var secretWord, wrongCount, guess;
 
 /*------------- cached element references -------------*/
-var $guess = $('#guess');
-var $img = $('#hang-img');
-var $message = $('#message');
+var $guess = $("#guess");
+var $img = $("#hang-img");
+var $message = $("#message");
 
 /*------------- event listeners -------------*/
-$('#letters').on('click', handleLetterClick);
+$("#letters").on("click", handleLetterClick);
 
-$('#reset').on('click', initialize);
+$("#reset").on("click", initialize);
 
 /*------------- functions -------------*/
 initialize();
 
 function initialize() {
-    wrongCount = 0;
-    secretWord = words[getRandomInt(words.length -1)];
+  wrongCount = 0;
+  secretWord = words[getRandomInt(words.length - 1)];
 
-    guess = "";
+  guess = "";
 
-    for (var i = 0; i < secretWord.length; i++) {
-      var currentLetter = secretWord[i];
-      if (currentLetter === " ") {
-          guess += " "
-      } else {
-          guess += "_";
-      }
-    };
+  for (var i = 0; i < secretWord.length; i++) {
+    var currentLetter = secretWord[i];
+    if (currentLetter === " ") {
+      guess += " ";
+    } else {
+      guess += "_";
+    }
+  }
 
-    $('button.letter-button').prop('disabled', false);
-    render();
+  $("button.letter-button").prop("disabled", false);
+  render();
 }
 
 function getRandomInt(max) {
-    return Math.floor (Math.random() * (max + 1));
+  return Math.floor(Math.random() * (max + 1));
 }
 
 function render() {
-    $guess.html(guess);
-      // pop balloong
-    $img.attr('src', 'images/img' + wrongCount + '.png')
+  $guess.html(guess);
+  // pop balloong
+  $img.attr("src", "images/img" + wrongCount + ".png");
 
-    if (guess === secretWord) {
-        // Hvis vinner
-    } else if ( wrongCount === 6) {
-        // Hvis Taper
-    } else {
-        // ?
-    }
+  if (guess === secretWord) {
+    // Hvis vinner
+  } else if (wrongCount === 7) {
+    // Hvis Taper
+  } else {
+    // ?
+  }
 }
 
-function handleLetterClick (evt) {
-    if (wrongCount === 6) return;
-    evt.target.style.backgroundColor = "white";
-    evt.target.style.opacity = "0.5";
-    var letter = evt.target.textContent;
-    console.log(secretWord);
-    if (secretWord.includes(letter)) {
-        var pos = secretWord.indexOf(letter);
-        while ( pos >= 0) {
-            guess = guess.split('');
-            guess[pos] = letter;
-            guess = guess.join('');
-            pos = secretWord.indexOf(letter,pos +1);
-        }
-    } else {
-        if (evt.target.id !== "reset") {
-            wrongCount++;
-        }
+function handleLetterClick(evt) {
+  if (wrongCount === 7) return;
+  evt.target.style.backgroundColor = "white";
+  evt.target.style.opacity = "0.5";
+  var letter = evt.target.textContent;
+  console.log(secretWord);
+  if (secretWord.includes(letter)) {
+    var pos = secretWord.indexOf(letter);
+    while (pos >= 0) {
+      guess = guess.split("");
+      guess[pos] = letter;
+      guess = guess.join("");
+      pos = secretWord.indexOf(letter, pos + 1);
     }
+  } else {
+    if (evt.target.id !== "reset") {
+      wrongCount++;
+    }
+  }
 
-    $(evt.target).prop('disabled', true);
-    $('#reset').prop('disabled', false);
-    render();
+  $(evt.target).prop("disabled", true);
+  $("#reset").prop("disabled", false);
+  render();
 }
