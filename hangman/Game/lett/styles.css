@@ -169,7 +169,7 @@ body {
 }
 #grisen {
   position: absolute;
-  margin-top: -130px;
+  margin-top: -170px;
   margin-left: -230px;
   user-select: none;
   -webkit-transform: scale(0.15); /* Saf3.1+, Chrome */
@@ -184,10 +184,12 @@ body {
   user-select: none;
   right: -300px;
 }
+
 #sky1 {
   width: 200px;
   animation: rightLeft 40s linear infinite;
 }
+
 #sky2 {
   width: 200px;
   top: 100px;
@@ -208,4 +210,58 @@ body {
   100% {
     right: 1500px;
   }
+}
+h1 {
+  color: #ff69b4;
+  font-family: "Indie Flower", cursive;
+  font-size: 60px;
+}
+#guess {
+  letter-spacing: 17px;
+  font-size: 32px;
+  height: 143px;
+  line-height: 184px;
+  margin-top: -30px;
+}
+
+#letters {
+  margin-top: 400px;
+  margin-left: -240px;
+  text-align: center;
+  user-select: none;
+}
+
+.letter-button {
+  user-select: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-size: 20px;
+  font-weight: bold;
+  white-space: nowrap;
+  background-color: white;
+  font-family: "Indie Flower";
+  cursor: pointer;
+  letter-spacing: 6px;
+}
+
+button:hover {
+  background-color: #ff69b4;
+}
+
+#reset {
+  border-radius: 8px;
+  padding: 7px 28px;
+  margin-bottom: 37px;
+  font-size: 15px;
+  background-color: gold;
+  font-family: "Indie Flower", cursive;
+  cursor: pointer;
+  letter-spacing: 4px;
+}
+
+#wrong {
+  position: relative;
+  margin-top: -181px;
+  font-family: "Indie Flower", cursive;
+  font-size: 24px;
 }

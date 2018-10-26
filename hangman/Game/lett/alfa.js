@@ -120,25 +120,31 @@ function render() {
 
 function handleLetterClick(evt) {
   if (wrongCount === 7) return;
-  evt.target.style.backgroundColor = "white";
-  evt.target.style.opacity = "0.5";
-  var letter = evt.target.textContent;
-  console.log(secretWord);
-  if (secretWord.includes(letter)) {
-    var pos = secretWord.indexOf(letter);
-    while (pos >= 0) {
-      guess = guess.split("");
-      guess[pos] = letter;
-      guess = guess.join("");
-      pos = secretWord.indexOf(letter, pos + 1);
-    }
-  } else {
-    if (evt.target.id !== "reset") {
-      wrongCount++;
+  for (i = 1; i < 30; i++) {
+    if (evt.target.id == document.getElementById("knapp" + i)) {
+      evt.target.style.backgroundColor = "white";
+      evt.target.style.opacity = "0.5";
+      var letter = evt.target.textContent;
+      console.log(secretWord);
+      if (secretWord.includes(letter)) {
+        var pos = secretWord.indexOf(letter);
+        while (pos >= 0) {
+          guess = guess.split("");
+          guess[pos] = letter;
+          guess = guess.join("");
+          pos = secretWord.indexOf(letter, pos + 1);
+        }
+      } else {
+        if (evt.target.id !== "reset") {
+          wrongCount++;
+        }
+      }
+
+      $(evt.target).prop("disabled", true);
+      $("#reset").prop("disabled", false);
+      render();
+    } else {
+      console.log("Noe gikk feil");
     }
   }
-
-  $(evt.target).prop("disabled", true);
-  $("#reset").prop("disabled", false);
-  render();
 }
