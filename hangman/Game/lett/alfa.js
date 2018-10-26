@@ -1,4 +1,21 @@
-/*------------- constants -------------*/
+window.addEventListener("resize", function() {
+  if (window.matchMedia("(min-width: 980px)").matches) {
+    console.log("Screen width is at least 980px");
+    for (let i = 1; i < 5; i++) {
+      var element = document.getElementById("border" + i);
+      element.classList.add("side" + i);
+    }
+  } else {
+    console.log("Screen less than 980px");
+    for (let i = 1; i < 5; i++) {
+      var element = document.getElementById("border" + i);
+      element.classList.remove("side" + i);
+    }
+  }
+});
+$.getJSON("ord.json", function(data) {
+  console.log(data);
+});
 var words = [
   "HØNEMOR",
   "LESEHEST",
@@ -19,50 +36,6 @@ var words = [
   "HELDIGGRIS",
   "REDDHARE",
   "KLATREMUS"
-];
-
-/*------------- constants -------------*/
-var utrykk = [
-  "SLU SOM EN REV",
-  "STILLE SOM EN MUS",
-  "DUM SOM EN SAU",
-  "STA SOM ET ESEL",
-  "TJUKK SOM EN GRIS",
-  "SVETTER SOM EN GRIS",
-  "TROFAST SOM EN HUND",
-  "STOLT SOM EN HANE",
-  "FEIG SOM EN KYLLING",
-  "LITEN SOM EN MUS",
-  "SNILL SOM ET LAM",
-  "SMIDIG SOM EN KATT",
-  "KAKLE SOM EN HØNE",
-  "HYLE SOM EN GRIS",
-  "STYGG SOM EN KU",
-  "LEKEN SOM EN KATT",
-  "VAGLE SOM EN GÅS",
-  "KJØRE SOM ET SVIN",
-  "FATTIG SOM EN KIRKEROTTE",
-  "GALE SOM EN HANE",
-  "MJAUE SOM EN KATT",
-  "FROM SOM ET LAM",
-  "SINT SOM EN OKSE",
-  "PIPE SOM EN MUS",
-  "KLATRE SOM EN GEIT",
-  "KLAR SOM ET EGG",
-  "FRI SOM FUGLEN",
-  "LISTE SEG PÅ KATTEPOTER",
-  "KASTE PERLER FOR SVIN",
-  "LOPPER I BLODET",
-  "KLEKKE UT EN PLAN",
-  "DET GÅR DEN VEIEN HØNA SPARKER",
-  "HA SINE SVIN PÅ SKOGEN",
-  "DET ER BEDRE MED EN FUGL I HÅNDA ENN TI PÅ TAKET",
-  "Å REGNE HUNDER OG KATTER",
-  "SULTEN SOM EN HEST",
-  "SKVETTE VANN PÅ GÅSA",
-  "INGEN VET HVOR HAREN HOPPER",
-  "GJØR IKKE EN FLUE FORTRED",
-  "SULTEN SOM ULV"
 ];
 
 /*------------- app's state -------------*/
