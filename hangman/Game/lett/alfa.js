@@ -107,21 +107,30 @@ function getRandomInt(max) {
 function render() {
   $guess.html(guess);
   // pop balloong
-  $img.attr("src", "images/img" + wrongCount + ".png");
 
   if (guess === secretWord) {
     // Hvis vinner
+  } else if (wrongCount === 1) {
+    sprekk();
+  } else if (wrongCount === 2) {
+    sprekk();
+  } else if (wrongCount === 3) {
+    sprekk();
+  } else if (wrongCount === 4) {
+    sprekk();
+  } else if (wrongCount === 5) {
+    sprekk();
+  } else if (wrongCount === 6) {
+    sprekk();
   } else if (wrongCount === 7) {
-    // Hvis Taper
-  } else {
-    // ?
+    sprekk();
   }
 }
 
 function handleLetterClick(evt) {
   if (wrongCount === 7) return;
   for (i = 1; i < 30; i++) {
-    if (evt.target.id == document.getElementById("knapp" + i)) {
+    if (evt.target.id == "knapp" + i) {
       evt.target.style.backgroundColor = "white";
       evt.target.style.opacity = "0.5";
       var letter = evt.target.textContent;
@@ -143,8 +152,17 @@ function handleLetterClick(evt) {
       $(evt.target).prop("disabled", true);
       $("#reset").prop("disabled", false);
       render();
-    } else {
-      console.log("Noe gikk feil");
     }
   }
+}
+let blng;
+function sprekk() {
+  blng = document.getElementById("ballong" + wrongCount);
+  blng.src = "../Bilder/blng.gif";
+  setTimeout(removeImg, 300);
+}
+
+function removeImg() {
+  console.log(blng);
+  blng.style.display = "none";
 }
