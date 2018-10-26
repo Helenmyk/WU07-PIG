@@ -14,6 +14,14 @@ window.addEventListener("resize", function() {
   }
 });
 
+var isChrome =
+  /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+if (!isChrome) {
+  $("#iframeAudio").remove();
+} else {
+  $("#playAudio").remove(); //just to make sure that it will not have 2x audio in the background
+}
+
 var words = [
   "HØNEMOR",
   "LESEHEST",
@@ -130,7 +138,7 @@ let blng;
 function sprekk() {
   blng = document.getElementById("ballong" + wrongCount);
   blng.src = "../Bilder/blng.gif";
-  var number = getRandomInt(5);
+  var number = getRandomInt(3);
   console.log(number);
   document.getElementById("pop" + number).play();
   setTimeout(removeImg, 300);

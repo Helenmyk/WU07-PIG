@@ -14,6 +14,14 @@ window.addEventListener("resize", function() {
   }
 });
 
+var isChrome =
+  /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+if (!isChrome) {
+  $("#iframeAudio").remove();
+} else {
+  $("#playAudio").remove(); //just to make sure that it will not have 2x audio in the background
+}
+
 var words = [
   "SLU SOM EN REV",
   "STILLE SOM EN MUS",
@@ -50,7 +58,7 @@ var words = [
 ];
 
 /*------------- app's state -------------*/
-var secretWord, wrongCount, guess;
+var secretWord, wrongCount, guess, letter, contains;
 
 /*------------- cached element references -------------*/
 var $guess = $("#guess");
@@ -59,8 +67,6 @@ var $message = $("#message");
 
 /*------------- event listeners -------------*/
 $("#letters").on("click", handleLetterClick);
-
-$("#reset").on("click", initialize);
 
 /*------------- functions -------------*/
 initialize();
@@ -93,20 +99,20 @@ function render() {
   // pop balloong
 
   if (guess === secretWord) {
-    // Hvis vinner
-  } else if (wrongCount === 1) {
+    console.log("du vant!");
+  } else if (wrongCount === 1 && contains == false) {
     sprekk();
-  } else if (wrongCount === 2) {
+  } else if (wrongCount === 2 && contains == false) {
     sprekk();
-  } else if (wrongCount === 3) {
+  } else if (wrongCount === 3 && contains == false) {
     sprekk();
-  } else if (wrongCount === 4) {
+  } else if (wrongCount === 4 && contains == false) {
     sprekk();
-  } else if (wrongCount === 5) {
+  } else if (wrongCount === 5 && contains == false) {
     sprekk();
-  } else if (wrongCount === 6) {
+  } else if (wrongCount === 6 && contains == false) {
     sprekk();
-  } else if (wrongCount === 7) {
+  } else if (wrongCount === 7 && contains == false) {
     sprekk();
   }
 }
@@ -117,9 +123,10 @@ function handleLetterClick(evt) {
     if (evt.target.id == "knapp" + i) {
       evt.target.style.backgroundColor = "white";
       evt.target.style.opacity = "0.5";
-      var letter = evt.target.textContent;
+      letter = evt.target.textContent;
       console.log(secretWord);
       if (secretWord.includes(letter)) {
+        contains = true;
         var pos = secretWord.indexOf(letter);
         while (pos >= 0) {
           guess = guess.split("");
@@ -129,6 +136,7 @@ function handleLetterClick(evt) {
         }
       } else {
         if (evt.target.id !== "reset") {
+          contains = false;
           wrongCount++;
         }
       }
@@ -143,6 +151,9 @@ let blng;
 function sprekk() {
   blng = document.getElementById("ballong" + wrongCount);
   blng.src = "../Bilder/blng.gif";
+  var number = getRandomInt(3);
+  console.log(number);
+  document.getElementById("pop" + number).play();
   setTimeout(removeImg, 300);
 }
 
