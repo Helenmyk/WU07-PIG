@@ -101,6 +101,8 @@ function render() {
     sprekk();
   } else if (wrongCount === 7 && contains == false) {
     sprekk();
+    spillLyd();
+    setTimeout(tapt, 2000);
   }
 }
 
@@ -146,4 +148,13 @@ function sprekk() {
 
 function removeImg() {
   blng.style.display = "none";
+}
+
+function spillLyd() {
+  let tastatur = document.getElementById("letters");
+}
+
+function tapt() {
+  var tastatur = document.getElementById("letters");
+  tastatur.style.animation = "keyboardOut 0.7s ease-out 0s normal 1 forwards";
 }

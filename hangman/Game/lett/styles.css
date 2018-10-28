@@ -212,6 +212,14 @@ body {
     right: 1500px;
   }
 }
+@keyframes keyboardOut {
+  0% {
+    margin-top: 350px;
+  }
+  100% {
+    margin-top: 1000px;
+  }
+}
 h1 {
   color: #ff69b4;
   font-family: "Indie Flower", cursive;
