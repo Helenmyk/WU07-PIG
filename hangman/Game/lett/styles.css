@@ -220,6 +220,11 @@ body {
     margin-top: 1000px;
   }
 }
+@keyframes animerGris {
+  100% {
+    margin-top: 1000px;
+  }
+}
 h1 {
   color: #ff69b4;
   font-family: "Indie Flower", cursive;

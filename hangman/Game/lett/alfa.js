@@ -8,21 +8,23 @@ window.addEventListener("resize", function() {
   } else {
     console.log("Screen less than 980px");
     for (let i = 1; i < 5; i++) {
-      var element = document.getElementById("border" + i);
+      let element = document.getElementById("border" + i);
       element.classList.remove("side" + i);
     }
   }
 });
-
-var isChrome =
+let player;
+let isChrome =
   /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 if (!isChrome) {
   $("#iframeAudio").remove();
+  player = false;
 } else {
   $("#playAudio").remove(); //just to make sure that it will not have 2x audio in the background
+  player = true;
 }
 
-var words = [
+let words = [
   "HØNEMOR",
   "LESEHEST",
   "RINGREV",
@@ -45,12 +47,12 @@ var words = [
 ];
 
 /*------------- app's state -------------*/
-var secretWord, wrongCount, guess, letter, contains;
+let secretWord, wrongCount, guess, letter, contains;
 
 /*------------- cached element references -------------*/
-var $guess = $("#guess");
-var $img = $("#hang-img");
-var $message = $("#message");
+let $guess = $("#guess");
+let $img = $("#hang-img");
+let $message = $("#message");
 
 /*------------- event listeners -------------*/
 $("#letters").on("click", handleLetterClick);
@@ -64,8 +66,8 @@ function initialize() {
 
   guess = "";
 
-  for (var i = 0; i < secretWord.length; i++) {
-    var currentLetter = secretWord[i];
+  for (let i = 0; i < secretWord.length; i++) {
+    let currentLetter = secretWord[i];
     if (currentLetter === " ") {
       guess += " ";
     } else {
@@ -101,8 +103,7 @@ function render() {
     sprekk();
   } else if (wrongCount === 7 && contains == false) {
     sprekk();
-    spillLyd();
-    setTimeout(tapt, 2000);
+    setTimeout(spillLyd, 700);
   }
 }
 
@@ -116,7 +117,7 @@ function handleLetterClick(evt) {
       console.log(secretWord);
       if (secretWord.includes(letter)) {
         contains = true;
-        var pos = secretWord.indexOf(letter);
+        let pos = secretWord.indexOf(letter);
         while (pos >= 0) {
           guess = guess.split("");
           guess[pos] = letter;
@@ -140,7 +141,7 @@ let blng;
 function sprekk() {
   blng = document.getElementById("ballong" + wrongCount);
   blng.src = "../Bilder/blng.gif";
-  var number = getRandomInt(3);
+  let number = getRandomInt(3);
   console.log(number);
   document.getElementById("pop" + number).play();
   setTimeout(removeImg, 300);
@@ -151,10 +152,27 @@ function removeImg() {
 }
 
 function spillLyd() {
-  let tastatur = document.getElementById("letters");
+  if (player == true) {
+    document.getElementById("iframeAudio").src = "";
+  } else {
+    document.getElementById("playAudio").pause();
+  }
+  document.getElementById("gob").style.webkitAnimationPlayState = "paused";
+  document.getElementById("sky1").style.webkitAnimationPlayState = "paused";
+  document.getElementById("sky2").style.webkitAnimationPlayState = "paused";
+  document.getElementById("sky3").style.webkitAnimationPlayState = "paused";
+  document.getElementById("alert").play();
+  setTimeout(tapt, 1000);
 }
 
 function tapt() {
-  var tastatur = document.getElementById("letters");
+  let tastatur = document.getElementById("letters");
   tastatur.style.animation = "keyboardOut 0.7s ease-out 0s normal 1 forwards";
+  setTimeout(grisAnimasjon, 1000);
+}
+
+function grisAnimasjon() {
+  document.getElementById("fall").play();
+  document.getElementById("gob").style.animation =
+    "animerGris 1.8s ease-in 0s normal 1 forwards";
 }
