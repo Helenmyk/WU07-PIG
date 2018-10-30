@@ -19,6 +19,11 @@ function startSpill() {
   vgrad.style.animation = "testAnimation 0.7s ease-out 0s normal 1 forwards";
 }
 
+function tilbakeVGrad() {
+  var vgrad = document.getElementById("vGrad");
+  vgrad.style.animation = "testAnimation 0.7s ease-out 0s reverse 1 forwards";
+}
+
 function regler() {
   let menyBoksRegler = document.getElementById("menyBoksRegler");
   if (menyBoksHistorie.style.display == "block") {

@@ -34,8 +34,10 @@
   </div>
 </div>
 <div id="vGrad" class="vanskelighetsGrad">
-<button onclick="lett()" class="vanskeligKnapp" id="lett">Lett</button><br />
-<button onclick="vanskelig()" class="vanskeligKnapp" id="vanskelig">Vanskelig</button>
+  <p id="infoVGrad">Alle ord og uttrykk er dyrerelatert! </p>
+<button onclick="lett()" class="vanskeligKnapp" id="lett">ORD <br>(lett)</button><br /><br>
+<button onclick="vanskelig()" class="vanskeligKnapp" id="vanskelig">UTTRYKK (vanskelig)</button>
+<input onclick="tilbakeVGrad()" id="tilbakeKnappV" type="button" class="menyKnapp" value="Tilbake"></input>
 </div>
 <div id="infoBokser">
 
@@ -56,8 +58,7 @@
     til gården?
    </p>
    <br>
-   <br>
-   <button class="menyKnapp" name="tilbake" onclick="regler()">Tilbake</button>
+   <input onclick="regler()" type="button" id="tilbakeKnappR" class="menyKnapp" value="Tilbake"></input>
     </p>
 </div>
 
@@ -70,8 +71,7 @@
      hjelpe Billie Bacon tilbake til gården?
    </p>
      <br>
-     <br>
-     <button class="menyKnapp" name="tilbake" onclick="historie()">Tilbake</button>
+     <input onclick="historie()" type="button" id="tilbakeKnappH" class="menyKnapp" value="Tilbake"></input>
       </p>
 </div>
 </div>
