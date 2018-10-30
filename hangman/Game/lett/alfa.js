@@ -8,22 +8,24 @@ window.addEventListener("resize", function() {
   } else {
     console.log("Screen less than 980px");
     for (let i = 1; i < 5; i++) {
-      let element = document.getElementById("border" + i);
-      element.classList.remove("side" + i);
+      let skjermSide = document.getElementById("border" + i);
+      skjermSide.classList.remove("side" + i);
     }
   }
 });
-let player;
+/*(let player;
 let isChrome =
   /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 if (!isChrome) {
   $("#iframeAudio").remove();
   player = false;
 } else {
-  $("#playAudio").remove(); //just to make sure that it will not have 2x audio in the background
+  $("#playAudio").remove(); //Sletter iframe elementet for å unngå dobbel lyd avspilling.
   player = true;
-}
-
+}*/
+let music = document.getElementById("playAudio");
+music.play();
+music.loop = true;
 let words = [
   "HØNEMOR",
   "LESEHEST",
@@ -62,11 +64,12 @@ initialize();
 
 function initialize() {
   wrongCount = 0;
-  secretWord = words[getRandomInt(words.length - 1)];
+  secretWord = words[getRandomInt(words.length - 1)]; //Velger tilfedlig ord fra words array
 
   guess = "";
 
   for (let i = 0; i < secretWord.length; i++) {
+    //i denne for løkken gjøres ordet om fra vanlig bokstaver til understreker og legger til mellomrom der det er.
     let currentLetter = secretWord[i];
     if (currentLetter === " ") {
       guess += " ";
@@ -80,6 +83,7 @@ function initialize() {
 }
 
 function getRandomInt(max) {
+  //funksjon for å skrive ut tilfedig tall avhengig av maks-tallet du gir den
   return Math.floor(Math.random() * (max + 1));
 }
 
@@ -108,9 +112,10 @@ function render() {
 }
 
 function handleLetterClick(evt) {
-  if (wrongCount === 7) return;
+  if (wrongCount === 7) return; //hvis spiller har tapt kjøres ikke resten av funskjonen
   for (i = 1; i < 30; i++) {
     if (evt.target.id == "knapp" + i) {
+      //fikser bug der flere ting enn bare knapepr kunne bli trykket på for å kjøre koden under
       evt.target.style.backgroundColor = "white";
       evt.target.style.opacity = "0.5";
       letter = evt.target.textContent;

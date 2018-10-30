@@ -8,18 +8,20 @@ window.addEventListener("resize", function() {
   } else {
     console.log("Screen less than 980px");
     for (let i = 1; i < 5; i++) {
-      var element = document.getElementById("border" + i);
-      element.classList.remove("side" + i);
+      let skjermSide = document.getElementById("border" + i);
+      skjermSide.classList.remove("side" + i);
     }
   }
 });
-
-var isChrome =
+let player;
+let isChrome =
   /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 if (!isChrome) {
   $("#iframeAudio").remove();
+  player = false;
 } else {
-  $("#playAudio").remove(); //just to make sure that it will not have 2x audio in the background
+  $("#playAudio").remove(); //Sletter iframe elementet for å unngå dobbel lyd avspilling.
+  player = true;
 }
 
 var words = [
@@ -68,7 +70,6 @@ var $message = $("#message");
 /*------------- event listeners -------------*/
 $("#letters").on("click", handleLetterClick);
 
-/*------------- functions -------------*/
 initialize();
 
 function initialize() {
@@ -118,16 +119,17 @@ function render() {
 }
 
 function handleLetterClick(evt) {
-  if (wrongCount === 7) return;
+  if (wrongCount === 7) return; //hvis spiller har tapt kjøres ikke resten av funskjonen
   for (i = 1; i < 30; i++) {
     if (evt.target.id == "knapp" + i) {
+      //fikser bug der flere ting enn bare knapepr kunne bli trykket på for å kjøre koden under
       evt.target.style.backgroundColor = "white";
       evt.target.style.opacity = "0.5";
       letter = evt.target.textContent;
       console.log(secretWord);
       if (secretWord.includes(letter)) {
         contains = true;
-        var pos = secretWord.indexOf(letter);
+        let pos = secretWord.indexOf(letter);
         while (pos >= 0) {
           guess = guess.split("");
           guess[pos] = letter;
@@ -151,12 +153,47 @@ let blng;
 function sprekk() {
   blng = document.getElementById("ballong" + wrongCount);
   blng.src = "../Bilder/blng.gif";
-  var number = getRandomInt(3);
+  let number = getRandomInt(3);
   console.log(number);
   document.getElementById("pop" + number).play();
-  setTimeout(removeImg, 300);
+  setTimeout(removeBlng, 300);
 }
 
-function removeImg() {
+function removeBlng() {
   blng.style.display = "none";
+}
+
+function spillLyd() {
+  if (player == true) {
+    document.getElementById("iframeAudio").src = "";
+  } else {
+    document.getElementById("playAudio").pause();
+  }
+  document.getElementById("gob").style.webkitAnimationPlayState = "paused";
+  document.getElementById("sky1").style.webkitAnimationPlayState = "paused";
+  document.getElementById("sky2").style.webkitAnimationPlayState = "paused";
+  document.getElementById("sky3").style.webkitAnimationPlayState = "paused";
+  document.getElementById("alert").play();
+  setTimeout(tapt, 1000);
+}
+
+function tapt() {
+  let tastatur = document.getElementById("letters");
+  tastatur.style.animation = "keyboardOut 0.7s ease-out 0s normal 1 forwards";
+  setTimeout(grisAnimasjon, 1000);
+}
+
+function grisAnimasjon() {
+  var grisPos = document.getElementById("gob");
+  grisPos.style.top = grisPos.offsetTop + "px";
+
+  for (let j = 1; j < 4; j++) {
+    var skyPos = document.getElementById("sky" + j);
+    skyPos.style.left = skyPos.offsetLeft + "px";
+    skyPos.style.animation = "animerSky 1.8s ease-in 0s normal 1 forwards";
+  }
+
+  document.getElementById("fall").play();
+  document.getElementById("gob").style.animation =
+    "animerGris 1.8s ease-in 0s normal 1 forwards";
 }
