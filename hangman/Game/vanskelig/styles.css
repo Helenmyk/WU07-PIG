@@ -63,11 +63,9 @@ body {
 }
 
 .grisOgBallong {
-  margin-left: 45%;
-  max-width: 100%;
-  max-height: 100%;
-  animation: MoveUpDown 2.5s linear infinite;
   position: relative;
+  z-index: 10;
+  animation: MoveUpDown 2.5s linear infinite;
 }
 
 .vanskelighetsGrad {
@@ -204,11 +202,28 @@ body {
   animation: rightLeft 40s linear infinite;
   animation-delay: 25s;
 }
+#sky4 {
+  top: 100px;
+  width: 150px;
+  right: 250px;
+  animation: initialRightLeft 30s linear 1 forwards;
+}
+#sky5 {
+  top: 160px;
+  width: 280px;
+  right: 550px;
+  animation: initialRightLeft 30s linear 1 forwards;
+}
 
 @keyframes rightLeft {
   0% {
     right: -300px;
   }
+  100% {
+    right: 1500px;
+  }
+}
+@keyframes initialRightLeft {
   100% {
     right: 1500px;
   }
@@ -231,6 +246,16 @@ body {
     top: -800px;
   }
 }
+@keyframes animerLanding {
+  100% {
+    top: -400px;
+  }
+}
+@keyframes grisVinn {
+  100% {
+    top: 300px;
+  }
+}
 h1 {
   color: #ff69b4;
   font-family: "Indie Flower", cursive;
@@ -242,6 +267,24 @@ h1 {
   height: 143px;
   line-height: 184px;
   margin-top: -30px;
+}
+#alleElementer {
+  margin-left: 45%;
+  max-width: 100%;
+  max-height: 100%;
+  position: relative;
+}
+
+#gaard {
+  position: absolute;
+  z-index: 1;
+  top: 1300px;
+  left: -1200px;
+  -webkit-transform: scale(0.5); /* Saf3.1+, Chrome */
+  -moz-transform: scale(0.5); /* FF3.5+ */
+  -ms-transform: scale(0.5); /* IE9 */
+  -o-transform: scale(0.5); /* Opera 10.5+ */
+  transform: scale(0.5);
 }
 
 #letters {
@@ -285,4 +328,16 @@ button:hover {
   margin-top: -181px;
   font-family: "Indie Flower", cursive;
   font-size: 24px;
+}
+#lydBilde {
+  position: absolute;
+  margin-left: 100px;
+  margin-top: -50px;
+  user-select: none;
+  outline: 0;
+  -webkit-transform: scale(0.15); /* Saf3.1+, Chrome */
+  -moz-transform: scale(0.15); /* FF3.5+ */
+  -ms-transform: scale(0.15); /* IE9 */
+  -o-transform: scale(0.15); /* Opera 10.5+ */
+  transform: scale(0.15);
 }

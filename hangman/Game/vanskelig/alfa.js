@@ -103,7 +103,7 @@ function render() {
   // pop balloong
 
   if (guess === secretWord) {
-    console.log("du vant!");
+    setTimeout(vinnFunksjon, 700);
   } else if (wrongCount === 1 && contains == false) {
     sprekk();
   } else if (wrongCount === 2 && contains == false) {
@@ -168,31 +168,71 @@ function removeBlng() {
 }
 
 function spillLyd() {
-  /*/if (player == true) {
-    document.getElementById("iframeAudio").src = "";
-  } else {
-    document.getElementById("playAudio").pause();
-  }*/
-  document.getElementById("gob").style.webkitAnimationPlayState = "paused";
-  document.getElementById("sky1").style.webkitAnimationPlayState = "paused";
-  document.getElementById("sky2").style.webkitAnimationPlayState = "paused";
-  document.getElementById("sky3").style.webkitAnimationPlayState = "paused";
+  //  if (player == true) {
+  //    document.getElementById("iframeAudio").src = "";
+  //  } else {
+  //    document.getElementById("playAudio").pause();
+  //  }
+  pauseAnimasjoner();
   document.getElementById("alert").play();
   setTimeout(tapt, 1000);
 }
+let skyPause;
+function pauseAnimasjoner() {
+  document.getElementById("gob").style.webkitAnimationPlayState = "paused";
+  for (let i = 1; i < 6; i++) {
+    skyPause = document.getElementById("sky" + i);
+    skyPause.style.webkitAnimationPlayState = "paused";
+  }
+}
+
+let tastatur = document.getElementById("letters");
+
+function vinnFunksjon() {
+  document.getElementById("guess").style.color = "green";
+  document.getElementById("fall").play();
+  setTimeout(vinnFunksjon2, 2300);
+}
+
+function vinnFunksjon2() {
+  pauseAnimasjoner();
+  tastatur.style.animation = "keyboardOut 0.7s ease-out 0s normal 1 forwards";
+  setTimeout(skyAnimasjonVinn, 1000);
+}
+
+let skyPos;
+let grisPos;
+let gaardBakgrunn;
+function skyAnimasjonVinn() {
+  for (let j = 1; j < 6; j++) {
+    skyPos = document.getElementById("sky" + j);
+    skyPos.style.left = skyPos.offsetLeft + "px";
+    skyPos.style.animation = "animerSky 2.5s ease-in 0s normal 1 forwards";
+  }
+  gaardBakgrunn = document.getElementById("gaard");
+  gaardBakgrunn.style.animation =
+    "animerLanding 2.5s ease-out 0s normal 1 forwards";
+  setTimeout(grisAnimasjonVinn, 1500);
+}
+
+function grisAnimasjonVinn() {
+  grisPos = document.getElementById("gob");
+  grisPos.style.top = grisPos.offsetTop + "px";
+  document.getElementById("gob").style.animation =
+    "grisVinn 2.5s ease-in-out 0s normal 1 forwards";
+}
 
 function tapt() {
-  let tastatur = document.getElementById("letters");
   tastatur.style.animation = "keyboardOut 0.7s ease-out 0s normal 1 forwards";
   setTimeout(grisAnimasjon, 1000);
 }
 
 function grisAnimasjon() {
-  var grisPos = document.getElementById("gob");
+  grisPos = document.getElementById("gob");
   grisPos.style.top = grisPos.offsetTop + "px";
 
-  for (let j = 1; j < 4; j++) {
-    var skyPos = document.getElementById("sky" + j);
+  for (let j = 1; j < 6; j++) {
+    skyPos = document.getElementById("sky" + j);
     skyPos.style.left = skyPos.offsetLeft + "px";
     skyPos.style.animation = "animerSky 1.8s ease-in 0s normal 1 forwards";
   }
