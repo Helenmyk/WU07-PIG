@@ -187,6 +187,7 @@ body {
 }
 
 #sky1 {
+  top: 0px;
   width: 200px;
   animation: rightLeft 40s linear infinite;
 }
@@ -222,7 +223,12 @@ body {
 }
 @keyframes animerGris {
   100% {
-    margin-top: 1000px;
+    top: 1000px;
+  }
+}
+@keyframes animerSky {
+  100% {
+    top: -800px;
   }
 }
 h1 {
