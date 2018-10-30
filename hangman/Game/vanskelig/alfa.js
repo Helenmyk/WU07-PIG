@@ -60,26 +60,28 @@ var words = [
 ];
 
 /*------------- app's state -------------*/
-var secretWord, wrongCount, guess, letter, contains;
+let secretWord, wrongCount, guess, letter, contains;
 
 /*------------- cached element references -------------*/
-var $guess = $("#guess");
-var $img = $("#hang-img");
-var $message = $("#message");
+let $guess = $("#guess");
+let $img = $("#hang-img");
+let $message = $("#message");
 
 /*------------- event listeners -------------*/
 $("#letters").on("click", handleLetterClick);
 
+/*------------- functions -------------*/
 initialize();
 
 function initialize() {
   wrongCount = 0;
-  secretWord = words[getRandomInt(words.length - 1)];
+  secretWord = words[getRandomInt(words.length - 1)]; //Velger tilfedlig ord fra words array
 
   guess = "";
 
-  for (var i = 0; i < secretWord.length; i++) {
-    var currentLetter = secretWord[i];
+  for (let i = 0; i < secretWord.length; i++) {
+    //i denne for løkken gjøres ordet om fra vanlig bokstaver til understreker og legger til mellomrom der det er.
+    let currentLetter = secretWord[i];
     if (currentLetter === " ") {
       guess += " ";
     } else {
@@ -92,6 +94,7 @@ function initialize() {
 }
 
 function getRandomInt(max) {
+  //funksjon for å skrive ut tilfedig tall avhengig av maks-tallet du gir den
   return Math.floor(Math.random() * (max + 1));
 }
 
@@ -115,6 +118,7 @@ function render() {
     sprekk();
   } else if (wrongCount === 7 && contains == false) {
     sprekk();
+    setTimeout(spillLyd, 700);
   }
 }
 
@@ -164,11 +168,11 @@ function removeBlng() {
 }
 
 function spillLyd() {
-  if (player == true) {
+  /*/if (player == true) {
     document.getElementById("iframeAudio").src = "";
   } else {
     document.getElementById("playAudio").pause();
-  }
+  }*/
   document.getElementById("gob").style.webkitAnimationPlayState = "paused";
   document.getElementById("sky1").style.webkitAnimationPlayState = "paused";
   document.getElementById("sky2").style.webkitAnimationPlayState = "paused";
