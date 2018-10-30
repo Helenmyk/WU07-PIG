@@ -144,10 +144,10 @@ function sprekk() {
   let number = getRandomInt(3);
   console.log(number);
   document.getElementById("pop" + number).play();
-  setTimeout(removeImg, 300);
+  setTimeout(removeBlng, 300);
 }
 
-function removeImg() {
+function removeBlng() {
   blng.style.display = "none";
 }
 
@@ -172,6 +172,15 @@ function tapt() {
 }
 
 function grisAnimasjon() {
+  var grisPos = document.getElementById("gob");
+  grisPos.style.top = grisPos.offsetTop + "px";
+
+  for (let j = 1; j < 4; j++) {
+    var skyPos = document.getElementById("sky" + j);
+    skyPos.style.left = skyPos.offsetLeft + "px";
+    skyPos.style.animation = "animerSky 1.8s ease-in 0s normal 1 forwards";
+  }
+
   document.getElementById("fall").play();
   document.getElementById("gob").style.animation =
     "animerGris 1.8s ease-in 0s normal 1 forwards";
