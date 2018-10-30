@@ -13,9 +13,7 @@ window.addEventListener("resize", function() {
     }
   }
 });
-<<<<<<< HEAD
-/*(let player;
-=======
+
 
 //Funskjon som skrur bakgrunnsmusikken av på siden
 function ingenLyd() {
@@ -32,7 +30,6 @@ function ingenLyd() {
       }
 
 
-<<<<<<< HEAD
 // let player;
 //let isChrome =
 //  /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
@@ -44,9 +41,8 @@ function ingenLyd() {
 //  player = true;
 //}
 
-=======
+
 let player;
->>>>>>> 822332d0b8b148ece57e29b8769611f79012ad30
 let isChrome =
   /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 if (!isChrome) {
@@ -59,7 +55,7 @@ if (!isChrome) {
 let music = document.getElementById("playAudio");
 music.play();
 music.loop = true;
->>>>>>> 0e9b62fe6c46e42ca82efc60ddef87e05e2fe2eb
+
 let words = [
   "HØNEMOR",
   "LESEHEST",
