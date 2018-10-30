@@ -192,6 +192,7 @@ input[name="tilbake"] {
   margin-left: -402px;
   margin-top: -250px;
   user-select: none;
+  outline: 0;
   -webkit-transform: scale(0.15); /* Saf3.1+, Chrome */
   -moz-transform: scale(0.15); /* FF3.5+ */
   -ms-transform: scale(0.15); /* IE9 */
