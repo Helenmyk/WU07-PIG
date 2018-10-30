@@ -288,8 +288,8 @@ button:hover {
 }
 #lydBilde {
   position: absolute;
-  margin-left: -402px;
-  margin-top: -250px;
+  margin-left: 100px;
+  margin-top: -50px;
   user-select: none;
   outline: 0;
   -webkit-transform: scale(0.15); /* Saf3.1+, Chrome */
