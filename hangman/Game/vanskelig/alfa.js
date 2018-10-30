@@ -168,11 +168,11 @@ function removeBlng() {
 }
 
 function spillLyd() {
-  //  if (player == true) {
-  //    document.getElementById("iframeAudio").src = "";
-  //  } else {
-  //    document.getElementById("playAudio").pause();
-  //  }
+  if (player == true) {
+    document.getElementById("iframeAudio").src = "";
+  } else {
+    document.getElementById("playAudio").pause();
+  }
   pauseAnimasjoner();
   document.getElementById("alert").play();
   setTimeout(tapt, 1000);

@@ -28,7 +28,6 @@ function ingenLyd() {
   lydBilde.blur(); //Fjerner fokus fra knappen så den ikke skrus av/på ved trykk på enter
 }
 
-/*
 let player;
 let isChrome =
   /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
@@ -39,10 +38,7 @@ if (!isChrome) {
   $("#playAudio").remove(); //Sletter iframe elementet for å unngå dobbel lyd avspilling.
   player = true;
 }
-let music = document.getElementById("playAudio");
-music.play();
-music.loop = true;
-*/
+
 let words = [
   "HØNEMOR",
   "LESEHEST",
@@ -174,11 +170,11 @@ function removeBlng() {
 }
 
 function spillLyd() {
-  //  if (player == true) {
-  //    document.getElementById("iframeAudio").src = "";
-  //  } else {
-  //    document.getElementById("playAudio").pause();
-  //  }
+  if (player == true) {
+    document.getElementById("iframeAudio").src = "";
+  } else {
+    document.getElementById("playAudio").pause();
+  }
   pauseAnimasjoner();
   document.getElementById("alert").play();
   setTimeout(tapt, 1000);
