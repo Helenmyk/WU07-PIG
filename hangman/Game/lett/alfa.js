@@ -13,40 +13,23 @@ window.addEventListener("resize", function() {
     }
   }
 });
-<<<<<<< HEAD
-/*(let player;
-=======
-
 
 //Funskjon som skrur bakgrunnsmusikken av på siden
 function ingenLyd() {
   var lyd = document.getElementById("lydFil");
-    if(lyd.muted==true) //Sjekker om lyden er av
-     {
-      lyd.muted=false; //Skrur på lyden dersom den er av
-      lydBilde.src="../Bilder/speaker.png"; //Gir et bilde til knappen
+  if (lyd.muted == true) {
+    //Sjekker om lyden er av
+    lyd.muted = false; //Skrur på lyden dersom den er av
+    lydBilde.src = "../Bilder/speaker.png"; //Gir et bilde til knappen
   } else {
-          lyd.muted=true; //Hvis lyden er på, skrus lyden av
-          lydBilde.src="../Bilder/no-sound.png"; //Gir et bilde til knappen
-        }
-        lydBilde.blur(); //Fjerner fokus fra knappen så den ikke skrus av/på ved trykk på enter
-      }
+    lyd.muted = true; //Hvis lyden er på, skrus lyden av
+    lydBilde.src = "../Bilder/no-sound.png"; //Gir et bilde til knappen
+  }
+  lydBilde.blur(); //Fjerner fokus fra knappen så den ikke skrus av/på ved trykk på enter
+}
 
-
-// let player;
-//let isChrome =
-//  /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-// if (!isChrome) {
-//  $("#iframeAudio").remove();
-//  player = false;
-//} else {
-//  $("#playAudio").remove(); //just to make sure that it will not have 2x audio in the background
-//  player = true;
-//}
-
-
+/*
 let player;
->>>>>>> 2bcbd094644b849b9c6843f00eee42d1eea367eb
 let isChrome =
   /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 if (!isChrome) {
@@ -55,11 +38,11 @@ if (!isChrome) {
 } else {
   $("#playAudio").remove(); //Sletter iframe elementet for å unngå dobbel lyd avspilling.
   player = true;
-}*/
+}
 let music = document.getElementById("playAudio");
 music.play();
 music.loop = true;
-
+*/
 let words = [
   "HØNEMOR",
   "LESEHEST",
@@ -191,16 +174,11 @@ function removeBlng() {
 }
 
 function spillLyd() {
-  if (player == true) {
-    document.getElementById("iframeAudio").src = "";
-  } else {
-    document.getElementById("playAudio").pause();
-  }
-//  if (player == true) {
-//    document.getElementById("iframeAudio").src = "";
-//  } else {
-//    document.getElementById("playAudio").pause();
-//  }
+  //  if (player == true) {
+  //    document.getElementById("iframeAudio").src = "";
+  //  } else {
+  //    document.getElementById("playAudio").pause();
+  //  }
   document.getElementById("gob").style.webkitAnimationPlayState = "paused";
   document.getElementById("sky1").style.webkitAnimationPlayState = "paused";
   document.getElementById("sky2").style.webkitAnimationPlayState = "paused";
