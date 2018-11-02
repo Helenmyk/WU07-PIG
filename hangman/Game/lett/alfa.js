@@ -5,15 +5,12 @@ window.addEventListener("resize", function() {
     flyttingBokstaver.style.marginTop = "25%";
   } else {
     console.log("Screen less than 1000px");
-    flyttingBokstaver.style.marginTop = "50%";
+    flyttingBokstaver.style.marginTop = "30%";
   }
 });
 window.addEventListener("resize", function() {
   if (window.matchMedia("(min-width: 1250px)").matches) {
     console.log("Screen width is at least 1250px");
-    flyttingBokstaver.style.marginTop = "25%";
-  } else {
-    console.log("Screen less than 1250px");
     flyttingBokstaver.style.marginTop = "25%";
   }
 });
