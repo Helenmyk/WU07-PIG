@@ -214,6 +214,7 @@ let skyPos;
 let grisPos;
 let gaardBakgrunn;
 let gressBakgrunn;
+let restartBoksVinn;
 function skyAnimasjonVinn() {
   for (let j = 1; j < 6; j++) {
     skyPos = document.getElementById("sky" + j);
@@ -232,7 +233,14 @@ function grisAnimasjonVinn() {
   grisPos.style.top = grisPos.offsetTop + "px";
   document.getElementById("gob").style.animation =
     "animerGris 2.5s ease-in-out 0s normal 1 forwards";
-}
+    setTimeout(boksAnimasjonVinn, 4500);
+  }
+
+  function boksAnimasjonVinn() {
+    restartBoksVinn = document.getElementById("restartMenyVinn");
+    restartBoksVinn.style.animation =
+      "testAnimation 0.7s ease-out 0s normal 1 forwards";
+  }
 
 function tapt() {
   tastatur.style.animation = "keyboardOut 0.7s ease-out 0s normal 1 forwards";
