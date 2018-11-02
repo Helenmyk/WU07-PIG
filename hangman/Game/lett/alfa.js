@@ -207,6 +207,7 @@ let skyPos;
 let grisPos;
 let gaardBakgrunn;
 let gressBakgrunn;
+let restartBoksVinn;
 function skyAnimasjonVinn() {
   for (let j = 1; j < 6; j++) {
     skyPos = document.getElementById("sky" + j);
@@ -217,7 +218,7 @@ function skyAnimasjonVinn() {
   gaardBakgrunn.style.display = "block";
   gaardBakgrunn.style.animation =
     "animerLanding 2.5s ease-out 0s normal 1 forwards";
-  setTimeout(grisAnimasjonVinn, 1500);
+  setTimeout(grisAnimasjonVinn, 1500);1
 }
 
 function grisAnimasjonVinn() {
@@ -225,6 +226,13 @@ function grisAnimasjonVinn() {
   grisPos.style.top = grisPos.offsetTop + "px";
   document.getElementById("gob").style.animation =
     "animerGris 2.5s ease-in-out 0s normal 1 forwards";
+  setTimeout(boksAnimasjonVinn, 4500);
+}
+
+function boksAnimasjonVinn() {
+  restartBoksVinn = document.getElementById("restartMenyVinn");
+  restartBoksVinn.style.animation =
+    "animerBoks 0.7s ease-out 0s normal 1 forwards";
 }
 
 function tapt() {
@@ -246,7 +254,6 @@ function grisAnimasjonTap() {
     setTimeout(grisTapFall, 1800);
   }, 1000);
 }
-
 function grisTapFall() {
   grisPos = document.getElementById("gob");
   grisPos.style.top = grisPos.offsetTop + "px";
@@ -255,4 +262,12 @@ function grisTapFall() {
   gressBakgrunn = document.getElementById("gress");
   gressBakgrunn.style.display = "block";
   gressBakgrunn.style.animation = "tapLanding 0.5s linear 0s normal 1 forwards";
+}
+
+function tilMeny() {
+  location.href = "../Forside/forside.html"
+}
+
+function spillIgjen() {
+  location.href = "../Lett/index.html"
 }

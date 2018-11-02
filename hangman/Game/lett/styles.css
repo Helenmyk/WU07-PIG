@@ -318,3 +318,59 @@ button:hover {
   -o-transform: scale(0.15); /* Opera 10.5+ */
   transform: scale(0.15);
 }
+
+/* Div som vanskelighetsgrad-menyen ligger i */
+.vanskelighetsGrad {
+  z-index: 499;
+  position: absolute;
+  top: -200vw;
+  margin-top: 0.1vw;
+  margin-left: 22vw;
+  width: 45vw;
+  height: 22vw;
+  display: block;
+  border: solid 0.1vw;
+  background-color: #a3baff;
+  opacity: 0.99;
+}
+
+
+
+
+/* Animasjon til vanskelighetsgrad-menyen */
+@keyframes animerBoks {
+  0% {
+    top: -100vw;
+  }
+  100% {
+    top: 15vw;
+  }
+}
+#tilMeny {
+  margin-top: 1vw;
+}
+
+/* Styling til alle knapper */
+
+.menyKnapp {
+  position: relative;
+  background-color: #6b90ff;
+  color: black;
+  border-radius: 0.8vw;
+  display: block;
+  width: 10vw;
+  border: 0.15vw solid #002eb7;
+  opacity: 0.8;
+  user-select: none;
+  margin-left: 18vw;
+  outline: 0;
+  height: auto;
+  font-size: 1.5vw;
+}
+/* Styling til alle knapper når musepekeren ligger over */
+.menyKnapp:hover {
+  background-color: #3255bc;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+}
