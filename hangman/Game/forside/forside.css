@@ -34,7 +34,6 @@ body {
   background-color: #a3baff;
   opacity: 0.99;
 }
-
 /* STYLE TIL KNAPPER */
 /* Div som menyknappene + lydbildet ligger i */
 .menyKnappDiv {
@@ -64,7 +63,7 @@ body {
   border: 0.15vw solid #002eb7;
   opacity: 0.8;
   user-select: none;
-  margin-left: 20vw;
+  margin-left: 18vw;
   outline: 0;
   height: auto;
   font-size: 1.5vw;
