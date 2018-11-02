@@ -6,51 +6,10 @@ body {
   background-color: #000;
   overflow: hidden;
 }
-
 * {
   margin: 0;
   padding: 0;
 }
-
-.side1 {
-  position: absolute;
-  display: flex;
-  height: 5%;
-  width: 100%;
-  background: black;
-  z-index: 500;
-}
-
-.side2 {
-  position: absolute;
-  display: flex;
-  bottom: 0;
-  height: 5%;
-  width: 100%;
-  background: black;
-  z-index: 500;
-}
-
-.side3 {
-  position: absolute;
-  display: flex;
-  right: 0;
-  height: 100%;
-  width: 15%;
-  background: black;
-  z-index: 500;
-}
-
-.side4 {
-  position: absolute;
-  display: flex;
-  left: 0;
-  height: 100%;
-  width: 15%;
-  background: black;
-  z-index: 500;
-}
-
 .parent {
   margin-left: auto;
   margin-right: auto;
@@ -61,47 +20,66 @@ body {
   background: -linear-gradient(top, #7ec0ee 0%, #fff 100%);
   background: -moz-linear-gradient(top, #7ec0ee 0%, #fff 100%);
 }
-
 .vanskelighetsGrad {
+  z-index: 499;
   position: absolute;
-  top: -500px;
+  top: -200vw;
+  margin-top: 0.1vw;
   margin-left: 20%;
-  width: 58%;
-  height: 65%;
+  width: 50vw;
+  height: 25vw;
   display: block;
   border: solid 1px;
   background-color: #a3baff;
   opacity: 0.99;
-  z-index: 499;
 }
-
 #lett {
-  margin-top: 5%;
+  margin-top: 1vw;
 }
-
-.vanskeligKnapp {
+.menyKnappDiv {
+  margin-top: 20%;
+  z-index: 400;
+  position: absolute;
+  display: inline-block;
+}
+.menyKnapp {
   position: relative;
   background-color: #6b90ff;
   color: black;
-  font-size: 20px;
-  padding: 10px 20px;
-  border-radius: 8px;
+  padding: 0.1vw 0.1vw;
+  border-radius: 0.8vw;
   display: block;
-  width: 25%;
+  width: 12vw;
   border: 2px solid #002eb7;
   opacity: 0.8;
   user-select: none;
   margin-left: 35%;
   outline: 0;
+  height: auto;
+  font-size: 1.5vw;
 }
-
-.vanskeligKnapp:hover {
+#historie,
+#regler,
+#start {
+  margin-left: 100%;
+  margin-top: 10%;
+  height: auto;
+  width: 12vw;
+}
+input[type="button"] {
+  margin-top: 50px;
+  margin-left: 20px;
+  font-size: 1vw;
+  height: auto;
+  padding: 0.1vw 0.1vw;
+  width: 5vw;
+}
+.menyKnapp:hover {
   background-color: #3255bc;
   color: white;
   cursor: pointer;
   user-select: none;
 }
-
 @keyframes testAnimation {
   0% {
     top: -500px;
@@ -110,7 +88,6 @@ body {
     top: 100px;
   }
 }
-
 @keyframes tilbakeAnimasjon {
   100% {
     top: -500px;
@@ -118,21 +95,18 @@ body {
 }
 #infoVGrad {
   text-align: center;
-  font-size: 1.5em;
   font-family: Helvetica;
   margin-top: 10%;
-}
-.alleElementer {
-  margin-left: 45%;
-  max-width: 100%;
-  max-height: 100%;
-  position: relative;
+  height: auto;
+  font-size: 2vw;
 }
 #grisen {
   z-index: 400;
   position: absolute;
-  margin-top: 130px;
-  margin-left: 0px;
+  margin-top: 0%;
+  margin-left: 50%;
+  height: auto;
+  width: 45vw;
   user-select: none;
   -webkit-transform: scale(0.5); /* Saf3.1+, Chrome */
   -moz-transform: scale(0.5); /* FF3.5+ */
@@ -143,8 +117,9 @@ body {
 #logo {
   z-index: 400;
   position: absolute;
-  margin-top: -160px;
-  margin-left: -950px;
+  margin-top: -24vw;
+  margin-left: -54vw;
+  width: 200vw;
   user-select: none;
   -webkit-transform: scale(0.2); /* Saf3.1+, Chrome */
   -moz-transform: scale(0.2); /* FF3.5+ */
@@ -154,69 +129,55 @@ body {
 }
 #gress {
   z-index: 399;
-  margin-top: 170px;
-  margin-left: -420px;
+  margin-top: 10%;
+  margin-left: 10%;
+  height: auto;
+  width: 75vw;
   position: absolute;
   user-select: none;
-  -webkit-transform: scale(1.1); /* Saf3.1+, Chrome */
-  -moz-transform: scale(1.1); /* FF3.5+ */
-  -ms-transform: scale(1.1); /* IE9 */
-  -o-transform: scale(1.1); /* Opera 10.5+ */
-  transform: scale(1.1);
+  -webkit-transform: scale(1.5); /* Saf3.1+, Chrome */
+  -moz-transform: scale(1.5); /* FF3.5+ */
+  -ms-transform: scale(1.5); /* IE9 */
+  -o-transform: scale(1.5); /* Opera 10.5+ */
+  transform: scale(1.5);
+}
+.menyKnappDiv {
+  margin-top: 20%;
+  z-index: 400;
+  position: absolute;
+  display: inline-block;
 }
 #historie,
 #regler,
 #start {
-  font-size: 20px;
-  padding: 14px 20px;
-  margin-left: -290px;
-  margin-top: 10px;
-  width: 150px;
+  padding: 1vw 2vw;
+  margin-left: 100%;
+  margin-top: 10%;
+  height: auto;
+  width: 12vw;
 }
-
 input[type="button"] {
   margin-top: 50px;
   margin-left: 20px;
-  font-size: 1em;
-  padding: 2px 10px;
+  font-size: 1vw;
+  height: auto;
+  padding: 0.2vw 0.2vw;
+  width: 5vw;
 }
 #tilbakeKnappV {
-  width: 10%;
+  width: 5vw;
   margin-top: 6%;
 }
 #tilbakeKnappR {
-  width: 24%;
+  width: 5vw;
 }
 #tilbakeKnappH {
-  width: 24%;
-}
-.menyKnapp {
-  background-color: #6b90ff;
-  color: black;
-  border-radius: 8px;
-  display: block;
-  border: 2px solid #002eb7;
-  opacity: 0.9;
-  user-select: none;
-  outline: 0;
-}
-
-.menyKnapp:hover {
-  background-color: #3255bc;
-  color: white;
-  cursor: pointer;
-  user-select: none;
-}
-
-.menyKnapper {
-  margin-top: 240px;
-  z-index: 400;
-  position: absolute;
+  width: 5vw;
 }
 #lydBilde {
   position: absolute;
-  margin-left: -402px;
-  margin-top: -250px;
+  margin-left: -360%;
+  margin-top: -190%;
   user-select: none;
   outline: 0;
   -webkit-transform: scale(0.15); /* Saf3.1+, Chrome */
@@ -226,46 +187,48 @@ input[type="button"] {
   transform: scale(0.15);
 }
 #infoBokser {
-  margin-left: 45%;
+  margin-left: 30%;
   max-width: 100%;
   max-height: 100%;
   position: relative;
 }
-
 #menyBoksRegler {
   z-index: 410;
+  position: absolute;
   overflow-y: auto;
-  margin-left: -570px;
-  margin-top: 150px;
+  margin-top: 10vw;
   padding: 10px;
-  height: 60%;
   display: block;
   border: solid 1px;
   background-color: #a3baff;
-  position: absolute;
-  width: 400px;
   display: none;
   opacity: 0.95;
+  width: 30vw;
+  height: 30vw;
 }
 
 #menyBoksHistorie {
   z-index: 410;
+  position: absolute;
   overflow-y: auto;
-  margin-left: -570px;
-  margin-top: 150px;
+  margin-top: 10vw;
   padding: 10px;
-  height: 52%;
   display: block;
   border: solid 1px;
   background-color: #a3baff;
-  position: absolute;
-  width: 300px;
   display: none;
   opacity: 0.95;
+  width: 30vw;
+  height: 30vw;
 }
 
 .boksOverskrift {
-  font-size: 2em;
+  font-size: 2vw;
   text-align: center;
+  font-family: Helvetica;
+}
+
+.infoTekst {
+  font-size: 1.2vw;
   font-family: Helvetica;
 }
