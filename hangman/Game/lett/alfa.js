@@ -1,16 +1,17 @@
+let flyttingBokstaver = document.getElementById("letters");
 window.addEventListener("resize", function() {
-  if (window.matchMedia("(min-width: 980px)").matches) {
-    console.log("Screen width is at least 980px");
-    for (let i = 1; i < 5; i++) {
-      var element = document.getElementById("border" + i);
-      element.classList.add("side" + i);
-    }
+  if (window.matchMedia("(min-width: 1000px)").matches) {
+    console.log("Screen width is at least 1000px");
+    flyttingBokstaver.style.marginTop = "25%";
   } else {
-    console.log("Screen less than 980px");
-    for (let i = 1; i < 5; i++) {
-      let skjermSide = document.getElementById("border" + i);
-      skjermSide.classList.remove("side" + i);
-    }
+    console.log("Screen less than 1000px");
+    flyttingBokstaver.style.marginTop = "30%";
+  }
+});
+window.addEventListener("resize", function() {
+  if (window.matchMedia("(min-width: 1250px)").matches) {
+    console.log("Screen width is at least 1250px");
+    flyttingBokstaver.style.marginTop = "25%";
   }
 });
 
@@ -212,6 +213,7 @@ function skyAnimasjonVinn() {
     skyPos.style.animation = "animerSky 2.5s ease-in 0s normal 1 forwards";
   }
   gaardBakgrunn = document.getElementById("gaard");
+  gaardBakgrunn.style.display = "block";
   gaardBakgrunn.style.animation =
     "animerLanding 2.5s ease-out 0s normal 1 forwards";
   setTimeout(grisAnimasjonVinn, 1500);
