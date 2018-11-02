@@ -176,8 +176,9 @@ input[type="button"] {
 }
 #lydBilde {
   position: absolute;
-  margin-left: -360%;
-  margin-top: -190%;
+  margin-left: -1vw;
+  margin-top: -24vw;
+  width: 20vw;
   user-select: none;
   outline: 0;
   -webkit-transform: scale(0.15); /* Saf3.1+, Chrome */
@@ -206,7 +207,6 @@ input[type="button"] {
   width: 30vw;
   height: 30vw;
 }
-
 #menyBoksHistorie {
   z-index: 410;
   position: absolute;
@@ -221,7 +221,6 @@ input[type="button"] {
   width: 30vw;
   height: 30vw;
 }
-
 .boksOverskrift {
   font-size: 2vw;
   text-align: center;
