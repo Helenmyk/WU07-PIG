@@ -228,20 +228,25 @@ function grisAnimasjonVinn() {
 
 function tapt() {
   tastatur.style.animation = "keyboardOut 0.7s ease-out 0s normal 1 forwards";
-  setTimeout(grisAnimasjon, 1000);
+  setTimeout(grisAnimasjonTap, 1000);
 }
 
-function grisAnimasjon() {
-  grisPos = document.getElementById("gob");
-  grisPos.style.top = grisPos.offsetTop + "px";
-
+function grisAnimasjonTap() {
   for (let j = 1; j < 6; j++) {
     skyPos = document.getElementById("sky" + j);
     skyPos.style.left = skyPos.offsetLeft + "px";
     skyPos.style.animation = "animerSky 1.8s ease-in 0s normal 1 forwards";
   }
-
   document.getElementById("fall").play();
+  sky6 = document.getElementById("sky6");
+  setTimeout(function() {
+    sky6.style.display = "block";
+    sky6.style.animation = "skyFallAnimasjon 1.8s ease-in 0s normal 1 forwards";
+  }, 1000);
+}
+function grisTapFall() {
+  grisPos = document.getElementById("gob");
+  grisPos.style.top = grisPos.offsetTop + "px";
   document.getElementById("gob").style.animation =
     "animerGris 1.8s ease-in 0s normal 1 forwards";
 }

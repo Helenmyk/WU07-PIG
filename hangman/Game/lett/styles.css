@@ -75,6 +75,12 @@ body {
   }
 }
 
+@keyframes skyFallAnimasjon {
+  100% {
+    top: -800px;
+  }
+}
+
 .ballonger {
   width: 6vw;
   height: auto;
@@ -137,6 +143,12 @@ body {
   right: -300px;
   z-index: 10;
 }
+.fallSky {
+  position: absolute;
+  user-select: none;
+  display: none;
+  z-index: 10;
+}
 
 #sky1 {
   top: 0px;
@@ -167,6 +179,11 @@ body {
   width: 280px;
   right: 550px;
   animation: initialRightLeft 30s linear 1 forwards;
+}
+#sky6 {
+  top: 2000px;
+  left: 5vw;
+  width: 500px;
 }
 
 @keyframes rightLeft {
@@ -205,6 +222,11 @@ body {
     top: 0vw;
   }
 }
+@keyframes tapLanding {
+  100% {
+    top: 13vw;
+  }
+}
 @keyframes grisVinn {
   100% {
     top: 25vw;
@@ -225,6 +247,14 @@ h1 {
 }
 
 #gaard {
+  position: absolute;
+  z-index: 1;
+  top: 100vw;
+  width: 100vw;
+  height: auto;
+  display: none;
+}
+#gress {
   position: absolute;
   z-index: 1;
   top: 100vw;

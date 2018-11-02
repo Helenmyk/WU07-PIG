@@ -46,10 +46,7 @@ var words = [
   "DUM SOM EN SAU",
   "STA SOM ET ESEL",
   "TJUKK SOM EN GRIS",
-  "SVETTER SOM EN GRIS",
-  "TROFAST SOM EN HUND",
   "STOLT SOM EN HANE",
-  "FEIG SOM EN KYLLING",
   "LITEN SOM EN MUS",
   "SNILL SOM ET LAM",
   "SMIDIG SOM EN KATT",
@@ -69,9 +66,6 @@ var words = [
   "FRI SOM FUGLEN",
   "LOPPER I BLODET",
   "KLEKKE UT EN PLAN",
-  "REGNE HUNDER OG KATTER",
-  "SULTEN SOM EN HEST",
-  "SKVETTE VANN PÅ GÅSA",
   "SULTEN SOM ULV"
 ];
 
@@ -226,6 +220,7 @@ function skyAnimasjonVinn() {
     skyPos.style.animation = "animerSky 2.5s ease-in 0s normal 1 forwards";
   }
   gaardBakgrunn = document.getElementById("gaard");
+  gaardBakgrunn.style.display = "block";
   gaardBakgrunn.style.animation =
     "animerLanding 2.5s ease-out 0s normal 1 forwards";
   setTimeout(grisAnimasjonVinn, 1500);
