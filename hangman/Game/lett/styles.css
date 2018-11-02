@@ -230,6 +230,7 @@ h1 {
   top: 100vw;
   width: 100vw;
   height: auto;
+  display: none;
 }
 
 #letters {

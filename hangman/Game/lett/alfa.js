@@ -213,6 +213,7 @@ function skyAnimasjonVinn() {
     skyPos.style.animation = "animerSky 2.5s ease-in 0s normal 1 forwards";
   }
   gaardBakgrunn = document.getElementById("gaard");
+  gaardBakgrunn.style.display = "block";
   gaardBakgrunn.style.animation =
     "animerLanding 2.5s ease-out 0s normal 1 forwards";
   setTimeout(grisAnimasjonVinn, 1500);
