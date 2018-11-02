@@ -12,73 +12,24 @@ body {
   padding: 0;
 }
 
-.side1 {
-  position: absolute;
-  display: flex;
-  height: 5%;
-  width: 100%;
-  background: black;
-  z-index: 500;
-}
-
-.side2 {
-  position: absolute;
-  display: flex;
-  bottom: 0;
-  height: 5%;
-  width: 100%;
-  background: black;
-  z-index: 500;
-}
-
-.side3 {
-  position: absolute;
-  display: flex;
-  right: 0;
-  height: 100%;
-  width: 15%;
-  background: black;
-  z-index: 500;
-}
-
-.side4 {
-  position: absolute;
-  display: flex;
-  left: 0;
-  height: 100%;
-  width: 15%;
-  background: black;
-  z-index: 500;
-}
-
 .parent {
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   width: 100%;
+  height: 100%;
+  margin: auto;
+  position: absolute;
   background: -webkit-linear-gradient(top, #7ec0ee 0%, #fff 100%);
   background: -linear-gradient(top, #7ec0ee 0%, #fff 100%);
   background: -moz-linear-gradient(top, #7ec0ee 0%, #fff 100%);
 }
 
 .grisOgBallong {
-  position: relative;
-  z-index: 10;
-  animation: MoveUpDown 2.5s linear infinite;
-}
-
-.vanskelighetsGrad {
+  margin-top: 0%;
+  margin-left: 46%;
   position: absolute;
-  top: -500px;
-  margin-left: 30%;
-  width: 40%;
-  height: 60%;
-  display: block;
-  border: solid 1px;
-  background-color: aliceblue;
-  opacity: 0.9;
-  z-index: 499;
+  z-index: 15;
+  animation: MoveUpDown 2.5s linear infinite;
 }
 
 #lett {
@@ -123,65 +74,68 @@ body {
     top: 100px;
   }
 }
+
+.ballonger {
+  width: 6vw;
+  height: auto;
+}
 #ballong1 {
   position: absolute;
-  left: -5px;
-  top: -15px;
+  left: -1%;
+  top: -3%;
   user-select: none;
 }
 #ballong2 {
   position: absolute;
-  left: 25px;
-  top: -15px;
+  left: 4.5%;
+  top: -3%;
   user-select: none;
 }
 #ballong3 {
   position: absolute;
-  left: 10px;
-  top: -25px;
+  left: 1.6%;
+  top: -4%;
   user-select: none;
 }
 #ballong4 {
   position: absolute;
-  left: 10px;
-  top: 0px;
+  left: 1.6%;
+  top: 0%;
   user-select: none;
 }
 #ballong5 {
   position: absolute;
-  left: 35px;
-  top: 0px;
+  left: 6%;
+  top: 0%;
   user-select: none;
 }
 #ballong6 {
   position: absolute;
-  left: -15px;
-  top: 0px;
+  left: -2.7%;
+  top: 0%;
   user-select: none;
 }
 #ballong7 {
   position: absolute;
-  left: 10px;
-  top: 20px;
+  left: 1.6%;
+  top: 3%;
   user-select: none;
 }
 
 #grisen {
-  position: absolute;
-  margin-top: -170px;
-  margin-left: -230px;
+  position: relative;
+  margin-top: 100%;
+  left: 1.4%;
   user-select: none;
-  -webkit-transform: scale(0.15); /* Saf3.1+, Chrome */
-  -moz-transform: scale(0.15); /* FF3.5+ */
-  -ms-transform: scale(0.15); /* IE9 */
-  -o-transform: scale(0.15); /* Opera 10.5+ */
-  transform: scale(0.15);
+  width: 6.3vw;
+  height: auto;
 }
 
 .sky {
   position: absolute;
   user-select: none;
   right: -300px;
+  z-index: 10;
 }
 
 #sky1 {
@@ -263,16 +217,11 @@ h1 {
 }
 #guess {
   letter-spacing: 17px;
-  font-size: 32px;
+  font-size: 4vw;
   height: 143px;
+  margin-left: 25px;
   line-height: 184px;
   margin-top: -30px;
-}
-#alleElementer {
-  margin-left: 45%;
-  max-width: 100%;
-  max-height: 100%;
-  position: relative;
 }
 
 #gaard {
@@ -288,8 +237,12 @@ h1 {
 }
 
 #letters {
-  margin-top: 350px;
-  margin-left: -240px;
+  z-index: 20;
+  margin-top: 23%;
+  margin-bottom: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
+  position: absolute;
   text-align: center;
   user-select: none;
   font-family: "Indie Flower";
@@ -298,8 +251,8 @@ h1 {
 .letter-button {
   user-select: none;
   border-radius: 8px;
-  padding: 10px 15px;
-  font-size: 20px;
+  padding: 0.5% 3%;
+  font-size: 2vw;
   font-weight: bold;
   white-space: nowrap;
   background-color: white;
@@ -331,8 +284,8 @@ button:hover {
 }
 #lydBilde {
   position: absolute;
-  margin-left: 100px;
-  margin-top: -50px;
+  margin-left: -470px;
+  margin-top: -80px;
   user-select: none;
   outline: 0;
   -webkit-transform: scale(0.15); /* Saf3.1+, Chrome */
