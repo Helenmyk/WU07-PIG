@@ -200,7 +200,7 @@ let tastatur = document.getElementById("letters");
 
 function vinnFunksjon() {
   document.getElementById("guess").style.color = "green";
-  document.getElementById("fall").play();
+  document.getElementById("vinnLyd").play();
   setTimeout(vinnFunksjon2, 2300);
 }
 
@@ -233,14 +233,14 @@ function grisAnimasjonVinn() {
   grisPos.style.top = grisPos.offsetTop + "px";
   document.getElementById("gob").style.animation =
     "animerGris 2.5s ease-in-out 0s normal 1 forwards";
-    setTimeout(boksAnimasjonVinn, 4500);
-  }
+  setTimeout(boksAnimasjonVinn, 4500);
+}
 
-  function boksAnimasjonVinn() {
-    restartBoksVinn = document.getElementById("restartMenyVinn");
-    restartBoksVinn.style.animation =
-      "testAnimation 0.7s ease-out 0s normal 1 forwards";
-  }
+function boksAnimasjonVinn() {
+  restartBoksVinn = document.getElementById("restartMenyVinn");
+  restartBoksVinn.style.animation =
+    "testAnimation 0.7s ease-out 0s normal 1 forwards";
+}
 
 function tapt() {
   tastatur.style.animation = "keyboardOut 0.7s ease-out 0s normal 1 forwards";

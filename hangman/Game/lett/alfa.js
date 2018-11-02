@@ -193,7 +193,7 @@ let tastatur = document.getElementById("letters");
 
 function vinnFunksjon() {
   document.getElementById("guess").style.color = "green";
-  document.getElementById("fall").play();
+  document.getElementById("vinnLyd").play();
   setTimeout(vinnFunksjon2, 2300);
 }
 
