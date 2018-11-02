@@ -213,6 +213,7 @@ function vinnFunksjon2() {
 let skyPos;
 let grisPos;
 let gaardBakgrunn;
+let gressBakgrunn;
 function skyAnimasjonVinn() {
   for (let j = 1; j < 6; j++) {
     skyPos = document.getElementById("sky" + j);
@@ -230,25 +231,50 @@ function grisAnimasjonVinn() {
   grisPos = document.getElementById("gob");
   grisPos.style.top = grisPos.offsetTop + "px";
   document.getElementById("gob").style.animation =
-    "grisVinn 2.5s ease-in-out 0s normal 1 forwards";
+    "animerGris 2.5s ease-in-out 0s normal 1 forwards";
 }
 
 function tapt() {
   tastatur.style.animation = "keyboardOut 0.7s ease-out 0s normal 1 forwards";
-  setTimeout(grisAnimasjon, 1000);
+  setTimeout(grisAnimasjonTap, 1000);
 }
 
-function grisAnimasjon() {
-  grisPos = document.getElementById("gob");
-  grisPos.style.top = grisPos.offsetTop + "px";
-
+function grisAnimasjonTap() {
   for (let j = 1; j < 6; j++) {
     skyPos = document.getElementById("sky" + j);
     skyPos.style.left = skyPos.offsetLeft + "px";
     skyPos.style.animation = "animerSky 1.8s ease-in 0s normal 1 forwards";
   }
-
   document.getElementById("fall").play();
-  document.getElementById("gob").style.animation =
-    "animerGris 1.8s ease-in 0s normal 1 forwards";
+  sky6 = document.getElementById("sky6");
+  setTimeout(function() {
+    sky6.style.display = "block";
+    sky6.style.animation = "skyFallAnimasjon 2s ease-in 0s normal 1 forwards";
+    setTimeout(grisTapFall, 1800);
+  }, 1000);
+}
+
+function grisTapFall() {
+  grisPos = document.getElementById("gob");
+  grisPos.style.top = grisPos.offsetTop + "px";
+  document.getElementById("grisen").style.animation =
+    "animerGris 0.5s ease-out 0s normal 1 forwards";
+  gressBakgrunn = document.getElementById("gress");
+  gressBakgrunn.style.display = "block";
+  gressBakgrunn.style.animation = "tapLanding 0.5s linear 0s normal 1 forwards";
+  setTimeout(boksAnimasjonTap, 2500);
+}
+
+function boksAnimasjonTap() {
+  var restartBoksTap = document.getElementById("tapMeny");
+  restartBoksTap.style.animation =
+    "testAnimation 0.7s ease-out 0s normal 1 forwards";
+}
+
+function tilMeny() {
+  location.href = "../forside/forside.html";
+}
+
+function spillIgjen() {
+  location.href = "../vanskelig/index.html";
 }

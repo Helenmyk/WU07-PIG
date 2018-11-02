@@ -15,10 +15,12 @@
   <img class="sky" id="sky2" src="../Bilder/sky2.png" />
   <img class="sky" id="sky3" src="../Bilder/sky2.png" />
   <img class="sky" id="sky4" src="../Bilder/sky1.png" />
-  <img class="sky" id="sky5" src="../Bilder/sky2.png" />
+  <img class="sky" id="sky5" src="../Bilder/sky1.png" />
+  <img class="fallSky" id="sky6" src="../Bilder/sky2.png" />
   <div class="parent">
 
   <img id="gaard" src="../Bilder/gaard.png" />
+  <img id="gress" src="../Bilder/gress.png" />
   <div class="grisOgBallong" id="gob">
   <img class="ballonger" id="ballong1" src="../Bilder/fixedballong.png" width="60px"/>
   <img class="ballonger" id="ballong6" src="../Bilder/fixedballong.png" width="60px"/>
@@ -27,7 +29,7 @@
   <img class="ballonger" id="ballong3" src="../Bilder/fixedballong.png" width="60px"/>
   <img class="ballonger" id="ballong4" src="../Bilder/fixedballong.png" width="60px"/>
   <img class="ballonger" id="ballong5" src="../Bilder/fixedballong.png" width="60px"/>
-  <img id="grisen" src="../Bilder/grisen.png" />
+  <img onclick="testEksplosjon()" id="grisen" src="../Bilder/grisen.png" />
 
 </div>
 
@@ -74,7 +76,12 @@
 <!-- Bildeknapp som kjører en funskjon om å skru bakgrunnsmusikken av eller på -->
 
 <!-- Bakgrunnsmusikken som spilles av automatisk -->
-
+<div id="tapMeny" class="restartBoks">
+  <div>
+  <button onclick="tilMeny()" class="menyKnapp" id="tilMeny">Meny</button>
+<button onclick="spillIgjen()" class="menyKnapp" id="restart">Spill igjen</button><br /><br>
+ </div>
+</div>
 </div>
 
 

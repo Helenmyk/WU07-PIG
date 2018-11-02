@@ -75,6 +75,12 @@ body {
   }
 }
 
+@keyframes skyFallAnimasjon {
+  100% {
+    top: -800px;
+  }
+}
+
 .ballonger {
   width: 6vw;
   height: auto;
@@ -124,6 +130,7 @@ body {
 
 #grisen {
   position: relative;
+  top: 0vw;
   margin-top: 100%;
   left: 1.4%;
   user-select: none;
@@ -135,6 +142,12 @@ body {
   position: absolute;
   user-select: none;
   right: -300px;
+  z-index: 10;
+}
+.fallSky {
+  position: absolute;
+  user-select: none;
+  display: none;
   z-index: 10;
 }
 
@@ -168,6 +181,11 @@ body {
   right: 550px;
   animation: initialRightLeft 30s linear 1 forwards;
 }
+#sky6 {
+  top: 1500px;
+  left: 5vw;
+  width: 500px;
+}
 
 @keyframes rightLeft {
   0% {
@@ -190,11 +208,6 @@ body {
     margin-top: 1000px;
   }
 }
-@keyframes animerGris {
-  100% {
-    top: 1000px;
-  }
-}
 @keyframes animerSky {
   100% {
     top: -800px;
@@ -205,7 +218,12 @@ body {
     top: 0vw;
   }
 }
-@keyframes grisVinn {
+@keyframes tapLanding {
+  100% {
+    top: 13vw;
+  }
+}
+@keyframes animerGris {
   100% {
     top: 25vw;
   }
@@ -225,6 +243,14 @@ h1 {
 }
 
 #gaard {
+  position: absolute;
+  z-index: 1;
+  top: 100vw;
+  width: 100vw;
+  height: auto;
+  display: none;
+}
+#gress {
   position: absolute;
   z-index: 1;
   top: 100vw;
@@ -291,4 +317,42 @@ button:hover {
   -ms-transform: scale(0.15); /* IE9 */
   -o-transform: scale(0.15); /* Opera 10.5+ */
   transform: scale(0.15);
+}
+.restartBoks {
+  z-index: 499;
+  position: absolute;
+  top: -200vw;
+  margin-top: 0.1vw;
+  margin-left: 22vw;
+  width: 45vw;
+  height: 22vw;
+  display: block;
+  border: solid 0.1vw;
+  background-color: #a3baff;
+  opacity: 0.99;
+}
+#tilMeny {
+  margin-top: 1vw;
+}
+.menyKnapp {
+  position: relative;
+  background-color: #6b90ff;
+  color: black;
+  border-radius: 0.8vw;
+  display: block;
+  width: 10vw;
+  border: 0.15vw solid #002eb7;
+  opacity: 0.8;
+  user-select: none;
+  margin-left: 18vw;
+  outline: 0;
+  height: auto;
+  font-size: 1.5vw;
+}
+/* Styling til alle knapper når musepekeren ligger over */
+.menyKnapp:hover {
+  background-color: #3255bc;
+  color: white;
+  cursor: pointer;
+  user-select: none;
 }
