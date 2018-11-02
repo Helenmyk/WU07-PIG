@@ -320,7 +320,7 @@ button:hover {
 }
 
 /* Div som vanskelighetsgrad-menyen ligger i */
-.vanskelighetsGrad {
+.restartBoks {
   z-index: 499;
   position: absolute;
   top: -200vw;
