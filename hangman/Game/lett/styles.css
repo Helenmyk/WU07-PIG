@@ -254,6 +254,7 @@ h1 {
   padding: 0.5% 3%;
   font-size: 2vw;
   font-weight: bold;
+  outline: 0;
   white-space: nowrap;
   background-color: white;
   font-family: "Indie Flower";
