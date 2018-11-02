@@ -8,7 +8,7 @@
 
 <body>
   <div class="parent">
-    
+
   <img src="../Bilder/logo.png" id="logo" />
   <img id="grisen" src="../Bilder/grisen.png" />
   <img src="../Bilder/gress.png" id="gress" />
@@ -35,9 +35,11 @@
 
 <div id="vGrad" class="vanskelighetsGrad">
   <p id="infoVGrad">Alle ord og uttrykk er dyrerelatert! </p>
+  <div>
 <button onclick="lett()" class="menyKnapp" id="lett">ORD</button><br /><br>
 <button onclick="vanskelig()" class="menyKnapp" id="vanskelig">UTTRYKK</button>
-<input onclick="tilbakeVGrad()" type="button" class="menyKnapp" value="Tilbake"></input>
+<button onclick="tilbakeVGrad()" class="menyKnapp" id="tilbakeKnapp">Tilbake</button>
+ </div>
 </div>
 <div id="infoBokser">
 
@@ -56,9 +58,9 @@
 
     Gjett ordet på så få bokstaver som mulig. Klarer du å få Billie Bacon hjem
     til gården?
+
+    <button onclick="regler()" class="menyKnapp" id="tilbakeKnapp">Tilbake</button>
    </p>
-   <input onclick="regler()" type="button" class="menyKnapp" value="Tilbake"></input>
-    </p>
 </div>
 
 <div id="menyBoksHistorie">
@@ -68,12 +70,10 @@
 
      Grisen er ensom, alene og savner de andre dyrene. Klarer du å
      hjelpe Billie Bacon tilbake til gården?
+      <button onclick="historie()" class="menyKnapp" id="tilbakeKnapp">Tilbake</button>
    </p>
-     <input onclick="historie()" type="button" class="menyKnapp" value="Tilbake"></input>
-      </p>
-</div>
-</div>
-
+  </div>
+ </div>
 </div>
 
   <!--<img src="ballongani.gif"/> -->

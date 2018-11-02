@@ -20,86 +20,98 @@ body {
   background: -linear-gradient(top, #7ec0ee 0%, #fff 100%);
   background: -moz-linear-gradient(top, #7ec0ee 0%, #fff 100%);
 }
+/* Div som vanskelighetsgrad-menyen ligger i */
 .vanskelighetsGrad {
   z-index: 499;
   position: absolute;
   top: -200vw;
   margin-top: 0.1vw;
-  margin-left: 20%;
-  width: 50vw;
-  height: 25vw;
+  margin-left: 22vw;
+  width: 45vw;
+  height: 22vw;
   display: block;
-  border: solid 1px;
+  border: solid 0.1vw;
   background-color: #a3baff;
   opacity: 0.99;
 }
-#lett {
-  margin-top: 1vw;
-}
+
+/* STYLE TIL KNAPPER */
+/* Div som menyknappene + lydbildet ligger i */
 .menyKnappDiv {
   margin-top: 20%;
   z-index: 400;
   position: absolute;
   display: inline-block;
 }
-.menyKnapp {
-  position: relative;
-  background-color: #6b90ff;
-  color: black;
-  padding: 0.1vw 0.1vw;
-  border-radius: 0.8vw;
-  display: block;
-  width: 12vw;
-  border: 2px solid #002eb7;
-  opacity: 0.8;
-  user-select: none;
-  margin-left: 35%;
-  outline: 0;
-  height: auto;
-  font-size: 1.5vw;
-}
+/* Plassering til menyknappene */
 #historie,
 #regler,
 #start {
+  padding: 1vw 2vw;
   margin-left: 100%;
   margin-top: 10%;
   height: auto;
   width: 12vw;
 }
-input[type="button"] {
-  margin-top: 50px;
-  margin-left: 20px;
-  font-size: 1vw;
+/* Styling til alle knapper */
+.menyKnapp {
+  position: relative;
+  background-color: #6b90ff;
+  color: black;
+  border-radius: 0.8vw;
+  display: block;
+  width: 10vw;
+  border: 0.15vw solid #002eb7;
+  opacity: 0.8;
+  user-select: none;
+  margin-left: 20vw;
+  outline: 0;
   height: auto;
-  padding: 0.1vw 0.1vw;
-  width: 5vw;
+  font-size: 1.5vw;
 }
+/* Styling til alle knapper når musepekeren ligger over */
 .menyKnapp:hover {
   background-color: #3255bc;
   color: white;
   cursor: pointer;
   user-select: none;
 }
+/* Plassering og størrelse til tilbakeknapper */
+#tilbakeKnapp {
+  margin-top: 5vw;
+  margin-left: 2vw;
+  font-size: 1vw;
+  height: auto;
+  padding: 0.1vw 0.1vw;
+  width: 5vw;
+}
+/* Plassering på den øverste knappen i vanskelighetsgrad-menyen */
+#lett {
+  margin-top: 1vw;
+}
+/* Animasjon til vanskelighetsgrad-menyen */
 @keyframes testAnimation {
   0% {
-    top: -500px;
+    top: -100vw;
   }
   100% {
-    top: 100px;
+    top: 15vw;
   }
 }
 @keyframes tilbakeAnimasjon {
   100% {
-    top: -500px;
+    top: -100vw;
   }
 }
+/* Styling til teksten i vanskelighetsgrad-menyen */
 #infoVGrad {
   text-align: center;
   font-family: Helvetica;
-  margin-top: 10%;
+  margin-top: 2vw;
   height: auto;
   font-size: 2vw;
 }
+/* Plassering og størrelse til grisen */
 #grisen {
   z-index: 400;
   position: absolute;
@@ -114,6 +126,7 @@ input[type="button"] {
   -o-transform: scale(0.5); /* Opera 10.5+ */
   transform: scale(0.5);
 }
+/* Plassering og størrelse til logoen */
 #logo {
   z-index: 400;
   position: absolute;
@@ -127,6 +140,7 @@ input[type="button"] {
   -o-transform: scale(0.2); /* Opera 10.5+ */
   transform: scale(0.2);
 }
+/* Plassering og størrelse til gresset */
 #gress {
   z-index: 399;
   margin-top: 10%;
@@ -141,39 +155,7 @@ input[type="button"] {
   -o-transform: scale(1.5); /* Opera 10.5+ */
   transform: scale(1.5);
 }
-.menyKnappDiv {
-  margin-top: 20%;
-  z-index: 400;
-  position: absolute;
-  display: inline-block;
-}
-#historie,
-#regler,
-#start {
-  padding: 1vw 2vw;
-  margin-left: 100%;
-  margin-top: 10%;
-  height: auto;
-  width: 12vw;
-}
-input[type="button"] {
-  margin-top: 50px;
-  margin-left: 20px;
-  font-size: 1vw;
-  height: auto;
-  padding: 0.2vw 0.2vw;
-  width: 5vw;
-}
-#tilbakeKnappV {
-  width: 5vw;
-  margin-top: 6%;
-}
-#tilbakeKnappR {
-  width: 5vw;
-}
-#tilbakeKnappH {
-  width: 5vw;
-}
+/* Plassering og størrelse til lydbildet */
 #lydBilde {
   position: absolute;
   margin-left: -1vw;
@@ -187,47 +169,37 @@ input[type="button"] {
   -o-transform: scale(0.15); /* Opera 10.5+ */
   transform: scale(0.15);
 }
+/* Div som regel og historie-boks ligger i */
 #infoBokser {
-  margin-left: 30%;
+  margin-left: 26vw;
   max-width: 100%;
   max-height: 100%;
   position: relative;
 }
-#menyBoksRegler {
-  z-index: 410;
-  position: absolute;
-  overflow-y: auto;
-  margin-top: 10vw;
-  padding: 10px;
-  display: block;
-  border: solid 1px;
-  background-color: #a3baff;
-  display: none;
-  opacity: 0.95;
-  width: 30vw;
-  height: 30vw;
-}
+/* Styling til regel og historie-boks*/
+#menyBoksRegler,
 #menyBoksHistorie {
   z-index: 410;
   position: absolute;
   overflow-y: auto;
   margin-top: 10vw;
-  padding: 10px;
+  padding: 2vw;
   display: block;
-  border: solid 1px;
+  border: solid 0.1vw;
   background-color: #a3baff;
   display: none;
   opacity: 0.95;
   width: 30vw;
   height: 30vw;
 }
+/* Styling til overskriften i regel og historie-boks */
 .boksOverskrift {
   font-size: 2vw;
   text-align: center;
   font-family: Helvetica;
 }
-
+/* Styling til tekst i regel og historie-boks */
 .infoTekst {
-  font-size: 1.2vw;
+  font-size: 1vw;
   font-family: Helvetica;
 }
