@@ -130,6 +130,7 @@ body {
 
 #grisen {
   position: relative;
+  top: 0vw;
   margin-top: 100%;
   left: 1.4%;
   user-select: none;
@@ -207,11 +208,6 @@ body {
     margin-top: 1000px;
   }
 }
-@keyframes animerGris {
-  100% {
-    top: 1000px;
-  }
-}
 @keyframes animerSky {
   100% {
     top: -800px;
@@ -227,7 +223,7 @@ body {
     top: 13vw;
   }
 }
-@keyframes grisVinn {
+@keyframes animerGris {
   100% {
     top: 25vw;
   }
