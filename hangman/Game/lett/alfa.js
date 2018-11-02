@@ -251,7 +251,7 @@ function grisTapFall() {
   grisPos = document.getElementById("gob");
   grisPos.style.top = grisPos.offsetTop + "px";
   document.getElementById("grisen").style.animation =
-    "animerGris 0.5s none 0s ease-out 1 forwards";
+    "animerGris 0.5s ease-out 0s normal 1 forwards";
   gressBakgrunn = document.getElementById("gress");
   gressBakgrunn.style.display = "block";
   gressBakgrunn.style.animation = "tapLanding 0.5s linear 0s normal 1 forwards";
