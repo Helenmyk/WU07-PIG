@@ -323,7 +323,7 @@ button:hover {
   position: absolute;
   top: -200vw;
   margin-top: 0.1vw;
-  margin-left: 22vw;
+  margin-left: 26vw;
   width: 45vw;
   height: 22vw;
   display: block;
@@ -355,4 +355,17 @@ button:hover {
   color: white;
   cursor: pointer;
   user-select: none;
+}
+/* Styling til overskriften i restart-boksen */
+.infoRestartOverskrift {
+  font-family: Helvetica;
+  font-size: 2.5vw;
+  text-align: center;
+  font-weight: bold;
+}
+/* Styling til teksten i restart-boksen */
+.infoRestart {
+  font-family: Helvetica;
+  font-size: 1.5vw;
+  text-align: center;
 }
