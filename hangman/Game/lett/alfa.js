@@ -1,5 +1,6 @@
 let flyttingBokstaver = document.getElementById("letters");
 window.addEventListener("resize", function() {
+  //Lytter til størrelsen på skjermen/vinduet flytter tastaturet litt opp hvis skjermen er mindre enn 1000px
   if (window.matchMedia("(min-width: 1000px)").matches) {
     console.log("Screen width is at least 1000px");
     flyttingBokstaver.style.marginTop = "25%";
@@ -9,6 +10,7 @@ window.addEventListener("resize", function() {
   }
 });
 window.addEventListener("resize", function() {
+  //fix for at tastaturet oppfører seg rart
   if (window.matchMedia("(min-width: 1250px)").matches) {
     console.log("Screen width is at least 1250px");
     flyttingBokstaver.style.marginTop = "25%";
@@ -33,7 +35,8 @@ let player;
 let isChrome =
   /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 if (!isChrome) {
-  $("#iframeAudio").remove();
+  //chrome er ikke samarbeidsvillig så må bruker iframe for lyd.
+  $("#iframeAudio").remove(); //fjerner iframe hvis det ikke er chrome
   player = false;
 } else {
   $("#playAudio").remove(); //Sletter iframe elementet for å unngå dobbel lyd avspilling.
@@ -41,6 +44,7 @@ if (!isChrome) {
 }
 
 let words = [
+  // hangman ordene
   "HØNEMOR",
   "LESEHEST",
   "RINGREV",
@@ -62,28 +66,25 @@ let words = [
   "KLATREMUS"
 ];
 
-/*------------- app's state -------------*/
-let secretWord, wrongCount, guess, letter, contains;
+let secretWord, wrongCount, guess, letter, contains; //definert noen globale variabler
 
-/*------------- cached element references -------------*/
-let $guess = $("#guess");
-let $img = $("#hang-img");
-let $message = $("#message");
+let $guess = $("#guess"); //henter elementet guess med id
+let $message = $("#message"); //henter elementet message med id
 
 /*------------- event listeners -------------*/
-$("#letters").on("click", handleLetterClick);
+$("#letters").on("click", handleLetterClick); //når diven letters blir tryky på kjøres funksjonen handleLetterClick
 
 /*------------- functions -------------*/
-initialize();
+initialize(); //kjører funksjonen intitialize når siden lastes.
 
 function initialize() {
-  wrongCount = 0;
+  wrongCount = 0; //setter wrongcounten til 0
   secretWord = words[getRandomInt(words.length - 1)]; //Velger tilfedlig ord fra words array
 
   guess = "";
 
   for (let i = 0; i < secretWord.length; i++) {
-    //i denne for løkken gjøres ordet om fra vanlig bokstaver til understreker og legger til mellomrom der det er.
+    //i denne for-løkken gjøres ordet om fra vanlig bokstaver til understreker og legger til mellomrom der det er.
     let currentLetter = secretWord[i];
     if (currentLetter === " ") {
       guess += " ";
@@ -92,8 +93,8 @@ function initialize() {
     }
   }
 
-  $("button.letter-button").prop("disabled", false);
-  render();
+  $("button.letter-button").prop("disabled", false); //"skrur på knappene"
+  render(); //kjører funksjonen render
 }
 
 function getRandomInt(max) {
@@ -102,10 +103,11 @@ function getRandomInt(max) {
 }
 
 function render() {
-  $guess.html(guess);
+  $guess.html(guess); //gjør elementet guess lik variabelen guess
   // pop balloong
 
   if (guess === secretWord) {
+    //kjører funksjonen sprekk fram til wrongcount er nådd 7 da kjøres spillLyd (starten på tap sekvensen)
     setTimeout(vinnFunksjon, 700);
   } else if (wrongCount === 1 && contains == false) {
     sprekk();
@@ -129,25 +131,25 @@ function handleLetterClick(evt) {
   if (wrongCount === 7) return; //hvis spiller har tapt kjøres ikke resten av funskjonen
   for (i = 1; i < 30; i++) {
     if (evt.target.id == "knapp" + i) {
-      //fikser bug der flere ting enn bare knapepr kunne bli trykket på for å kjøre koden under
-      evt.target.style.backgroundColor = "white";
-      evt.target.style.opacity = "0.5";
-      letter = evt.target.textContent;
+      //fikser bug der flere ting enn bare knapper kunne bli trykket på for å kjøre koden under
+      evt.target.style.backgroundColor = "white"; //endrer farge på den trykte knappen
+      evt.target.style.opacity = "0.5"; //gjør den trykte knappen mer gjennomsiktig
+      letter = evt.target.textContent; //setter variabelen letter lik verdien av den trykte knappen
       console.log(secretWord);
       if (secretWord.includes(letter)) {
-        contains = true;
-        let pos = secretWord.indexOf(letter);
+        //hvis secretWord inneholder den trykte bokstaven kjøres if-en
+        contains = true; //fikser bug for render funksjonen der flere ballonger sprakk samtidig
+        let pos = secretWord.indexOf(letter); //
         while (pos >= 0) {
+          //endrer understreken i guess til den trykte knappen
           guess = guess.split("");
           guess[pos] = letter;
           guess = guess.join("");
           pos = secretWord.indexOf(letter, pos + 1);
         }
       } else {
-        if (evt.target.id !== "reset") {
-          contains = false;
-          wrongCount++;
-        }
+        contains = false;
+        wrongCount++;
       }
 
       $(evt.target).prop("disabled", true);
