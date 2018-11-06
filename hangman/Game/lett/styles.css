@@ -370,3 +370,16 @@ button:hover {
   cursor: pointer;
   user-select: none;
 }
+/* Styling til overskriften i restart-boksen */
+.infoRestartOverskrift {
+  font-family: Helvetica;
+  font-size: 2.5vw;
+  text-align: center;
+  font-weight: bold;
+}
+/* Styling til teksten i restart-boksen */
+.infoRestart {
+  font-family: Helvetica;
+  font-size: 1.5vw;
+  text-align: center;
+}

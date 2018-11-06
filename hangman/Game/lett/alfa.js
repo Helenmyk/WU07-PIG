@@ -205,11 +205,7 @@ function vinnFunksjon2() {
   setTimeout(skyAnimasjonVinn, 1000);
 }
 
-let skyPos;
-let grisPos;
-let gaardBakgrunn;
-let gressBakgrunn;
-let restartBoksVinn;
+let skyPos, grisPos, gaardBakgrunn, gressBakgrunn, restartBoksVinn;
 function skyAnimasjonVinn() {
   for (let j = 1; j < 6; j++) {
     skyPos = document.getElementById("sky" + j);
