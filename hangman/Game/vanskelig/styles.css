@@ -375,7 +375,6 @@ button:hover {
 }
 
 /* Styling til alle knapper */
-
 .menyKnapp {
   position: relative;
   background-color: #6b90ff;
@@ -384,6 +383,7 @@ button:hover {
   display: block;
   width: 10vw;
   border: 0.15vw solid #002eb7;
+  padding: 0.2vw;
   opacity: 0.8;
   user-select: none;
   margin-left: 18vw;
