@@ -1,9 +1,9 @@
-window.onbeforeunload = function() {
-  window.setTimeout(function() {
-    location.href = "../Forside/forside.html";
-  }, 0);
-  window.onbeforeunload = null; // necessary to prevent infinite loop, that kills your browser
-};
+if (window.performance) {
+  console.info("window.performance works fine on this browser");
+}
+if (performance.navigation.type == 1) {
+  location.href = "../forside/forside.html";
+}
 let flyttingBokstaver = document.getElementById("letters");
 window.addEventListener("resize", function() {
   //Lytter til størrelsen på skjermen/vinduet flytter tastaturet litt opp hvis skjermen er mindre enn 1000px
@@ -127,12 +127,16 @@ function render() {
     sprekk();
   } else if (wrongCount === 7 && contains == false) {
     sprekk();
+  } else if (wrongCount === 8 && contains == false) {
+    sprekk();
+  } else if (wrongCount === 9 && contains == false) {
+    sprekk();
     setTimeout(spillLyd, 700);
   }
 }
 
 function handleLetterClick(evt) {
-  if (wrongCount === 7) return; //hvis spiller har tapt kjøres ikke resten av funskjonen
+  if (wrongCount === 9) return; //hvis spiller har tapt kjøres ikke resten av funskjonen
   for (i = 1; i < 30; i++) {
     if (evt.target.id == "knapp" + i) {
       //fikser bug der flere ting enn bare knapper kunne bli trykket på for å kjøre koden under
@@ -175,6 +179,9 @@ function removeBlng() {
 }
 
 function spillLyd() {
+  document.getElementById("guess").innerHTML = secretWord; //Skriver ut hva det riktige ordet var
+  document.getElementById("guess").style.color = "red"; //Skriver ut riktig ord i rødt
+
   if (player == true) {
     document.getElementById("iframeAudio").src = "";
   } else {
@@ -182,7 +189,7 @@ function spillLyd() {
   }
   pauseAnimasjoner();
   document.getElementById("alert").play();
-  setTimeout(tapt, 1000);
+  setTimeout(tapt, 2000);
 }
 let skyPause;
 function pauseAnimasjoner() {
