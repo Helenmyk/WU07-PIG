@@ -1,3 +1,10 @@
+if (window.performance) {
+  console.info("window.performance works fine on this browser");
+}
+if (performance.navigation.type == 1) {
+  location.href = "../forside/forside.html";
+}
+
 let flyttingBokstaver = document.getElementById("letters");
 window.addEventListener("resize", function() {
   if (window.matchMedia("(min-width: 1000px)").matches) {
@@ -49,7 +56,6 @@ var words = [
   "STOLT SOM EN HANE",
   "LITEN SOM EN MUS",
   "SNILL SOM ET LAM",
-  "SMIDIG SOM EN KATT",
   "KAKLE SOM EN HØNE",
   "HYLE SOM EN GRIS",
   "STYGG SOM EN KU",
@@ -61,11 +67,9 @@ var words = [
   "FROM SOM ET LAM",
   "SINT SOM EN OKSE",
   "PIPE SOM EN MUS",
-  "KLATRE SOM EN GEIT",
   "KLAR SOM ET EGG",
   "FRI SOM FUGLEN",
   "LOPPER I BLODET",
-  "KLEKKE UT EN PLAN",
   "SULTEN SOM ULV"
 ];
 
@@ -178,6 +182,9 @@ function removeBlng() {
 }
 
 function spillLyd() {
+  document.getElementById("guess").innerHTML = secretWord; //Skriver ut hva det riktige ordet var
+  document.getElementById("guess").style.color = "red"; //Skriver ut riktig ord i rødt
+
   if (player == true) {
     document.getElementById("iframeAudio").src = "";
   } else {
@@ -185,7 +192,7 @@ function spillLyd() {
   }
   pauseAnimasjoner();
   document.getElementById("alert").play();
-  setTimeout(tapt, 1000);
+  setTimeout(tapt, 2000);
 }
 let skyPause;
 function pauseAnimasjoner() {
@@ -210,11 +217,7 @@ function vinnFunksjon2() {
   setTimeout(skyAnimasjonVinn, 1000);
 }
 
-let skyPos;
-let grisPos;
-let gaardBakgrunn;
-let gressBakgrunn;
-let restartBoksVinn;
+let skyPos, grisPos, gaardBakgrunn, gressBakgrunn, restartBoksVinn;
 function skyAnimasjonVinn() {
   for (let j = 1; j < 6; j++) {
     skyPos = document.getElementById("sky" + j);
