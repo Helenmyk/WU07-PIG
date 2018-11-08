@@ -198,6 +198,11 @@ function sprekk() {
   let number = getRandomInt(3);
   document.getElementById("pop" + number).play();
   setTimeout(removeBlng, 300);
+  setTimeout(function() {
+    if (wrongCount === 9) {
+      document.getElementById("streken").style.display = "none";
+    }
+  }, 100);
 }
 
 function removeBlng() {
@@ -293,6 +298,10 @@ function grisTapFall() {
   gressBakgrunn = document.getElementById("gress");
   gressBakgrunn.style.display = "block";
   gressBakgrunn.style.animation = "tapLanding 0.5s linear 0s normal 1 forwards";
+  setTimeout(function() {
+    document.getElementById("splat").play();
+    document.getElementById("grisen").src = "../Bilder/grisen.png";
+  }, 150);
   setTimeout(boksAnimasjonTap, 2500);
 }
 

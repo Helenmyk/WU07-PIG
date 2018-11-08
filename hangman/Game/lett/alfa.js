@@ -207,7 +207,6 @@ function sprekk() {
   blng.src = "../Bilder/blng.gif";
   let number = getRandomInt(3);
   document.getElementById("pop" + number).play();
-
   setTimeout(removeBlng, 300);
   setTimeout(function() {
     if (wrongCount === 9) {

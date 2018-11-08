@@ -148,6 +148,16 @@ body {
   width: 6.3vw;
   height: auto;
 }
+#streken {
+  z-index: 0;
+  position: absolute;
+  top: 0vw;
+  margin-top: 30%;
+  left: 49%;
+  user-select: none;
+  height: 10vw;
+  width: auto;
+}
 
 .sky {
   position: absolute;
