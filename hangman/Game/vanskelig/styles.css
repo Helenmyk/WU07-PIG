@@ -252,7 +252,6 @@ h1 {
   line-height: 184px;
   margin-top: -30px;
 }
-
 #gaard {
   position: absolute;
   z-index: 1;
@@ -352,7 +351,7 @@ button:hover {
   position: absolute;
   top: -200vw;
   margin-top: 0.1vw;
-  margin-left: 22vw;
+  margin-left: 26vw;
   width: 45vw;
   height: 22vw;
   display: block;
@@ -360,7 +359,6 @@ button:hover {
   background-color: #a3baff;
   opacity: 0.99;
 }
-
 /* Animasjon til vanskelighetsgrad-menyen */
 @keyframes animerBoks {
   0% {
@@ -373,7 +371,6 @@ button:hover {
 #tilMeny {
   margin-top: 1vw;
 }
-
 /* Styling til alle knapper */
 .menyKnapp {
   position: relative;
