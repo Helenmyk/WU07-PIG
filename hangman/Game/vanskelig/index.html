@@ -76,8 +76,14 @@
 <input type="image" src="../Bilder/information.png" onclick="hint()" id="hintKnapp"></button>
 
 
+<!-- Bildeknapp som kjører en funskjon om å skru bakgrunnsmusikken av eller på -->
 <input id="lydBilde" type="image" src="../Bilder/speaker.png" onclick="ingenLyd()"></button>
 
+<!-- Bakgrunnsmusikken som spilles av automatisk -->
+<audio id="lydFil" loop autoplay preload="auto">
+<source src="../Lydeffekter/HappyBGM.mp3" type="audio/mpeg">
+ Your browser does not support the audio element.
+</audio>
 <!-- Bildeknapp som kjører en funskjon om å skru bakgrunnsmusikken av eller på -->
 
 <!-- Bakgrunnsmusikken som spilles av automatisk -->
@@ -101,12 +107,6 @@
   <button onclick="spillIgjen()" class="menyKnapp" id="restart">Spill igjen</button>
  </div>
 </div>
-
-<iframe src="../Lydeffekter/HappyBGM.mp3" allow="autoplay" loop="true" style="display:none" id="iframeAudio">
-</iframe>
-<audio autoplay loop  id="playAudio">
-<source src="../Lydeffekter/HappyBGM.mp3">
-</audio>
 
 <audio id="pop0" src="../Lydeffekter/pop1.mp3"></audio>
 <audio id="pop1" src="../Lydeffekter/pop2.mp3"></audio>
