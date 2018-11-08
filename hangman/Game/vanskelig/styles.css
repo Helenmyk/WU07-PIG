@@ -59,10 +59,10 @@ body {
 
 @keyframes testAnimation {
   0% {
-    top: -500px;
+    top: -100vw;
   }
   100% {
-    top: 100px;
+    top: 15vw;
   }
 }
 @keyframes MoveUpDown {
@@ -307,9 +307,25 @@ button:hover {
   font-size: 24px;
 }
 #lydBilde {
+  z-index: 700;
   position: absolute;
-  margin-left: -470px;
-  margin-top: -80px;
+  margin-left: -3.3vw;
+  margin-top: -4vw;
+  width: 20vw;
+  user-select: none;
+  outline: 0;
+  -webkit-transform: scale(0.15); /* Saf3.1+, Chrome */
+  -moz-transform: scale(0.15); /* FF3.5+ */
+  -ms-transform: scale(0.15); /* IE9 */
+  -o-transform: scale(0.15); /* Opera 10.5+ */
+  transform: scale(0.15);
+}
+#hintKnapp {
+  z-index: 700;
+  position: absolute;
+  margin-left: -3.3vw;
+  margin-top: 0vw;
+  width: 20vw;
   user-select: none;
   outline: 0;
   -webkit-transform: scale(0.15); /* Saf3.1+, Chrome */

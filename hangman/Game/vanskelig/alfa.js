@@ -22,7 +22,7 @@ window.addEventListener("resize", function() {
   }
 });
 
-//Funskjon som skrur bakgrunnsmusikken av på siden
+//Funskjon som skrur bakgrunnsmusikken av og på siden
 function ingenLyd() {
   var lyd = document.getElementById("lydFil");
   if (lyd.muted == true) {
@@ -35,7 +35,7 @@ function ingenLyd() {
   }
   lydBilde.blur(); //Fjerner fokus fra knappen så den ikke skrus av/på ved trykk på enter
 }
-
+/*
 let player;
 let isChrome =
   /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
@@ -45,7 +45,7 @@ if (!isChrome) {
 } else {
   $("#playAudio").remove(); //Sletter iframe elementet for å unngå dobbel lyd avspilling.
   player = true;
-}
+}*/
 
 var words = [
   "SLU SOM EN REV",
@@ -167,6 +167,35 @@ function handleLetterClick(evt) {
     }
   }
 }
+
+function hint() {
+    for(let i = 0; i<secretWord.length;i++){
+      if(guess[i]=="_"){
+        let selectedChar = secretWord[i];
+        for(let j = 1; j<30;j++){
+          if(document.getElementById("knapp"+j).innerHTML==selectedChar){
+            document.getElementById("knapp"+j).style.backgroundColor = "white";
+            document.getElementById("knapp"+j).style.opacity = "0.5";
+            $("#knapp"+j).prop("disabled", true);
+            for(let h =0;h<secretWord.length;h++){
+              if(secretWord[h]==selectedChar){
+                guess = setCharAt(guess,h,selectedChar);
+                document.getElementById("guess").innerHTML = guess;
+              }
+            }
+          }
+        }
+      }break;
+    }
+}
+
+function setCharAt(str,index,chr) {
+    if(index > str.length-1) return str;
+    return str.substr(0,index) + chr + str.substr(index+1);
+}
+
+
+
 let blng;
 function sprekk() {
   blng = document.getElementById("ballong" + wrongCount);
