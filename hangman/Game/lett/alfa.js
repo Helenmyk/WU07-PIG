@@ -37,18 +37,6 @@ function ingenLyd() {
   lydBilde.blur(); //Fjerner fokus fra knappen så den ikke skrus av/på ved trykk på enter
 }
 
-let player;
-let isChrome =
-  /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-if (!isChrome) {
-  //chrome er ikke samarbeidsvillig så må bruker iframe for lyd.
-  $("#iframeAudio").remove(); //fjerner iframe hvis det ikke er chrome
-  player = false;
-} else {
-  $("#playAudio").remove(); //Sletter iframe elementet for å unngå dobbel lyd avspilling.
-  player = true;
-}
-
 let words = [
   // hangman ordene
   "HØNEMOR",
@@ -223,16 +211,13 @@ function spillLyd() {
   document.getElementById("guess").innerHTML = secretWord; //Skriver ut hva det riktige ordet var
   document.getElementById("guess").style.color = "red"; //Skriver ut riktig ord i rødt
 
-  if (player == true) {
-    document.getElementById("iframeAudio").src = "";
-  } else {
-    document.getElementById("playAudio").pause();
+
+    document.getElementById("lydFil").pause();
+
+    pauseAnimasjoner();
+    document.getElementById("alert").play();
+    setTimeout(tapt, 2000);
   }
-  pauseAnimasjoner();
-  document.getElementById("alert").play();
-  document.getElementById("grisen").src = "../Bilder/overrasket.png";
-  setTimeout(tapt, 2000);
-}
 let skyPause;
 function pauseAnimasjoner() {
   document.getElementById("gob").style.webkitAnimationPlayState = "paused";
