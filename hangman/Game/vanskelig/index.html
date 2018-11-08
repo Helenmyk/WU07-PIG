@@ -72,16 +72,22 @@
     </div>
 
 </div>
-
 <!-- Bildeknapp som kjører en funksjon om å gi et hint -->
 <input type="image" src="../Bilder/information.png" onclick="hint()" id="hintKnapp"></button>
+
+
+<input id="lydBilde" type="image" src="../Bilder/speaker.png" onclick="ingenLyd()"></button>
+
+<!-- Bildeknapp som kjører en funskjon om å skru bakgrunnsmusikken av eller på -->
+
+<!-- Bakgrunnsmusikken som spilles av automatisk -->
 
 <div id="restartMenyVinn" class="restartBoks">
   <p class="infoRestartOverskrift">GRATULERER! </p>
   <br>
   <p class="infoRestart">Vil du spille igjen eller gå tilbake til menyen? </p>
   <div>
-<button onclick="tilMeny()" class="menyKnapp" id="tilMeny">Meny</button>
+<button onclick="tilMeny()" class="menyKnapp" id="tilMeny">Meny</button><br>
 <button onclick="spillIgjen()" class="menyKnapp" id="spillIgjen">Spill igjen</button>
 </div>
 </div>
@@ -91,19 +97,15 @@
   <br>
   <p class="infoRestart">Vil du spille igjen eller gå tilbake til menyen? </p>
   <div>
-  <button onclick="tilMeny()" class="menyKnapp" id="tilMeny">Meny</button>
+  <button onclick="tilMeny()" class="menyKnapp" id="tilMeny">Meny</button><br>
   <button onclick="spillIgjen()" class="menyKnapp" id="restart">Spill igjen</button>
  </div>
 </div>
 
-
-<!-- Bildeknapp som kjører en funskjon om å skru bakgrunnsmusikken av eller på -->
-<input id="lydBilde" type="image" src="../Bilder/speaker.png" onclick="ingenLyd()"></button>
-
-<!-- Bakgrunnsmusikken som spilles av automatisk -->
-<audio id="lydFil" loop autoplay preload="auto">
-<source src="../Lydeffekter/HappyBGM.mp3" type="audio/mpeg">
- Your browser does not support the audio element.
+<iframe src="../Lydeffekter/HappyBGM.mp3" allow="autoplay" loop="true" style="display:none" id="iframeAudio">
+</iframe>
+<audio autoplay loop  id="playAudio">
+<source src="../Lydeffekter/HappyBGM.mp3">
 </audio>
 
 <audio id="pop0" src="../Lydeffekter/pop1.mp3"></audio>
