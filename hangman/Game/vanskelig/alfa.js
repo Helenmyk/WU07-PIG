@@ -4,9 +4,9 @@ if (window.performance) {
 if (performance.navigation.type == 1) {
   location.href = "../forside/forside.html";
 }
-
 let flyttingBokstaver = document.getElementById("letters");
 window.addEventListener("resize", function() {
+  //Lytter til størrelsen på skjermen/vinduet flytter tastaturet litt opp hvis skjermen er mindre enn 1000px
   if (window.matchMedia("(min-width: 1000px)").matches) {
     console.log("Screen width is at least 1000px");
     flyttingBokstaver.style.marginTop = "25%";
@@ -16,6 +16,7 @@ window.addEventListener("resize", function() {
   }
 });
 window.addEventListener("resize", function() {
+  //fix for at tastaturet oppfører seg rart
   if (window.matchMedia("(min-width: 1250px)").matches) {
     console.log("Screen width is at least 1250px");
     flyttingBokstaver.style.marginTop = "25%";
@@ -40,7 +41,8 @@ let player;
 let isChrome =
   /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 if (!isChrome) {
-  $("#iframeAudio").remove();
+  //chrome er ikke samarbeidsvillig så må bruker iframe for lyd.
+  $("#iframeAudio").remove(); //fjerner iframe hvis det ikke er chrome
   player = false;
 } else {
   $("#playAudio").remove(); //Sletter iframe elementet for å unngå dobbel lyd avspilling.
@@ -73,7 +75,6 @@ var words = [
   "SULTEN SOM ULV"
 ];
 
-/*------------- app's state -------------*/
 let secretWord, wrongCount, guess, letter, contains; //definert noen globale variabler
 
 let $guess = $("#guess"); //henter elementet guess med id
@@ -167,6 +168,42 @@ function handleLetterClick(evt) {
     }
   }
 }
+let antallHint = 0;
+let selectedChar;
+function hint() {
+  for (let i = 0; i < 15; i++) {
+    if (guess[i] == "_") {
+      selectedChar = secretWord[i];
+      console.log("ok " + selectedChar);
+      for (let j = 1; j < 30; j++) {
+        if (document.getElementById("knapp" + j).innerHTML == selectedChar) {
+          document.getElementById("knapp" + j).style.backgroundColor = "white";
+          document.getElementById("knapp" + j).style.opacity = "0.5";
+          $("#knapp" + j).prop("disabled", true);
+          console.log("Funksjonen blir kjørt");
+          for (let h = 0; h < secretWord.length; h++) {
+            if (secretWord[h] == selectedChar) {
+              guess = endreBokstav(guess, h, selectedChar);
+              document.getElementById("guess").innerHTML = guess;
+            }
+          }
+        }
+      }
+      document.getElementById("hintKnapp").onclick = bruktOppHint;
+      break;
+    }
+  }
+}
+
+function endreBokstav(str, index, chr) {
+  if (index > str.length - 1) return str;
+  return str.substr(0, index) + chr + str.substr(index + 1);
+}
+
+function bruktOppHint() {
+  alert("Du har ikke flere hint!");
+}
+
 let blng;
 function sprekk() {
   blng = document.getElementById("ballong" + wrongCount);
