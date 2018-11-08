@@ -2,7 +2,6 @@ html,
 body {
   width: 100%;
   height: 100%;
-  display: flex;
   background-color: #000;
   overflow: hidden;
 }
@@ -88,43 +87,55 @@ body {
 #ballong1 {
   position: absolute;
   left: 0%;
-  top: -40%;
+  top: -39%;
   user-select: none;
 }
 #ballong2 {
   position: absolute;
-  left: 24%;
-  top: -32%;
+  left: 23%;
+  top: -33%;
   user-select: none;
 }
 #ballong3 {
   position: absolute;
   user-select: none;
-  left: -25%;
+  left: -26%;
   top: -33%;
 }
 #ballong4 {
   position: absolute;
-  left: 35%;
-  top: -14%;
+  left: 0%;
+  top: -23%;
   user-select: none;
 }
 #ballong5 {
   position: absolute;
   user-select: none;
-  left: 0%;
-  top: -24%;
+  left: -45%;
+  top: -21%;
 }
 #ballong6 {
   position: absolute;
-  left: -40%;
-  top: -14%;
+  left: 45%;
+  top: -21%;
   user-select: none;
 }
 #ballong7 {
   position: absolute;
+  left: 29%;
+  top: -13%;
+  user-select: none;
+}
+#ballong8 {
+  position: absolute;
+  left: -29%;
+  top: -13%;
+  user-select: none;
+}
+#ballong9 {
+  position: absolute;
   left: 0%;
-  top: -7%;
+  top: -9%;
   user-select: none;
 }
 
@@ -334,12 +345,14 @@ button:hover {
   -o-transform: scale(0.15); /* Opera 10.5+ */
   transform: scale(0.15);
 }
+
+/* Div som vanskelighetsgrad-menyen ligger i */
 .restartBoks {
   z-index: 499;
   position: absolute;
   top: -200vw;
   margin-top: 0.1vw;
-  margin-left: 26vw;
+  margin-left: 22vw;
   width: 45vw;
   height: 22vw;
   display: block;
@@ -347,9 +360,22 @@ button:hover {
   background-color: #a3baff;
   opacity: 0.99;
 }
+
+/* Animasjon til vanskelighetsgrad-menyen */
+@keyframes animerBoks {
+  0% {
+    top: -100vw;
+  }
+  100% {
+    top: 15vw;
+  }
+}
 #tilMeny {
   margin-top: 1vw;
 }
+
+/* Styling til alle knapper */
+
 .menyKnapp {
   position: relative;
   background-color: #6b90ff;

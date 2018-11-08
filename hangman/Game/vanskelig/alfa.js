@@ -74,27 +74,23 @@ var words = [
 ];
 
 /*------------- app's state -------------*/
-let secretWord, wrongCount, guess, letter, contains;
+let secretWord, wrongCount, guess, letter, contains; //definert noen globale variabler
 
-/*------------- cached element references -------------*/
-let $guess = $("#guess");
-let $img = $("#hang-img");
-let $message = $("#message");
+let $guess = $("#guess"); //henter elementet guess med id
+let $message = $("#message"); //henter elementet message med id
 
-/*------------- event listeners -------------*/
-$("#letters").on("click", handleLetterClick);
+$("#letters").on("click", handleLetterClick); //når diven letters blir trykt på kjøres funksjonen handleLetterClick
 
-/*------------- functions -------------*/
-initialize();
+initialize(); //kjører funksjonen intitialize når siden lastes.
 
 function initialize() {
-  wrongCount = 0;
+  wrongCount = 0; //setter wrongcounten til 0
   secretWord = words[getRandomInt(words.length - 1)]; //Velger tilfedlig ord fra words array
 
   guess = "";
 
   for (let i = 0; i < secretWord.length; i++) {
-    //i denne for løkken gjøres ordet om fra vanlig bokstaver til understreker og legger til mellomrom der det er.
+    //i denne for-løkken gjøres ordet om fra vanlig bokstaver til understreker og legger til mellomrom der det er.
     let currentLetter = secretWord[i];
     if (currentLetter === " ") {
       guess += " ";
@@ -103,8 +99,8 @@ function initialize() {
     }
   }
 
-  $("button.letter-button").prop("disabled", false);
-  render();
+  $("button.letter-button").prop("disabled", false); //"skrur på knappene"
+  render(); //kjører funksjonen render
 }
 
 function getRandomInt(max) {
@@ -113,10 +109,11 @@ function getRandomInt(max) {
 }
 
 function render() {
-  $guess.html(guess);
+  $guess.html(guess); //gjør elementet guess lik variabelen guess
   // pop balloong
 
   if (guess === secretWord) {
+    //kjører funksjonen sprekk fram til wrongcount er nådd 7 da kjøres spillLyd (starten på tap sekvensen)
     setTimeout(vinnFunksjon, 700);
   } else if (wrongCount === 1 && contains == false) {
     sprekk();
@@ -132,37 +129,40 @@ function render() {
     sprekk();
   } else if (wrongCount === 7 && contains == false) {
     sprekk();
+  } else if (wrongCount === 8 && contains == false) {
+    sprekk();
+  } else if (wrongCount === 9 && contains == false) {
+    sprekk();
     setTimeout(spillLyd, 700);
   }
 }
 
 function handleLetterClick(evt) {
-  if (wrongCount === 7) return; //hvis spiller har tapt kjøres ikke resten av funskjonen
+  if (wrongCount === 9) return; //hvis spiller har tapt kjøres ikke resten av funskjonen
   for (i = 1; i < 30; i++) {
     if (evt.target.id == "knapp" + i) {
-      //fikser bug der flere ting enn bare knapepr kunne bli trykket på for å kjøre koden under
-      evt.target.style.backgroundColor = "white";
-      evt.target.style.opacity = "0.5";
-      letter = evt.target.textContent;
+      //fikser bug der flere ting enn bare knapper kunne bli trykket på for å kjøre koden under
+      evt.target.style.backgroundColor = "white"; //endrer farge på den trykte knappen
+      evt.target.style.opacity = "0.5"; //gjør den trykte knappen mer gjennomsiktig
+      letter = evt.target.textContent; //setter variabelen letter lik verdien av den trykte knappen
       console.log(secretWord);
       if (secretWord.includes(letter)) {
-        contains = true;
-        let pos = secretWord.indexOf(letter);
+        //hvis secretWord inneholder den trykte bokstaven kjøres if-en
+        contains = true; //fikser bug for render funksjonen der flere ballonger sprakk samtidig
+        let pos = secretWord.indexOf(letter); //
         while (pos >= 0) {
+          //endrer understreken i guess til den trykte knappen
           guess = guess.split("");
           guess[pos] = letter;
           guess = guess.join("");
           pos = secretWord.indexOf(letter, pos + 1);
         }
       } else {
-        if (evt.target.id !== "reset") {
-          contains = false;
-          wrongCount++;
-        }
+        contains = false;
+        wrongCount++;
       }
 
       $(evt.target).prop("disabled", true);
-      $("#reset").prop("disabled", false);
       render();
     }
   }
@@ -201,7 +201,6 @@ function sprekk() {
   blng = document.getElementById("ballong" + wrongCount);
   blng.src = "../Bilder/blng.gif";
   let number = getRandomInt(3);
-  console.log(number);
   document.getElementById("pop" + number).play();
   setTimeout(removeBlng, 300);
 }
@@ -258,6 +257,7 @@ function skyAnimasjonVinn() {
   gaardBakgrunn.style.animation =
     "animerLanding 2.5s ease-out 0s normal 1 forwards";
   setTimeout(grisAnimasjonVinn, 1500);
+  1;
 }
 
 function grisAnimasjonVinn() {
@@ -265,13 +265,13 @@ function grisAnimasjonVinn() {
   grisPos.style.top = grisPos.offsetTop + "px";
   document.getElementById("gob").style.animation =
     "animerGris 2.5s ease-in-out 0s normal 1 forwards";
-  setTimeout(boksAnimasjonVinn, 4500);
+  setTimeout(boksAnimasjonVinn, 3700);
 }
 
 function boksAnimasjonVinn() {
   restartBoksVinn = document.getElementById("restartMenyVinn");
   restartBoksVinn.style.animation =
-    "testAnimation 0.7s ease-out 0s normal 1 forwards";
+    "animerBoks 0.7s ease-out 0s normal 1 forwards";
 }
 
 function tapt() {
@@ -293,7 +293,6 @@ function grisAnimasjonTap() {
     setTimeout(grisTapFall, 1800);
   }, 1000);
 }
-
 function grisTapFall() {
   grisPos = document.getElementById("gob");
   grisPos.style.top = grisPos.offsetTop + "px";
@@ -312,9 +311,9 @@ function boksAnimasjonTap() {
 }
 
 function tilMeny() {
-  location.href = "../forside/forside.html";
+  location.href = "../Forside/forside.html";
 }
 
 function spillIgjen() {
-  location.href = "../vanskelig/index.html";
+  location.href = "../Lett/index.html";
 }
