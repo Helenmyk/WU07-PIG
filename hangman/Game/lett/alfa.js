@@ -165,6 +165,42 @@ function handleLetterClick(evt) {
     }
   }
 }
+let antallHint = 0;
+let selectedChar;
+function hint() {
+  for (let i = 0; i < 15; i++) {
+    if (guess[i] == "_") {
+      selectedChar = secretWord[i];
+      console.log("ok " + selectedChar);
+      for (let j = 1; j < 30; j++) {
+        if (document.getElementById("knapp" + j).innerHTML == selectedChar) {
+          document.getElementById("knapp" + j).style.backgroundColor = "white";
+          document.getElementById("knapp" + j).style.opacity = "0.5";
+          $("#knapp" + j).prop("disabled", true);
+          console.log("Funksjonen blir kjørt");
+          for (let h = 0; h < secretWord.length; h++) {
+            if (secretWord[h] == selectedChar) {
+              guess = endreBokstav(guess, h, selectedChar);
+              document.getElementById("guess").innerHTML = guess;
+            }
+          }
+        }
+      }
+      document.getElementById("hintKnapp").onclick = bruktOppHint;
+      break;
+    }
+  }
+}
+
+function endreBokstav(str, index, chr) {
+  if (index > str.length - 1) return str;
+  return str.substr(0, index) + chr + str.substr(index + 1);
+}
+
+function bruktOppHint() {
+  alert("Du har ikke flere hint!");
+}
+
 let blng;
 function sprekk() {
   blng = document.getElementById("ballong" + wrongCount);
