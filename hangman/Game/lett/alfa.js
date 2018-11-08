@@ -195,7 +195,13 @@ function sprekk() {
   blng.src = "../Bilder/blng.gif";
   let number = getRandomInt(3);
   document.getElementById("pop" + number).play();
+
   setTimeout(removeBlng, 300);
+  setTimeout(function() {
+    if (wrongCount === 9) {
+      document.getElementById("streken").style.display = "none";
+    }
+  }, 100);
 }
 
 function removeBlng() {
@@ -206,12 +212,13 @@ function spillLyd() {
   document.getElementById("guess").innerHTML = secretWord; //Skriver ut hva det riktige ordet var
   document.getElementById("guess").style.color = "red"; //Skriver ut riktig ord i rødt
 
-  document.getElementById("lydFil").pause();
 
-  pauseAnimasjoner();
-  document.getElementById("alert").play();
-  setTimeout(tapt, 2000);
-}
+    document.getElementById("lydFil").pause();
+
+    pauseAnimasjoner();
+    document.getElementById("alert").play();
+    setTimeout(tapt, 2000);
+  }
 let skyPause;
 function pauseAnimasjoner() {
   document.getElementById("gob").style.webkitAnimationPlayState = "paused";
@@ -291,6 +298,10 @@ function grisTapFall() {
   gressBakgrunn = document.getElementById("gress");
   gressBakgrunn.style.display = "block";
   gressBakgrunn.style.animation = "tapLanding 0.5s linear 0s normal 1 forwards";
+  setTimeout(function() {
+    document.getElementById("splat").play();
+    document.getElementById("grisen").src = "../Bilder/grisen.png";
+  }, 150);
   setTimeout(boksAnimasjonTap, 2500);
 }
 
