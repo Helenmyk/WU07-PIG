@@ -1,3 +1,9 @@
+window.onbeforeunload = function() {
+  window.setTimeout(function() {
+    location.href = "../Forside/forside.html";
+  }, 0);
+  window.onbeforeunload = null; // necessary to prevent infinite loop, that kills your browser
+};
 let flyttingBokstaver = document.getElementById("letters");
 window.addEventListener("resize", function() {
   //Lytter til størrelsen på skjermen/vinduet flytter tastaturet litt opp hvis skjermen er mindre enn 1000px
@@ -71,10 +77,8 @@ let secretWord, wrongCount, guess, letter, contains; //definert noen globale var
 let $guess = $("#guess"); //henter elementet guess med id
 let $message = $("#message"); //henter elementet message med id
 
-/*------------- event listeners -------------*/
-$("#letters").on("click", handleLetterClick); //når diven letters blir tryky på kjøres funksjonen handleLetterClick
+$("#letters").on("click", handleLetterClick); //når diven letters blir trykt på kjøres funksjonen handleLetterClick
 
-/*------------- functions -------------*/
 initialize(); //kjører funksjonen intitialize når siden lastes.
 
 function initialize() {
@@ -153,7 +157,6 @@ function handleLetterClick(evt) {
       }
 
       $(evt.target).prop("disabled", true);
-      $("#reset").prop("disabled", false);
       render();
     }
   }
@@ -163,7 +166,6 @@ function sprekk() {
   blng = document.getElementById("ballong" + wrongCount);
   blng.src = "../Bilder/blng.gif";
   let number = getRandomInt(3);
-  console.log(number);
   document.getElementById("pop" + number).play();
   setTimeout(removeBlng, 300);
 }
@@ -225,7 +227,7 @@ function grisAnimasjonVinn() {
   grisPos.style.top = grisPos.offsetTop + "px";
   document.getElementById("gob").style.animation =
     "animerGris 2.5s ease-in-out 0s normal 1 forwards";
-  setTimeout(boksAnimasjonVinn, 4500);
+  setTimeout(boksAnimasjonVinn, 3700);
 }
 
 function boksAnimasjonVinn() {
