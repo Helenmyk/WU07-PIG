@@ -212,6 +212,9 @@ function sprekk() {
 
 function removeBlng() {
   blng.style.display = "none";
+  if (wrongCount === 9) {
+    document.getElementById("streken").style.display = "none";
+  }
 }
 
 function spillLyd() {
