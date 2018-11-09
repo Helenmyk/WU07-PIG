@@ -135,6 +135,7 @@ function handleLetterClick(evt) {
         console.log(secretWord);
         if (secretWord.includes(letter)) {
           //hvis secretWord inneholder den trykte bokstaven kjøres if-en
+          document.getElementById("ding").play();
           contains = true; //fikser bug for render funksjonen der flere ballonger sprakk samtidig
           let pos = secretWord.indexOf(letter); //
           while (pos >= 0) {

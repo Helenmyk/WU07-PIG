@@ -428,6 +428,7 @@ button:hover {
   font-size: 2.5vw;
   text-align: center;
   font-weight: bold;
+  padding: 1vw;
 }
 /* Styling til teksten i restart-boksen */
 .infoRestart {
