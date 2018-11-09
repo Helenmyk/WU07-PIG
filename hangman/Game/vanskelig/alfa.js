@@ -59,7 +59,6 @@ var words = [
   "KLAR SOM ET EGG",
   "FRI SOM FUGLEN",
   "LOPPER I BLODET",
-  "SULTEN SOM ULV"
 ];
 
 let secretWord, wrongCount, guess, letter, contains; //definert noen globale variabler
