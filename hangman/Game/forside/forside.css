@@ -115,10 +115,10 @@ body {
 #grisen {
   z-index: 400;
   position: absolute;
-  margin-top: -18vw;
-  margin-left: 3vw;
+  margin-top: 1vw;
+  margin-left: 45vw;
   height: auto;
-  width: 130vw;
+  width: 50vw;
   user-select: none;
   -webkit-transform: scale(0.5); /* Saf3.1+, Chrome */
   -moz-transform: scale(0.5); /* FF3.5+ */
