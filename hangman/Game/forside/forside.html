@@ -7,24 +7,27 @@
 </head>
 
 <body>
+  <!-- div som alt av innhold på siden ligger i -->
   <div class="parent">
 
-  <img src="../Bilder/logo.png" id="logo" />
-  <img id="grisen" src="../Bilder/grisen.png" />
-  <img src="../Bilder/gress.png" id="gress" />
+  <!-- src til bilde av logo, gris og gress -->
+  <img src="../Bilder/logo.png" id="logo" alt="Pop Pig Logo"/>
+  <img id="grisen" src="../Bilder/grisen.png" alt="Gris"/>
+  <img src="../Bilder/gress.png" id="gress" alt="Gress"/>
 
+   <!-- div som menyknapper og lyd-bildet ligger i for posisjon -->
    <div class="menyKnappDiv">
 
-      <!-- Bildeknapp som kjører en funskjon om å skru bakgrunnsmusikken av eller på -->
-      <input id="lydBilde" type="image" src="../Bilder/speaker.png" onclick="ingenLyd()"></button>
+      <!-- bildeknapp med en funskjon om å skru bakgrunnsmusikken av eller på -->
+      <input id="lydBilde" type="image" src="../Bilder/speaker.png" onclick="ingenLyd()" alt="Lydbilde (av/på)"></button>
 
-      <!-- Bakgrunnsmusikken som spilles av automatisk -->
+      <!-- bakgrunnsmusikken som spilles av automatisk -->
       <audio id="lydFil" loop autoplay preload="auto">
       <source src="../Lydeffekter/HappyBGM.mp3" type="audio/mpeg">
        Your browser does not support the audio element.
       </audio>
 
-
+ <!-- alle de forskjellige meny-valgene -->
   <button id="start" onclick="startSpill()" class="menyKnapp">Start spill</button>
   <br>
   <button id="regler" onclick="regler()" id="spillRegler" class="menyKnapp">Regler</button>
@@ -33,16 +36,21 @@
 
   </div>
 
+<!-- div for vanskelighetsgrad-boksen som kommer opp ved trykk på "start spill" -->
 <div id="vGrad" class="vanskelighetsGrad">
   <p id="infoVGrad">Alle ord og uttrykk er dyrerelatert! </p>
   <div>
-<button onclick="lett()" class="menyKnapp" id="lett">ORD</button>
-<button onclick="vanskelig()" class="menyKnapp" id="vanskelig">UTTRYKK</button>
-<button onclick="tilbakeVGrad()" class="menyKnapp" id="tilbakeKnapp">Tilbake</button>
+    <!-- de forskjellige vanskelighetsgrad-knappene med tilbakeknapp -->
+   <button onclick="lett()" class="menyKnapp" id="lett">ORD</button>
+   <button onclick="vanskelig()" class="menyKnapp" id="vanskelig">UTTRYKK</button>
+   <button onclick="tilbakeVGrad()" class="menyKnapp" id="tilbakeKnapp">Tilbake</button>
  </div>
 </div>
+
+<!-- div som info-boksene ligger i for plassering -->
 <div id="infoBokser">
 
+<!-- div som regel-boksen ligger i -->
 <div id="menyBoksRegler">
 <h2 class="boksOverskrift">REGLER</h2>
 <p class="infoTekst">«Pop Pig» er basert på det tradisjonelle hangman-spillet, men med en liten vri.
@@ -58,11 +66,12 @@
 
     Gjett ordet på så få bokstaver som mulig. Klarer du å få Billie Bacon hjem
     til gården?
-
+    <!-- Tilbakeknapp, regler -->
     <button onclick="regler()" class="menyKnapp" id="tilbakeKnapp">Tilbake</button>
    </p>
 </div>
 
+<!-- div som historie-boksen ligger i -->
 <div id="menyBoksHistorie">
   <h2 class="boksOverskrift">HISTORIE</h2>
   <p class="infoTekst">Grisen «Billie Bacon» har rotet seg bort fra gården –
@@ -70,13 +79,12 @@
 
      Grisen er ensom, alene og savner de andre dyrene. Klarer du å
      hjelpe Billie Bacon tilbake til gården?
+     <!-- tilbakeknapp, historie -->
       <button onclick="historie()" class="menyKnapp" id="tilbakeKnapp">Tilbake</button>
    </p>
   </div>
  </div>
 </div>
-
-  <!--<img src="ballongani.gif"/> -->
 </body>
 <script type="text/javascript" src="forside.js"></script>
 </html>
