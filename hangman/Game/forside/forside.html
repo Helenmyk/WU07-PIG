@@ -7,33 +7,53 @@
 </head>
 
 <body>
+  <!-- div som alt av innhold på siden ligger i -->
   <div class="parent">
-  <div class="alleElementer">
-  <img id="grisen" src="../Bilder/grisen.png" />
-  <img src="../Bilder/gress.png" id="gress" />
-  <img src="../Bilder/logo.png" id="logo" />
 
-  <div class="menyKnapper">
+  <!-- src til bilde av logo, gris og gress -->
+  <img src="../Bilder/logo.png" id="logo" alt="Pop Pig Logo"/>
+  <img id="grisen" src="../Bilder/grisen.png" alt="Gris"/>
+  <img src="../Bilder/gress.png" id="gress" alt="Gress"/>
 
-  <img id="lydBilde" src="../Bilder/speaker.png">
+   <!-- div som menyknapper og lyd-bildet ligger i for posisjon -->
+   <div class="menyKnappDiv">
 
-  <button id="start" onclick="startSpill()"  class="menyKnapp">Start spill</button>
+      <!-- bildeknapp med en funskjon om å skru bakgrunnsmusikken av eller på -->
+      <input id="lydBilde" type="image" src="../Bilder/speaker.png" onclick="ingenLyd()" alt="Lydbilde (av/på)"></button>
+
+      <!-- bakgrunnsmusikken som spilles av automatisk -->
+      <audio id="lydFil" loop autoplay preload="auto">
+      <source src="../Lydeffekter/HappyBGM.mp3" type="audio/mpeg">
+       Your browser does not support the audio element.
+      </audio>
+
+ <!-- alle de forskjellige meny-valgene -->
+  <button id="start" onclick="startSpill()" class="menyKnapp">Start spill</button>
   <br>
   <button id="regler" onclick="regler()" id="spillRegler" class="menyKnapp">Regler</button>
   <br>
   <button id="historie" onclick="historie()" id="spillHistorie" class="menyKnapp">Historie</button>
 
   </div>
-</div>
+
+<!-- div for vanskelighetsgrad-boksen som kommer opp ved trykk på "start spill" -->
 <div id="vGrad" class="vanskelighetsGrad">
-<button onclick="lett()" class="vanskeligKnapp" id="lett">Lett</button><br />
-<button onclick="vanskelig()" class="vanskeligKnapp" id="vanskelig">Vanskelig</button>
+  <p id="infoVGrad">Alle ord og uttrykk er dyrerelatert! </p>
+  <div>
+    <!-- de forskjellige vanskelighetsgrad-knappene med tilbakeknapp -->
+   <button onclick="lett()" class="menyKnapp" id="lett">ORD</button>
+   <button onclick="vanskelig()" class="menyKnapp" id="vanskelig">UTTRYKK</button>
+   <button onclick="tilbakeVGrad()" class="menyKnapp" id="tilbakeKnapp">Tilbake</button>
+ </div>
 </div>
+
+<!-- div som info-boksene ligger i for plassering -->
 <div id="infoBokser">
 
+<!-- div som regel-boksen ligger i -->
 <div id="menyBoksRegler">
 <h2 class="boksOverskrift">REGLER</h2>
-<p>«Pop Pig» er basert på det tradisjonelle hangman-spillet, men med en liten vri.
+<p class="infoTekst">«Pop Pig» er basert på det tradisjonelle hangman-spillet, men med en liten vri.
     Ordet man skal gjette seg frem til vises med en rad med streker, der hvor en
     strek tilsvarer én bokstav.<br><br>
 
@@ -46,35 +66,25 @@
 
     Gjett ordet på så få bokstaver som mulig. Klarer du å få Billie Bacon hjem
     til gården?
+    <!-- Tilbakeknapp, regler -->
+    <button onclick="regler()" class="menyKnapp" id="tilbakeKnapp">Tilbake</button>
    </p>
-   <br>
-   <br>
-   <button class="menyKnapp" name="tilbake" onclick="regler()">Tilbake</button>
-    </p>
 </div>
 
+<!-- div som historie-boksen ligger i -->
 <div id="menyBoksHistorie">
   <h2 class="boksOverskrift">HISTORIE</h2>
-  <p>Grisen «Billie Bacon» har rotet seg bort fra gården –
-     heldigvis har han funnet seg noen heliumballonger!<br><br>
+  <p class="infoTekst">Grisen «Billie Bacon» har rotet seg bort fra gården –
+     heldigvis har den funnet seg noen heliumballonger!<br><br>
 
-     Han er ensom, alene og savner de andre dyrene. Klarer du å
+     Grisen er ensom, alene og savner de andre dyrene. Klarer du å
      hjelpe Billie Bacon tilbake til gården?
+     <!-- tilbakeknapp, historie -->
+      <button onclick="historie()" class="menyKnapp" id="tilbakeKnapp">Tilbake</button>
    </p>
-     <br>
-     <br>
-     <button class="menyKnapp" name="tilbake" onclick="historie()">Tilbake</button>
-      </p>
+  </div>
+ </div>
 </div>
-</div>
-
-</div>
-<div id="border1" class="side1"></div>
-<div id="border2" class="side2"></div>
-<div id="border3" class="side3"></div>
-<div id="border4" class="side4"></div>
-
-  <!--<img src="ballongani.gif"/> -->
 </body>
 <script type="text/javascript" src="forside.js"></script>
 </html>

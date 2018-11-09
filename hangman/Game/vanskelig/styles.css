@@ -2,7 +2,6 @@ html,
 body {
   width: 100%;
   height: 100%;
-  display: flex;
   background-color: #000;
   overflow: hidden;
 }
@@ -12,75 +11,24 @@ body {
   padding: 0;
 }
 
-.side1 {
-  position: absolute;
-  display: flex;
-  height: 5%;
-  width: 100%;
-  background: black;
-  z-index: 500;
-}
-
-.side2 {
-  position: absolute;
-  display: flex;
-  bottom: 0;
-  height: 5%;
-  width: 100%;
-  background: black;
-  z-index: 500;
-}
-
-.side3 {
-  position: absolute;
-  display: flex;
-  right: 0;
-  height: 100%;
-  width: 15%;
-  background: black;
-  z-index: 500;
-}
-
-.side4 {
-  position: absolute;
-  display: flex;
-  left: 0;
-  height: 100%;
-  width: 15%;
-  background: black;
-  z-index: 500;
-}
-
 .parent {
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   width: 100%;
+  height: 100%;
+  margin: auto;
+  position: absolute;
   background: -webkit-linear-gradient(top, #7ec0ee 0%, #fff 100%);
   background: -linear-gradient(top, #7ec0ee 0%, #fff 100%);
   background: -moz-linear-gradient(top, #7ec0ee 0%, #fff 100%);
 }
 
 .grisOgBallong {
-  margin-left: 45%;
-  max-width: 100%;
-  max-height: 100%;
-  animation: MoveUpDown 2.5s linear infinite;
-  position: relative;
-}
-
-.vanskelighetsGrad {
+  margin-top: 0%;
+  margin-left: 46%;
   position: absolute;
-  top: -500px;
-  margin-left: 30%;
-  width: 40%;
-  height: 60%;
-  display: block;
-  border: solid 1px;
-  background-color: aliceblue;
-  opacity: 0.9;
-  z-index: 499;
+  z-index: 15;
+  animation: MoveUpDown 2.5s linear infinite;
 }
 
 #lett {
@@ -110,10 +58,10 @@ body {
 
 @keyframes testAnimation {
   0% {
-    top: -500px;
+    top: -100vw;
   }
   100% {
-    top: 100px;
+    top: 15vw;
   }
 }
 @keyframes MoveUpDown {
@@ -125,68 +73,107 @@ body {
     top: 100px;
   }
 }
+
+@keyframes skyFallAnimasjon {
+  100% {
+    top: -800px;
+  }
+}
+
+.ballonger {
+  width: 6vw;
+  height: auto;
+}
 #ballong1 {
   position: absolute;
-  left: -5px;
-  top: -15px;
+  left: 0%;
+  top: -39%;
   user-select: none;
 }
 #ballong2 {
   position: absolute;
-  left: 25px;
-  top: -15px;
+  left: 23%;
+  top: -33%;
   user-select: none;
 }
 #ballong3 {
   position: absolute;
-  left: 10px;
-  top: -25px;
   user-select: none;
+  left: -26%;
+  top: -33%;
 }
 #ballong4 {
   position: absolute;
-  left: 10px;
-  top: 0px;
+  left: 0%;
+  top: -23%;
   user-select: none;
 }
 #ballong5 {
   position: absolute;
-  left: 35px;
-  top: 0px;
   user-select: none;
+  left: -45%;
+  top: -21%;
 }
 #ballong6 {
   position: absolute;
-  left: -15px;
-  top: 0px;
+  left: 45%;
+  top: -21%;
   user-select: none;
 }
 #ballong7 {
   position: absolute;
-  left: 10px;
-  top: 20px;
+  left: 29%;
+  top: -13%;
+  user-select: none;
+}
+#ballong8 {
+  position: absolute;
+  left: -29%;
+  top: -13%;
+  user-select: none;
+}
+#ballong9 {
+  position: absolute;
+  left: 0%;
+  top: -9%;
   user-select: none;
 }
 
 #grisen {
-  position: absolute;
-  margin-top: -170px;
-  margin-left: -230px;
+  position: relative;
+  top: 0vw;
+  margin-top: 100%;
+  left: 1.4%;
   user-select: none;
-  -webkit-transform: scale(0.15); /* Saf3.1+, Chrome */
-  -moz-transform: scale(0.15); /* FF3.5+ */
-  -ms-transform: scale(0.15); /* IE9 */
-  -o-transform: scale(0.15); /* Opera 10.5+ */
-  transform: scale(0.15);
+  width: 6.3vw;
+  height: auto;
+}
+#streken {
+  z-index: 0;
+  position: absolute;
+  top: 0vw;
+  margin-top: 30%;
+  left: 49%;
+  user-select: none;
+  height: 10vw;
+  width: auto;
 }
 
 .sky {
   position: absolute;
   user-select: none;
   right: -300px;
+  z-index: 10;
+}
+.fallSky {
+  position: absolute;
+  user-select: none;
+  display: none;
+  z-index: 10;
 }
 
 #sky1 {
+  top: 0px;
   width: 200px;
   animation: rightLeft 40s linear infinite;
 }
@@ -203,6 +190,23 @@ body {
   animation: rightLeft 40s linear infinite;
   animation-delay: 25s;
 }
+#sky4 {
+  top: 100px;
+  width: 150px;
+  right: 250px;
+  animation: initialRightLeft 30s linear 1 forwards;
+}
+#sky5 {
+  top: 160px;
+  width: 280px;
+  right: 550px;
+  animation: initialRightLeft 30s linear 1 forwards;
+}
+#sky6 {
+  top: 1500px;
+  left: 5vw;
+  width: 500px;
+}
 
 @keyframes rightLeft {
   0% {
@@ -212,6 +216,39 @@ body {
     right: 1500px;
   }
 }
+@keyframes initialRightLeft {
+  100% {
+    right: 1500px;
+  }
+}
+@keyframes keyboardOut {
+  0% {
+    margin-top: 350px;
+  }
+  100% {
+    margin-top: 1000px;
+  }
+}
+@keyframes animerSky {
+  100% {
+    top: -800px;
+  }
+}
+@keyframes animerLanding {
+  100% {
+    top: 0vw;
+  }
+}
+@keyframes tapLanding {
+  100% {
+    top: 13vw;
+  }
+}
+@keyframes animerGris {
+  100% {
+    top: 25vw;
+  }
+}
 h1 {
   color: #ff69b4;
   font-family: "Indie Flower", cursive;
@@ -219,25 +256,48 @@ h1 {
 }
 #guess {
   letter-spacing: 17px;
-  font-size: 32px;
+  font-size: 4vw;
   height: 143px;
+  margin-left: 25px;
   line-height: 184px;
   margin-top: -30px;
 }
+#gaard {
+  position: absolute;
+  z-index: 1;
+  top: 100vw;
+  width: 100vw;
+  height: auto;
+  display: none;
+}
+#gress {
+  position: absolute;
+  z-index: 1;
+  top: 100vw;
+  width: 100vw;
+  height: auto;
+  display: none;
+}
 
 #letters {
-  margin-top: 350px;
-  margin-left: -240px;
+  z-index: 20;
+  margin-top: 23%;
+  margin-bottom: 10%;
+  margin-left: 10%;
+  margin-right: 11%;
+  position: absolute;
   text-align: center;
   user-select: none;
+  font-family: "Indie Flower";
 }
 
 .letter-button {
   user-select: none;
   border-radius: 8px;
-  padding: 10px 15px;
-  font-size: 20px;
+  padding: 0.5% 3%;
+  font-size: 2vw;
   font-weight: bold;
+  outline: 0;
   white-space: nowrap;
   background-color: white;
   font-family: "Indie Flower";
@@ -265,4 +325,96 @@ button:hover {
   margin-top: -181px;
   font-family: "Indie Flower", cursive;
   font-size: 24px;
+}
+#lydBilde {
+  z-index: 700;
+  position: absolute;
+  margin-left: -3.3vw;
+  margin-top: -4vw;
+  width: 20vw;
+  user-select: none;
+  outline: 0;
+  -webkit-transform: scale(0.15); /* Saf3.1+, Chrome */
+  -moz-transform: scale(0.15); /* FF3.5+ */
+  -ms-transform: scale(0.15); /* IE9 */
+  -o-transform: scale(0.15); /* Opera 10.5+ */
+  transform: scale(0.15);
+}
+#hintKnapp {
+  z-index: 700;
+  position: absolute;
+  margin-left: -3.3vw;
+  margin-top: 0vw;
+  width: 20vw;
+  user-select: none;
+  outline: 0;
+  -webkit-transform: scale(0.15); /* Saf3.1+, Chrome */
+  -moz-transform: scale(0.15); /* FF3.5+ */
+  -ms-transform: scale(0.15); /* IE9 */
+  -o-transform: scale(0.15); /* Opera 10.5+ */
+  transform: scale(0.15);
+}
+
+/* Div som vanskelighetsgrad-menyen ligger i */
+.restartBoks {
+  z-index: 499;
+  position: absolute;
+  top: -200vw;
+  margin-top: 0.1vw;
+  margin-left: 26vw;
+  width: 45vw;
+  height: 22vw;
+  display: block;
+  border: solid 0.1vw;
+  background-color: #a3baff;
+  opacity: 0.99;
+}
+/* Animasjon til vanskelighetsgrad-menyen */
+@keyframes animerBoks {
+  0% {
+    top: -100vw;
+  }
+  100% {
+    top: 15vw;
+  }
+}
+#tilMeny {
+  margin-top: 1vw;
+}
+/* Styling til alle knapper */
+.menyKnapp {
+  position: relative;
+  background-color: #6b90ff;
+  color: black;
+  border-radius: 0.8vw;
+  display: block;
+  width: 10vw;
+  border: 0.15vw solid #002eb7;
+  padding: 0.2vw;
+  opacity: 0.8;
+  user-select: none;
+  margin-left: 18vw;
+  outline: 0;
+  height: auto;
+  font-size: 1.5vw;
+}
+/* Styling til alle knapper når musepekeren ligger over */
+.menyKnapp:hover {
+  background-color: #3255bc;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+}
+/* Styling til overskriften i restart-boksen */
+.infoRestartOverskrift {
+  font-family: Helvetica;
+  font-size: 2.5vw;
+  text-align: center;
+  font-weight: bold;
+}
+/* Styling til teksten i restart-boksen */
+.infoRestart {
+  font-family: Helvetica;
+  font-size: 1.5vw;
+  text-align: center;
 }
