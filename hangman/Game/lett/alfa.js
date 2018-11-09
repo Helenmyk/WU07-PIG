@@ -215,6 +215,7 @@ function spillLyd() {
 
   pauseAnimasjoner();
   document.getElementById("alert").play();
+  document.getElementById("grisen").src = "../Bilder/overrasket.png";
   setTimeout(tapt, 2000);
 }
 let skyPause;
