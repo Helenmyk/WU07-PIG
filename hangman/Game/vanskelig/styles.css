@@ -355,7 +355,7 @@ button:hover {
   transform: scale(0.15);
 }
 
-/* Div som vanskelighetsgrad-menyen ligger i */
+/* Div som restart-menyen ligger i */
 .restartBoks {
   z-index: 499;
   position: absolute;
@@ -369,7 +369,7 @@ button:hover {
   background-color: #a3baff;
   opacity: 0.99;
 }
-/* Animasjon til vanskelighetsgrad-menyen */
+/* Animasjon til restart-menyen */
 @keyframes animerBoks {
   0% {
     top: -100vw;
