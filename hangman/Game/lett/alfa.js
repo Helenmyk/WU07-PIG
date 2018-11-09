@@ -239,12 +239,14 @@ function pauseAnimasjoner() {
 let tastatur = document.getElementById("letters");
 
 function vinnFunksjon() {
+  document.getElementById("lydFil").pause();
   document.getElementById("guess").style.color = "green";
   document.getElementById("vinnLyd").play();
   setTimeout(vinnFunksjon2, 2300);
 }
 
 function vinnFunksjon2() {
+  document.getElementById("vinnSang").play();
   pauseAnimasjoner();
   tastatur.style.animation = "keyboardOut 0.7s ease-out 0s normal 1 forwards";
   setTimeout(skyAnimasjonVinn, 1000);

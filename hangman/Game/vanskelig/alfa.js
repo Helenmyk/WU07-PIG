@@ -25,7 +25,7 @@ window.addEventListener("resize", function() {
 
 //Funskjon som skrur bakgrunnsmusikken av på siden
 function ingenLyd() {
-  var lyd = document.getElementById("lydFil");
+  let lyd = document.getElementById("lydFil");
   if (lyd.muted == true) {
     //Sjekker om lyden er av
     lyd.muted = false; //Skrur på lyden dersom den er av
@@ -220,7 +220,6 @@ function removeBlng() {
 function spillLyd() {
   document.getElementById("guess").innerHTML = secretWord; //Skriver ut hva det riktige ordet var
   document.getElementById("guess").style.color = "red"; //Skriver ut riktig ord i rødt
-
   document.getElementById("lydFil").pause();
 
   pauseAnimasjoner();
@@ -240,12 +239,14 @@ function pauseAnimasjoner() {
 let tastatur = document.getElementById("letters");
 
 function vinnFunksjon() {
+  document.getElementById("lydFil").pause();
   document.getElementById("guess").style.color = "green";
   document.getElementById("vinnLyd").play();
   setTimeout(vinnFunksjon2, 2300);
 }
 
 function vinnFunksjon2() {
+  document.getElementById("vinnSang").play();
   pauseAnimasjoner();
   tastatur.style.animation = "keyboardOut 0.7s ease-out 0s normal 1 forwards";
   setTimeout(skyAnimasjonVinn, 1000);
