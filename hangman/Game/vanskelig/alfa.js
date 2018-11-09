@@ -58,7 +58,7 @@ var words = [
   "PIPE SOM EN MUS",
   "KLAR SOM ET EGG",
   "FRI SOM FUGLEN",
-  "LOPPER I BLODET",
+  "LOPPER I BLODET"
 ];
 
 let secretWord, wrongCount, guess, letter, contains; //definert noen globale variabler
@@ -123,6 +123,7 @@ function render() {
     setTimeout(spillLyd, 700);
   }
 }
+let dingSound = 1;
 let pauseTid = true;
 function handleLetterClick(evt) {
   if (pauseTid == true) {
@@ -136,6 +137,11 @@ function handleLetterClick(evt) {
         console.log(secretWord);
         if (secretWord.includes(letter)) {
           //hvis secretWord inneholder den trykte bokstaven kjøres if-en
+          if (dingSound == 3) {
+            dingSound = 1;
+          }
+          document.getElementById("ding" + dingSound).play();
+          dingSound++;
           contains = true; //fikser bug for render funksjonen der flere ballonger sprakk samtidig
           let pos = secretWord.indexOf(letter); //
           while (pos >= 0) {
