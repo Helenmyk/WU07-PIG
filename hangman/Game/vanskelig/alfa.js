@@ -124,35 +124,41 @@ function render() {
     setTimeout(spillLyd, 700);
   }
 }
-
+let pauseTid = true;
 function handleLetterClick(evt) {
-  if (wrongCount === 9) return; //hvis spiller har tapt kjøres ikke resten av funskjonen
-  for (i = 1; i < 30; i++) {
-    if (evt.target.id == "knapp" + i) {
-      //fikser bug der flere ting enn bare knapper kunne bli trykket på for å kjøre koden under
-      evt.target.style.backgroundColor = "white"; //endrer farge på den trykte knappen
-      evt.target.style.opacity = "0.5"; //gjør den trykte knappen mer gjennomsiktig
-      letter = evt.target.textContent; //setter variabelen letter lik verdien av den trykte knappen
-      console.log(secretWord);
-      if (secretWord.includes(letter)) {
-        //hvis secretWord inneholder den trykte bokstaven kjøres if-en
-        contains = true; //fikser bug for render funksjonen der flere ballonger sprakk samtidig
-        let pos = secretWord.indexOf(letter); //
-        while (pos >= 0) {
-          //endrer understreken i guess til den trykte knappen
-          guess = guess.split("");
-          guess[pos] = letter;
-          guess = guess.join("");
-          pos = secretWord.indexOf(letter, pos + 1);
+  if (pauseTid == true) {
+    if (wrongCount === 9) return; //hvis spiller har tapt kjøres ikke resten av funskjonen
+    for (i = 1; i < 30; i++) {
+      if (evt.target.id == "knapp" + i) {
+        //fikser bug der flere ting enn bare knapper kunne bli trykket på for å kjøre koden under
+        evt.target.style.backgroundColor = "white"; //endrer farge på den trykte knappen
+        evt.target.style.opacity = "0.5"; //gjør den trykte knappen mer gjennomsiktig
+        letter = evt.target.textContent; //setter variabelen letter lik verdien av den trykte knappen
+        console.log(secretWord);
+        if (secretWord.includes(letter)) {
+          //hvis secretWord inneholder den trykte bokstaven kjøres if-en
+          contains = true; //fikser bug for render funksjonen der flere ballonger sprakk samtidig
+          let pos = secretWord.indexOf(letter); //
+          while (pos >= 0) {
+            //endrer understreken i guess til den trykte knappen
+            guess = guess.split("");
+            guess[pos] = letter;
+            guess = guess.join("");
+            pos = secretWord.indexOf(letter, pos + 1);
+          }
+        } else {
+          contains = false;
+          wrongCount++;
         }
-      } else {
-        contains = false;
-        wrongCount++;
-      }
 
-      $(evt.target).prop("disabled", true);
-      render();
+        $(evt.target).prop("disabled", true);
+        render();
+      }
     }
+    pauseTid = false;
+    setTimeout(function() {
+      pauseTid = true;
+    }, 600);
   }
 }
 let antallHint = 0;
@@ -175,6 +181,9 @@ function hint() {
             }
           }
         }
+      }
+      if (guess == secretWord) {
+        setTimeout(vinnFunksjon, 700);
       }
       document.getElementById("hintKnapp").onclick = bruktOppHint;
       break;
