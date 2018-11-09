@@ -148,6 +148,7 @@ body {
   width: 6.3vw;
   height: auto;
 }
+
 #streken {
   z-index: 0;
   position: absolute;
@@ -257,10 +258,26 @@ h1 {
 #gaard {
   position: absolute;
   z-index: 1;
+  width: 100vw;
+  height: auto;
+}
+#gaardOgmamma {
+  position: absolute;
+  z-index: 1;
   top: 100vw;
   width: 100vw;
   height: auto;
   display: none;
+}
+#mammaGris {
+  position: absolute;
+  z-index: 2;
+  top: 0vw;
+  margin-top: 33vw;
+  left: 75vw;
+  user-select: none;
+  width: 10vw;
+  height: auto;
 }
 #gress {
   position: absolute;
