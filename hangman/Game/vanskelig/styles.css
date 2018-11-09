@@ -254,14 +254,6 @@ h1 {
   font-family: "Indie Flower", cursive;
   font-size: 60px;
 }
-#guess {
-  letter-spacing: 17px;
-  font-size: 4vw;
-  height: 143px;
-  margin-left: 25px;
-  line-height: 184px;
-  margin-top: -30px;
-}
 #gaard {
   position: absolute;
   z-index: 1;
@@ -278,19 +270,25 @@ h1 {
   height: auto;
   display: none;
 }
-
 #letters {
   z-index: 20;
   margin-top: 23%;
   margin-bottom: 10%;
-  margin-left: 10%;
+  margin-left: 14%;
   margin-right: 11%;
   position: absolute;
   text-align: center;
   user-select: none;
   font-family: "Indie Flower";
 }
-
+#guess {
+  letter-spacing: 17px;
+  font-size: 4vw;
+  height: 143px;
+  margin-left: 25px;
+  line-height: 184px;
+  margin-top: -30px;
+}
 .letter-button {
   user-select: none;
   border-radius: 8px;
