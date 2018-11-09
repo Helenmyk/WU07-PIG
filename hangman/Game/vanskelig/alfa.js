@@ -312,9 +312,11 @@ function boksAnimasjonTap() {
 }
 
 function tilMeny() {
-  location.href = "../Forside/forside.html";
+  location.href =
+    "http://folk.ntnu.no/marilhan/hangman/Game/forside/forside.html";
 }
 
 function spillIgjen() {
-  location.href = "../Lett/index.html";
+  location.href =
+    "http://folk.ntnu.no/marilhan/hangman/Game/vanskelig/index.html";
 }

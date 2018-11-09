@@ -211,13 +211,12 @@ function spillLyd() {
   document.getElementById("guess").innerHTML = secretWord; //Skriver ut hva det riktige ordet var
   document.getElementById("guess").style.color = "red"; //Skriver ut riktig ord i rødt
 
+  document.getElementById("lydFil").pause();
 
-    document.getElementById("lydFil").pause();
-
-    pauseAnimasjoner();
-    document.getElementById("alert").play();
-    setTimeout(tapt, 2000);
-  }
+  pauseAnimasjoner();
+  document.getElementById("alert").play();
+  setTimeout(tapt, 2000);
+}
 let skyPause;
 function pauseAnimasjoner() {
   document.getElementById("gob").style.webkitAnimationPlayState = "paused";
@@ -311,9 +310,10 @@ function boksAnimasjonTap() {
 }
 
 function tilMeny() {
-  location.href = "../Forside/forside.html";
+  location.href =
+    "http://folk.ntnu.no/marilhan/hangman/Game/forside/forside.html";
 }
 
 function spillIgjen() {
-  location.href = "../Lett/index.html";
+  location.href = "http://folk.ntnu.no/marilhan/hangman/Game/lett/index.html";
 }
