@@ -299,8 +299,10 @@ function grisTapFall() {
   gressBakgrunn.style.animation = "tapLanding 0.5s linear 0s normal 1 forwards";
   setTimeout(function() {
     document.getElementById("splat").play();
-    document.getElementById("grisen").src = "../Bilder/grisen.png";
-  }, 150);
+    setTimeout(function() {
+      document.getElementById("grisen").src = "../Bilder/skvist.png";
+    }, 250);
+  }, 100);
   setTimeout(boksAnimasjonTap, 2500);
 }
 
