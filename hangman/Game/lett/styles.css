@@ -206,6 +206,7 @@ body {
   top: 1500px;
   left: 5vw;
   width: 500px;
+  display: none;
 }
 
 @keyframes rightLeft {
@@ -246,7 +247,7 @@ body {
 }
 @keyframes animerGris {
   100% {
-    top: 25vw;
+    top: 27vw;
   }
 }
 h1 {

@@ -136,9 +136,9 @@ function handleLetterClick(evt) {
         console.log(secretWord);
         if (secretWord.includes(letter)) {
           //hvis secretWord inneholder den trykte bokstaven kjøres if-en
-         if (dingSound == 3) {
-           dingSound = 1;
-         }
+          if (dingSound == 3) {
+            dingSound = 1;
+          }
           document.getElementById("ding" + dingSound).play();
           dingSound++;
           contains = true; //fikser bug for render funksjonen der flere ballonger sprakk samtidig
@@ -293,8 +293,8 @@ function tapt() {
 }
 
 function grisAnimasjonTap() {
-  for (let j = 1; j < 6; j++) {
-    skyPos = document.getElementById("sky" + j);
+  for (let i = 1; i < 6; i++) {
+    skyPos = document.getElementById("sky" + i);
     skyPos.style.left = skyPos.offsetLeft + "px";
     skyPos.style.animation = "animerSky 1.8s ease-in 0s normal 1 forwards";
   }
