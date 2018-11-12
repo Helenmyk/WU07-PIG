@@ -29,10 +29,10 @@ function ingenLyd() {
   if (lyd.muted == true) {
     //Sjekker om lyden er av
     lyd.muted = false; //Skrur på lyden dersom den er av
-    lydBilde.src = "../Bilder/speaker.png"; //Gir et bilde til knappen
+    lydBilde.src = "../Bilder/speaker2.png"; //Gir et bilde til knappen
   } else {
     lyd.muted = true; //Hvis lyden er på, skrus lyden av
-    lydBilde.src = "../Bilder/no-sound.png"; //Gir et bilde til knappen
+    lydBilde.src = "../Bilder/mute-2.png"; //Gir et bilde til knappen
   }
   lydBilde.blur(); //Fjerner fokus fra knappen så den ikke skrus av/på ved trykk på enter
 }

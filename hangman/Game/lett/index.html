@@ -88,12 +88,17 @@
 
 <!-- Bildeknapp som kjører en funksjon om å gi et hint -->
 
-<input type="image" src="../Bilder/information.png" onclick="hint()" id="hintKnapp" alt="Hint" title="Velger en rett bokstav"></button>
+<!-- Bildeknapp med en funksjon om å gi et hint -->
+<input type="image" src="../Bilder/info.png" onclick="hint()" id="hintKnapp"
+       title="Velger en rett bokstav" alt="Hint"></input>
 
+<!-- Bildeknapp med en funksjon om å gå tilbake til meny når man er i spillet -->
+<input type="image" src="../Bilder/home.png" onclick="menyBtn()" id="menyBtn"
+       title="Meny" alt="Meny"></input>
 
-       <!-- Bildeknapp med en funskjon om å skru bakgrunnsmusikken av eller på -->
-       <input id="lydBilde" type="image" src="../Bilder/speaker.png" onclick="ingenLyd()"
-              alt="Lydbilde (av/på)"></button>
+  <!-- Bildeknapp med en funskjon om å skru bakgrunnsmusikken av eller på -->
+  <input id="lydBilde" type="image" src="../Bilder/speaker2.png" onclick="ingenLyd()"
+         title="Lyd (av/på)" alt="Lydbilde (av/på)"></button>
 
        <!-- Bakgrunnsmusikken som spilles av automatisk -->
        <audio id="lydFil" loop autoplay preload="auto">
