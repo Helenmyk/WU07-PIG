@@ -23,7 +23,21 @@ window.addEventListener("resize", function() {
   }
 });
 
-var words = [
+//Funskjon som skrur bakgrunnsmusikken av på siden
+function ingenLyd() {
+  var lyd = document.getElementById("lydFil");
+  if (lyd.muted == true) {
+    //Sjekker om lyden er av
+    lyd.muted = false; //Skrur på lyden dersom den er av
+    lydBilde.src = "../Bilder/speaker.png"; //Gir et bilde til knappen
+  } else {
+    lyd.muted = true; //Hvis lyden er på, skrus lyden av
+    lydBilde.src = "../Bilder/no-sound.png"; //Gir et bilde til knappen
+  }
+  lydBilde.blur(); //Fjerner fokus fra knappen så den ikke skrus av/på ved trykk på enter
+}
+
+let words = [
   "SLU SOM EN REV",
   "STILLE SOM EN MUS",
   "DUM SOM EN SAU",
@@ -233,6 +247,7 @@ let tastatur = document.getElementById("letters");
 function vinnFunksjon() {
   document.getElementById("lydFil").pause();
   document.getElementById("guess").style.color = "green";
+  document.getElementById("grisen").src = "../Bilder/blid.png";
   document.getElementById("vinnLyd").play();
   setTimeout(vinnFunksjon2, 2300);
 }
@@ -325,7 +340,6 @@ function spillIgjen() {
     "http://folk.ntnu.no/marilhan/hangman/Game/vanskelig/index.html";
 }
 function menyBtn() {
-  let menyBtn = document.getElementById("menyBtn");
-  menyBtn.location.href =
+   location.href =
     "http://folk.ntnu.no/marilhan/hangman/Game/forside/forside.html"
 }
