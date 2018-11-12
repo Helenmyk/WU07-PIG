@@ -23,7 +23,21 @@ window.addEventListener("resize", function() {
   }
 });
 
-var words = [
+//Funskjon som skrur bakgrunnsmusikken av på siden
+function ingenLyd() {
+  var lyd = document.getElementById("lydFil");
+  if (lyd.muted == true) {
+    //Sjekker om lyden er av
+    lyd.muted = false; //Skrur på lyden dersom den er av
+    lydBilde.src = "../Bilder/speaker.png"; //Gir et bilde til knappen
+  } else {
+    lyd.muted = true; //Hvis lyden er på, skrus lyden av
+    lydBilde.src = "../Bilder/no-sound.png"; //Gir et bilde til knappen
+  }
+  lydBilde.blur(); //Fjerner fokus fra knappen så den ikke skrus av/på ved trykk på enter
+}
+
+let words = [
   "SLU SOM EN REV",
   "STILLE SOM EN MUS",
   "DUM SOM EN SAU",
