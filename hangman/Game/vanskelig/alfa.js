@@ -326,7 +326,6 @@ function spillIgjen() {
     "http://folk.ntnu.no/marilhan/hangman/Game/vanskelig/index.html";
 }
 function menyBtn() {
-  let menyBtn = document.getElementById("menyBtn");
-  menyBtn.location.href =
+   location.href =
     "http://folk.ntnu.no/marilhan/hangman/Game/forside/forside.html"
 }
