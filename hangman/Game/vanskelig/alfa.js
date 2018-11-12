@@ -233,6 +233,7 @@ let tastatur = document.getElementById("letters");
 function vinnFunksjon() {
   document.getElementById("lydFil").pause();
   document.getElementById("guess").style.color = "green";
+  document.getElementById("grisen").src = "../Bilder/blid.png";
   document.getElementById("vinnLyd").play();
   setTimeout(vinnFunksjon2, 2300);
 }
