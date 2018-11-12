@@ -369,6 +369,20 @@ button:hover {
   -o-transform: scale(0.15); /* Opera 10.5+ */
   transform: scale(0.15);
 }
+#menyBtn {
+  z-index: 700;
+  position: absolute;
+  margin-left: 80vw;
+  margin-top: -4vw;
+  width: 20vw;
+  user-select: none;
+  outline: 0;
+  -webkit-transform: scale(0.15); /* Saf3.1+, Chrome */
+  -moz-transform: scale(0.15); /* FF3.5+ */
+  -ms-transform: scale(0.15); /* IE9 */
+  -o-transform: scale(0.15); /* Opera 10.5+ */
+  transform: scale(0.15);
+}
 
 /* Div som restart-menyen ligger i */
 .restartBoks {

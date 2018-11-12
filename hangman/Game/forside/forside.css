@@ -27,6 +27,7 @@ body {
   top: -200vw;
   margin-top: 0.1vw;
   margin-left: 26vw;
+  border-radius: 0.8vw;
   width: 45vw;
   height: 22vw;
   display: block;
@@ -155,23 +156,9 @@ body {
   -o-transform: scale(1.5); /* Opera 10.5+ */
   transform: scale(1.5);
 }
-/* Plassering og størrelse til lydbildet */
-#lydBilde {
-  position: absolute;
-  margin-left: -1vw;
-  margin-top: -24vw;
-  width: 20vw;
-  user-select: none;
-  outline: 0;
-  -webkit-transform: scale(0.15); /* Saf3.1+, Chrome */
-  -moz-transform: scale(0.15); /* FF3.5+ */
-  -ms-transform: scale(0.15); /* IE9 */
-  -o-transform: scale(0.15); /* Opera 10.5+ */
-  transform: scale(0.15);
-}
 /* Div som regel og historie-boks ligger i */
 #infoBokser {
-  margin-left: 26vw;
+  margin-left: 30vw;
   max-width: 100%;
   max-height: 100%;
   position: relative;
@@ -186,6 +173,7 @@ body {
   padding: 2vw;
   display: block;
   border: solid 0.1vw;
+  border-radius: 0.8vw;
   background-color: #a3baff;
   display: none;
   opacity: 0.95;
