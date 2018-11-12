@@ -249,11 +249,6 @@ body {
     top: 25vw;
   }
 }
-h1 {
-  color: #ff69b4;
-  font-family: "Indie Flower", cursive;
-  font-size: 60px;
-}
 #gaard {
   position: absolute;
   z-index: 1;
