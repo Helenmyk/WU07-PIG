@@ -15,7 +15,7 @@ window.addEventListener("resize", function() {
     flyttingBokstaver.style.marginTop = "30%";
   }
 });
-window.addEventListener("resize", function() {
+ window.addEventListener("resize", function() {
   //fix for at tastaturet oppfører seg rart
   if (window.matchMedia("(min-width: 1250px)").matches) {
     console.log("Screen width is at least 1250px");

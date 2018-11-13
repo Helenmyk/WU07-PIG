@@ -9,6 +9,8 @@ body {
   margin: 0;
   padding: 0;
 }
+
+/* Bakgrunnsfarge  */
 .parent {
   max-width: 100%;
   max-height: 100%;
@@ -139,10 +141,10 @@ body {
 /* Styling til alfabetet */
 #letters {
   z-index: 20;
-  margin-top: 23%;
-  margin-bottom: 10%;
-  margin-left: 14%;
-  margin-right: 11%;
+  margin-top: 23vw;
+  margin-bottom: 10vw;
+  margin-left: 14vw;
+  margin-right: 18vw;
   position: absolute;
   text-align: center;
   user-select: none;
@@ -157,6 +159,8 @@ body {
   margin-left: 25px;
   line-height: 184px;
   margin-top: -30px;
+  text-align: center;
+  position: relative;
 }
 
 /* Styling til knappene i alfabetet */
