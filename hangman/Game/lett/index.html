@@ -4,6 +4,8 @@
 <title>Pop Pig</title>
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="styles.css" />
+<!-- FONT -->
+<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 <script src = "https://code.jquery.com/jquery-3.2.1.min.js"
  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
  crossorigin="anonymous"></script>
@@ -19,15 +21,22 @@
  <img class="sky" id="sky5" src="../Bilder/sky1.png" alt="Sky" />
  <img class="fallSky" id="sky6" src="../Bilder/sky2.png" alt="Sky" />
 
+   <!--  -->
    <div class="parent">
 
-     <!-- src til bilde av gård og gress-->
-   <div id="gaardOgmamma">
-     <img id="gaard" src="../Bilder/gaard.png" alt="Gaard"/>
-     <img id="mammaGris" src="../Bilder/Mom.png" alt="Mamma Gris"/>
-   </div>
+     <!-- Div som gård + mammagris ligger i -->
+     <div id="gaardOgmamma">
 
-          <img id="gress" src="../Bilder/gress.png" alt="Gress"/>
+       <!-- src til bilde av gård -->
+       <img id="gaard" src="../Bilder/gaard.png" alt="Gaard"/>
+
+       <!-- src til bilde av mammagris -->
+       <img id="mammaGris" src="../Bilder/Mom.png" alt="Mamma Gris"/>
+     </div>
+
+       <!-- src til bilde av gress -->
+       <img id="gress" src="../Bilder/gress.png" alt="Gress"/>
+
 
        <!-- div for at gris med ballonger skal henge sammen-->
        <div class="grisOgBallong" id="gob">
@@ -50,7 +59,7 @@
   <div id="letters">
   <!-- div til guess -->
   <div id="guess"></div>
-  <div>
+
     <!-- alle alfabet-knappene -->
     <button id="knapp1" class="letter-button">A</button>
     <button id="knapp2" class="letter-button">B</button>
@@ -86,19 +95,17 @@
   </div>
   </div>
 
-<!-- Bildeknapp som kjører en funksjon om å gi et hint -->
+     <!-- Bildeknapp med en funksjon om å gi et hint -->
+     <input type="image" src="../Bilder/info.png" onclick="hint()" id="hintKnapp"
+            title="Velger en rett bokstav" alt="Hint"></input>
 
-<!-- Bildeknapp med en funksjon om å gi et hint -->
-<input type="image" src="../Bilder/info.png" onclick="hint()" id="hintKnapp"
-       title="Velger en rett bokstav" alt="Hint"></input>
+     <!-- Bildeknapp med en funksjon om å gå tilbake til meny når man er i spillet -->
+     <input type="image" src="../Bilder/home.png" onclick="menyBtn()" id="menyBtn"
+            title="Meny" alt="Meny"></input>
 
-<!-- Bildeknapp med en funksjon om å gå tilbake til meny når man er i spillet -->
-<input type="image" src="../Bilder/home.png" onclick="menyBtn()" id="menyBtn"
-       title="Meny" alt="Meny"></input>
-
-  <!-- Bildeknapp med en funskjon om å skru bakgrunnsmusikken av eller på -->
-  <input id="lydBilde" type="image" src="../Bilder/speaker2.png" onclick="ingenLyd()"
-         title="Lyd (av/på)" alt="Lydbilde (av/på)"></button>
+       <!-- Bildeknapp med en funskjon om å skru bakgrunnsmusikken av eller på -->
+       <input id="lydBilde" type="image" src="../Bilder/speaker2.png" onclick="ingenLyd()"
+              title="Musikk (av/på)" alt="Lydbilde (av/på)"></button>
 
        <!-- Bakgrunnsmusikken som spilles av automatisk -->
        <audio id="lydFil" loop autoplay preload="auto">
@@ -108,7 +115,7 @@
 
    <!-- div til restart-meny boksen som kommer opp ved vunnet spill -->
    <div id="restartMenyVinn" class="restartBoks">
-    <p class="infoRestartOverskrift">GRATULERER! </p><br>
+    <p class="infoRestartOverskrift">Gratulerer! </p><br>
      <p class="infoRestart">Vil du spille igjen eller gå tilbake til menyen? </p>
   <div>
 
@@ -120,7 +127,7 @@
 
    <!-- div til restart-meny boksen som kommer opp ved tapt spill -->
    <div id="tapMeny" class="restartBoks">
-    <p class="infoRestartOverskrift">DU TAPTE! </p><br>
+    <p class="infoRestartOverskrift">Du tapte! </p><br>
      <p class="infoRestart">Vil du spille igjen eller gå tilbake til menyen? </p>
   <div>
     <!-- knapper med en funksjon om å gå til meny eller spille igjen -->

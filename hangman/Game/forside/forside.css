@@ -64,6 +64,7 @@ body {
   border: 0.15vw solid #002eb7;
   padding: 0.2vw;
   opacity: 0.8;
+  font-family: "Indie Flower";
   user-select: none;
   margin-left: 18vw;
   outline: 0;
@@ -107,7 +108,7 @@ body {
 /* Styling til teksten i vanskelighetsgrad-menyen */
 #infoVGrad {
   text-align: center;
-  font-family: Helvetica;
+  font-family: "Indie Flower";
   margin-top: 2vw;
   height: auto;
   font-size: 2vw;
@@ -184,10 +185,10 @@ body {
 .boksOverskrift {
   font-size: 2vw;
   text-align: center;
-  font-family: Helvetica;
+  font-family: "Indie Flower";
 }
 /* Styling til tekst i regel og historie-boks */
 .infoTekst {
-  font-size: 1vw;
-  font-family: Helvetica;
+  font-size: 1.5vw;
+  font-family: "Indie Flower";
 }
