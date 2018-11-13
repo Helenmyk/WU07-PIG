@@ -54,15 +54,3 @@ function lett() { // funksjon som tar deg til index.html i lett mappen dersom du
 function vanskelig() { // funksjon som tar deg til index.html i vanskelig mappen dersom du trykker på uttrykk
   document.location.href = "../vanskelig/index.html";
 }
-
-function ingenLyd() { // funskjon som skrur bakgrunnsmusikken av på siden
-  let lyd = document.getElementById("lydFil"); // definerer variabelen lyd og sier den lik elementet lydFil
-  if (lyd.muted == true) { // sjekker om lyden er av
-    lyd.muted = false; // skrur på lyden dersom den er av
-    lydBilde.src = "../Bilder/speaker2.png"; // gir et bilde til knappen
-  } else {
-    lyd.muted = true; // hvis lyden er på, skrus lyden av
-    lydBilde.src = "../Bilder/mute-2.png"; // gir et bilde til knappen
-  }
-  lydBilde.blur(); // fjerner fokus fra knappen så den ikke skrus av/på ved trykk på enter
-}
