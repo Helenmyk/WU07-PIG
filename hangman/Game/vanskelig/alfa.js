@@ -154,7 +154,7 @@ function handleLetterClick(evt) {
     // mer enn 1 gang hvert 600 millisekund for å unngå diverse bugs som lydproblemer og ballong pop gif som ikke ville display :Funksjonen
     setTimeout(function() {
       pauseTid = true;
-    }, 600);
+    }, 750);
   }
 }
 let antallHint = 0;
@@ -342,7 +342,7 @@ function grisTapFall() {
 
 function boksAnimasjonTap() {
   //funksjonen animerer inn enn boks der man kan velge mellom å gå til meny eller spilel igjen
-  let restartBoksTap = document.getElementById("tapMeny"); //setter variabelen restartBoksTap lik elementet tapMeny
+  let restartBoksTap = document.getElementById("tapMeny"); //definerer variabelen restartBoksTap lik elementet tapMeny
   restartBoksTap.style.animation = //animerer inn restart boksen
     "animerBoksRestart 0.7s ease-out 0s normal 1 forwards";
 }
