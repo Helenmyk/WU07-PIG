@@ -254,6 +254,7 @@ function vinnFunksjon2() {
 let skyPos, grisPos, gaardBakgrunn, gressBakgrunn, restartBoksVinn; //definerer noen globale variabler som bare er relevante nedenfor dette
 function skyAnimasjonVinn() {
   //Sekvens der grisen begynner landingen sin ved gården
+  tastatur.style.display = "none"; //skjuler tastaturet med display none
   for (let j = 1; j < 6; j++) {
     //for-løkke for å animere sky 1-5 oppover for å visualisere at grien drar nedover
     skyPos = document.getElementById("sky" + j); //setter skyPos lik elementet sky + j (der j er mellom 1 og 5)
@@ -304,6 +305,7 @@ function tapt() {
 
 function grisAnimasjonTap() {
   //funksjon for å animere skyene opp i tap sekvensen for å visualisere at grisen faller
+  tastatur.style.display = "none"; //skjuler tastaturet med display none
   for (let i = 1; i < 6; i++) {
     //for-løkke for å animere skyene 1-5 oppover
     skyPos = document.getElementById("sky" + i); //setter skyPos
