@@ -285,7 +285,7 @@ function grisAnimasjonVinn() {
 function boksAnimasjonVinn() {
   restartBoksVinn = document.getElementById("restartMenyVinn");
   restartBoksVinn.style.animation =
-    "animerBoks 0.7s ease-out 0s normal 1 forwards";
+    "animerBoksRestart 0.7s ease-out 0s normal 1 forwards";
 }
 
 function tapt() {
@@ -327,7 +327,7 @@ function grisTapFall() {
 function boksAnimasjonTap() {
   var restartBoksTap = document.getElementById("tapMeny");
   restartBoksTap.style.animation =
-    "testAnimation 0.7s ease-out 0s normal 1 forwards";
+    "animerBoksRestart 0.7s ease-out 0s normal 1 forwards";
 }
 
 function tilMeny() {
