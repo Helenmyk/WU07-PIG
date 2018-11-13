@@ -154,7 +154,7 @@ body {
 /* Posisjon til understrekene i hangman */
 #guess {
   letter-spacing: 17px;
-  font-size: 4vw;
+  font-size: 3vw;
   height: 143px;
   margin-left: 25px;
   line-height: 184px;
@@ -323,6 +323,7 @@ button:hover {
   outline: 0;
   height: auto;
   font-size: 1.5vw;
+  font-family: "Indie Flower";
 }
 
 /* Styling til alle knapper når musepekeren ligger over */
@@ -335,7 +336,7 @@ button:hover {
 
 /* Styling til overskriften i restart-boksen */
 .infoRestartOverskrift {
-  font-family: Helvetica;
+  font-family: "Indie Flower", Helvetica;
   font-size: 2.5vw;
   text-align: center;
   font-weight: bold;
@@ -343,7 +344,7 @@ button:hover {
 }
 /* Styling til teksten i restart-boksen */
 .infoRestart {
-  font-family: Helvetica;
+  font-family: "Indie Flower", Helvetica;
   font-size: 1.5vw;
   text-align: center;
 }
