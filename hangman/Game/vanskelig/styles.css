@@ -215,12 +215,6 @@ button:hover {
   margin-top: -4vw;
 }
 
-/* Posisjon til fullskjerm-knappen i selve spillet */
-#fullskjerm {
-  margin-left: 83vw;
-  margin-right: 0vw;
-}
-
 /* Plassering til div som holder gård og mammagris sammen */
 #gaardOgmamma {
   position: absolute;
