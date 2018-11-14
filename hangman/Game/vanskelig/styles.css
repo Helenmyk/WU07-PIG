@@ -183,12 +183,10 @@ button:hover {
   background-color: #ff69b4;
 }
 
-/* Posisjon og størrelse til lyd-knappen (ikon av lydknapp) */
-#lydBilde {
+/* Størrelse og annet til alle ikonene i spillet */
+.ikon {
   z-index: 700;
   position: absolute;
-  margin-left: -3.3vw;
-  margin-top: -4vw;
   width: 20vw;
   user-select: none;
   outline: 0;
@@ -199,45 +197,28 @@ button:hover {
   transform: scale(0.15);
 }
 
-/* Posisjon og størrelse til hint-knappen (ikon av spm-tegn) */
+/* Posisjon til lyd-knappen (ikon av lydknapp) */
+#lydBilde {
+  margin-left: -3.3vw;
+  margin-top: -4vw;
+}
+
+/* Posisjon til hint-knappen (ikon av spm-tegn) */
 #hintKnapp {
-  z-index: 700;
-  position: absolute;
   margin-left: -3.3vw;
   margin-top: 0vw;
-  width: 20vw;
-  user-select: none;
-  outline: 0;
-  -webkit-transform: scale(0.15); /* Saf3.1+, Chrome */
-  -moz-transform: scale(0.15); /* FF3.5+ */
-  -ms-transform: scale(0.15); /* IE9 */
-  -o-transform: scale(0.15); /* Opera 10.5+ */
-  transform: scale(0.15);
 }
 
-/* Posisjon og størrelse til meny-knappen i selve spillet (ikon av hus) */
+/* Posisjon til meny-knappen i selve spillet (ikon av hus) */
 #menyBtn {
-  z-index: 700;
-  position: absolute;
   margin-left: 83vw;
   margin-top: -4vw;
-  width: 20vw;
-  user-select: none;
-  outline: 0;
-  -webkit-transform: scale(0.15); /* Saf3.1+, Chrome */
-  -moz-transform: scale(0.15); /* FF3.5+ */
-  -ms-transform: scale(0.15); /* IE9 */
-  -o-transform: scale(0.15); /* Opera 10.5+ */
-  transform: scale(0.15);
 }
 
+/* Posisjon til fullskjerm-knappen i selve spillet */
 #fullskjerm {
-  background-color: black;
-  z-index: 700;
-  position: absolute;
-  margin-left: 85vw;
-  margin-top: 5vw;
-  width: 5vw;
+  margin-left: 83vw;
+  margin-right: 0vw;
 }
 
 /* Plassering til div som holder gård og mammagris sammen */
