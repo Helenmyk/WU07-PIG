@@ -231,6 +231,15 @@ button:hover {
   transform: scale(0.15);
 }
 
+#fullskjerm {
+  background-color: black;
+  z-index: 700;
+  position: absolute;
+  margin-left: 85vw;
+  margin-top: 5vw;
+  width: 5vw;
+}
+
 /* Plassering til div som holder gård og mammagris sammen */
 #gaardOgmamma {
   position: absolute;
