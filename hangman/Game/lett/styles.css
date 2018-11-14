@@ -247,6 +247,7 @@ button:hover {
   z-index: 1;
   width: 100vw;
   height: auto;
+  user-select: none;
 }
 
 /* Posisjon og størrelse til mammagrisen */
@@ -284,6 +285,7 @@ button:hover {
   width: 100vw;
   height: auto;
   display: none;
+  user-select: none;
 }
 
 /* Div som restart-menyen ligger i */
