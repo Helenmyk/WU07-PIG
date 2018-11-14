@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="no">
 <head>
 <title>Pop Pig</title>
 <meta charset="utf-8">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name = "viewport" content = "initial-scale = 1.0">
 <link rel="stylesheet" type="text/css" href="styles.css" />
 <!-- FONT -->
 <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
@@ -45,15 +44,15 @@
 
     <!-- src til bilde av ballong-snoren, alle ballongene og grisen -->
     <img id="streken" src="../Bilder/strek.png" alt="Ballongsnor" />
-    <img class="ballonger" id="ballong1" src="../Bilder/fixedballong.png" width="60px" alt="Ballong"/>
-    <img class="ballonger" id="ballong2" src="../Bilder/fixedballong.png" width="60px" alt="Ballong"/>
-    <img class="ballonger" id="ballong3" src="../Bilder/fixedballong.png" width="60px" alt="Ballong"/>
-    <img class="ballonger" id="ballong4" src="../Bilder/fixedballong.png" width="60px" alt="Ballong"/>
-    <img class="ballonger" id="ballong5" src="../Bilder/fixedballong.png" width="60px" alt="Ballong"/>
-    <img class="ballonger" id="ballong6" src="../Bilder/fixedballong.png" width="60px" alt="Ballong"/>
-    <img class="ballonger" id="ballong7" src="../Bilder/fixedballong.png" width="60px" alt="Ballong"/>
-    <img class="ballonger" id="ballong8" src="../Bilder/fixedballong.png" width="60px" alt="Ballong"/>
-    <img class="ballonger" id="ballong9" src="../Bilder/fixedballong.png" width="60px" alt="Ballong"/>
+    <img class="ballonger" id="ballong1" src="../Bilder/fixedballong.png" alt="Ballong"/>
+    <img class="ballonger" id="ballong2" src="../Bilder/fixedballong.png" alt="Ballong"/>
+    <img class="ballonger" id="ballong3" src="../Bilder/fixedballong.png" alt="Ballong"/>
+    <img class="ballonger" id="ballong4" src="../Bilder/fixedballong.png" alt="Ballong"/>
+    <img class="ballonger" id="ballong5" src="../Bilder/fixedballong.png" alt="Ballong"/>
+    <img class="ballonger" id="ballong6" src="../Bilder/fixedballong.png" alt="Ballong"/>
+    <img class="ballonger" id="ballong7" src="../Bilder/fixedballong.png" alt="Ballong"/>
+    <img class="ballonger" id="ballong8" src="../Bilder/fixedballong.png" alt="Ballong"/>
+    <img class="ballonger" id="ballong9" src="../Bilder/fixedballong.png" alt="Ballong"/>
     <img id="grisen" src="../Bilder/grisen.png" alt="Grisen"/>
        </div>
 
@@ -99,16 +98,16 @@
 
      <!-- Bildeknapp med en funksjon om å gi et hint -->
      <input type="image" src="../Bilder/info.png" onclick="hint()" id="hintKnapp"
-            class="ikon" title="Velger en rett bokstav" alt="Hint"></input>
+            class="ikon" title="Velger en rett bokstav" alt="Hint"/>
 
      <!-- Bildeknapp med en funksjon om å gå tilbake til meny når man er i spillet -->
      <input type="image" src="../Bilder/home.png" onclick="menyBtn()" id="menyBtn"
-            class="ikon" title="Meny" alt="Meny"></input>
+            class="ikon" title="Meny" alt="Meny"/>
 
 
   <!-- Bildeknapp med en funskjon om å skru bakgrunnsmusikken av eller på -->
   <input id="lydBilde" type="image" src="../Bilder/speaker2.png" onclick="ingenLyd()"
-         class="ikon" title="Musikk (av/på)" alt="Lydbilde (av/på)"></input>
+         class="ikon" title="Musikk (av/på)" alt="Lydbilde (av/på)"/>
 
        <!-- Bakgrunnsmusikken som spilles av automatisk -->
        <audio id="lydFil" loop autoplay preload="auto">
@@ -153,5 +152,5 @@
       <audio id="ding2" src="../Lydeffekter/DING2.mp3"></audio>
 
 </body>
-<script type="text/javascript" src="alfa.js"></script>
+<script src="alfa.js"></script>
 </html>

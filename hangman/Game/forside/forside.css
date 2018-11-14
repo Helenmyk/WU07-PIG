@@ -107,7 +107,23 @@ body {
 }
 
 /* Plassering og størrelse til tilbakeknapper */
-#tilbakeKnapp {
+#tilbakeKnapp1 {
+  margin-top: 5vw;
+  margin-left: 2vw;
+  font-size: 1vw;
+  height: auto;
+  padding: 0.1vw 0.1vw;
+  width: 5vw;
+}
+#tilbakeKnapp2 {
+  margin-top: 5vw;
+  margin-left: 2vw;
+  font-size: 1vw;
+  height: auto;
+  padding: 0.1vw 0.1vw;
+  width: 5vw;
+}
+#tilbakeKnapp3 {
   margin-top: 5vw;
   margin-left: 2vw;
   font-size: 1vw;
@@ -193,7 +209,6 @@ body {
   transform: scale(1.5);
 }
 
-
 /* ANIMASJONER */
 /* Animasjon til vanskelighetsgrad-menyen, boksen går ned når "start spill" trykkes på */
 @keyframes testAnimation {
@@ -211,7 +226,6 @@ body {
     top: -100vw;
   }
 }
-
 
 /* SCROLLBAR I REGELBOKSEN */
 /* tykkelse på scrollbar */
