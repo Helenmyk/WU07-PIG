@@ -351,19 +351,16 @@ function boksAnimasjonTap() {
 
 function tilMeny() {
   //funksjon for meny knappen i restartboksen
-  location.href =
-    "http://folk.ntnu.no/marilhan/hangman/Game/forside/forside.html"; // endrer filen til vinduet til forside filen
+  location.href = "../forside/forside.html"; // endrer filen til vinduet til forside filen
 }
 
 function spillIgjen() {
   //funksjon for spill igjen knappen i restartboksen
-  location.href =
-    "http://folk.ntnu.no/marilhan/hangman/Game/vanskelig/index.html";
+  location.href = "../vanskelig/index.html";
   // endrer filen til vinduet til samme filen for å refreshe siden
 }
 function menyBtn() {
   //funksjon for menyknappen oppe til høyre i spillvinduet
-  location.href =
-    "http://folk.ntnu.no/marilhan/hangman/Game/forside/forside.html";
+  location.href = "../forside/forside.html";
   // endrer filen til vinduet til forside filen
 }
