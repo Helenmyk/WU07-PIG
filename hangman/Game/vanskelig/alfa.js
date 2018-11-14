@@ -23,6 +23,17 @@ window.addEventListener("resize", function() {
   }
 });
 
+addEventListener("click", function() {
+  var el = document.documentElement,
+    rfs =
+      el.requestFullscreen ||
+      el.webkitRequestFullScreen ||
+      el.mozRequestFullScreen ||
+      el.msRequestFullscreen;
+
+  rfs.call(el);
+});
+
 //Funskjon som skrur bakgrunnsmusikken av på siden
 function ingenLyd() {
   var lyd = document.getElementById("lydFil");
