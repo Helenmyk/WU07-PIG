@@ -231,7 +231,7 @@ button:hover {
   transform: scale(0.15);
 }
 #fullskjerm {
-  background-color: black;
+  background-color: red;
   z-index: 700;
   position: absolute;
   margin-left: 85vw;
